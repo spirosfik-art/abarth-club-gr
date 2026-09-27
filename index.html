@@ -405,6 +405,8 @@ footer img{width:84px}
 @keyframes ckspin{to{transform:rotate(360deg)}}
 @keyframes cheat{to{transform:scale(0) rotate(90deg);opacity:0}}
 @media (max-width:860px){.cookie{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+.vote-teaser{margin-top:14px;max-width:56ch;padding:12px 14px;border-left:3px solid var(--rosso);background:rgba(229,32,46,.08);border-radius:0 10px 10px 0;color:var(--chalk)}
+.cotw-home{background:radial-gradient(ellipse at 15% 0%,rgba(229,32,46,.16),transparent 55%),var(--asphalt)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* ===== v3: multi-page ===== */
@@ -625,9 +627,10 @@ a.partner{color:inherit}
       <h1 class="wordmark" aria-label="ABARTH_CLUB_GR"><span class="a">ABARTH</span><span class="us">_</span><span class="c">CLUB</span><span class="us">_</span><span class="gr">GR</span></h1>
       <div class="hero-tag"><span class="hand">One Team. One Family. One Purpose.</span></div>
       <p class="hero-lede">Η κοινότητα της Αθήνας για όσους αγαπάνε τα ιταλικά αυτοκίνητα: <b>Abarth, Fiat, Lancia και Alfa Romeo</b>. Ξεκινήσαμε τον Αύγουστο του 2026 και στο πρώτο μας car meet ήρθαν <b>πάνω από 50 αυτοκίνητα</b>. Αυτό είναι μόνο η αρχή.</p>
+      <p class="vote-teaser"><b id="carTotal">62</b> αυτοκίνητα μελών διεκδικούν το <b>Car of the Week</b>. Ψήφισε τα 3 αγαπημένα σου, ο νικητής ανακοινώνεται την Κυριακή.</p>
       <div class="btns">
-        <a class="btn hot" href="#meets">Varkiza · 17 Οκτωβρίου</a>
-        <a class="btn" href="#cars">Ψήφισε το Car of the Week</a>
+        <a class="btn hot" href="#cotw">Ψήφισε το Car of the Week</a>
+        <a class="btn" href="#meets">Varkiza · 17 Οκτωβρίου</a>
       </div>
     </div>
     <div class="logo-stage"><img src="img/logo.png" alt="Λογότυπο Abarth Club GR Athens, Est. 2026"></div>
@@ -657,6 +660,59 @@ a.partner{color:inherit}
     <span>Cars</span><span>People</span><span>Places</span><span>Stories</span><span>Good cars better people</span><span>Italian spirit</span><span>Small sticker big family</span><span>Diversi nello stile, uniti dalla passione</span>
   </div>
 </div>
+
+<section id="cotw" class="cotw-home">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Car of the Week</div>
+      <h2>Ψήφισε το Car of the Week.</h2>
+      <p>Κάθε αυτοκίνητο έχει τον αριθμό του. Διάλεξε τα αγαπημένα σου, στείλε την ψήφο με DM και την Κυριακή ανακοινώνουμε τον νικητή στο Instagram του club.</p>
+    </div>
+    <div class="vote-layout">
+      <div>
+        <div class="carousel" id="carousel">
+          <div class="slides" id="slides"></div>
+          <button class="car-nav prev" id="prev" aria-label="Προηγούμενο αυτοκίνητο">‹</button>
+          <button class="car-nav next" id="nextb" aria-label="Επόμενο αυτοκίνητο">›</button>
+        </div>
+        <div class="strip" id="strip" aria-label="Όλα τα αυτοκίνητα"></div>
+      </div>
+      <aside class="board">
+        <h3>Οι ψήφοι σου <small>έως 3</small></h3>
+        <ol id="board"></ol>
+        <div class="dm-preview" id="voteDm"></div>
+        <div class="btns" style="margin-top:0">
+          <button class="btn hot" type="button" id="voteCopy">Αντιγραφή ψήφου</button>
+          <a class="btn" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">Στείλε με DM</a>
+        </div>
+        <p class="note">Η ψήφος μετράει όταν φτάσει με DM στο <b>@abarth_club_gr</b>. Ο νικητής ανακοινώνεται κάθε Κυριακή.</p>
+        <div class="upload">
+          <h4>Ανέβασε το αυτοκίνητό σου</h4>
+          <p>Μία φωτογραφία ανά μέλος την εβδομάδα. Τη νύχτα βγαίνουν καλύτερα.</p>
+          <div class="row">
+            <label class="sr" for="up-brand">Μάρκα</label>
+            <select class="field" id="up-brand"><option>Abarth</option><option>Fiat</option><option>Alfa Romeo</option><option>Lancia</option></select>
+            <label class="sr" for="up-model">Μοντέλο</label>
+            <input class="field" type="text" id="up-model" placeholder="Μοντέλο">
+          </div>
+          <label class="sr" for="up-owner">Instagram</label>
+          <input class="field" type="text" id="up-owner" placeholder="@το_instagram_σου">
+          <p class="note photo-rules"><b>Κανόνες φωτογραφίας:</b> μόνο αυτοκίνητα, χωρίς πρόσωπα, και η πινακίδα να μη φαίνεται. Θα σου ζητήσουμε να τη θολώσεις πριν ανέβει.</p>
+          <label class="file" for="up-file">Επιλογή φωτογραφίας</label>
+          <input class="hidden-file" type="file" id="up-file" accept="image/*">
+          <div class="msg" id="up-msg"></div>
+        </div>
+      </aside>
+    </div>
+    <div class="vote-rules">
+      <div><b>1. Ανεβάζεις</b><p>Μία φωτογραφία του αυτοκινήτου σου με το @ του Instagram σου.</p></div>
+      <div><b>2. Ψηφίζεις με DM</b><p>Διαλέγεις έως 3 αυτοκίνητα και στέλνεις το έτοιμο μήνυμα με τους αριθμούς τους.</p></div>
+      <div><b>3. Ο νικητής στο προφίλ</b><p>Το Car of the Week ανεβαίνει στο Instagram και κερδίζει δωρεάν αυτοκόλλητο.</p></div>
+    </div>
+  </div>
+</section>
+
+
 
 <section>
   <div class="wrap">
@@ -698,13 +754,12 @@ a.partner{color:inherit}
     </div>
     <div class="tiles">
       <a class="tile" href="#meets"><img src="img/meet-farma-wide.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Meets</b><span>Varkiza 17/10, «Έρχομαι», album της βραδιάς</span></div></a>
-      <a class="tile" href="#cars"><img src="img/c-gpa-black-stripe.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Αυτοκίνητα</b><span>Car of the Week και το garage των μελών</span></div></a>
+      <a class="tile" href="#cars"><img src="img/c-gpa-black-stripe.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Garage</b><span>Όλα τα αυτοκίνητα των μελών, με φίλτρα ανά μάρκα</span></div></a>
       <a class="tile" href="#merch"><img src="img/m-tee-mockup.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Merch</b><span>Αυτοκόλλητα, μπλούζες, lanyard, μπρελόκ</span></div></a>
       <a class="tile" href="#guide"><img src="img/c-mito-red-forest.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Οδηγοί</b><span>Μοντέλα, διαδρομές για cruise, συνεργεία</span></div></a>
       <a class="tile" href="#play"><img src="img/sticker-595.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Παιχνίδια</b><span>Spot the Sticker, κάρτα μέλους, quiz</span></div></a>
       <a class="tile" href="#club"><img src="img/banner.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Το Club</b><span>Η ιστορία μας, συνεργάτες, επικοινωνία</span></div></a>
     </div>
-    <a class="leader" href="#cars" style="text-decoration:none;color:inherit" id="homeLeader"></a>
   </div>
 </section>
 </div>
@@ -823,60 +878,9 @@ a.partner{color:inherit}
 <div class="page-hero"><div class="wrap">
   <div class="eyebrow"><span class="tri"></span>Η οικογένεια σε τέσσερις τροχούς</div>
   <h1>Αυτοκίνητα.</h1>
-  <p>Όλα τα αυτοκίνητα που μας έχουν στείλει τα μέλη. Ψήφισε το Car of the Week και ψάξε στο garage ανά μάρκα και μοντέλο.</p>
-  <nav class="subnav"><a href="#cotw">Car of the Week</a><a href="#members">Garage μελών</a><a href="#family">Οι 4 μάρκες</a></nav>
+  <p>Όλα τα αυτοκίνητα που μας έχουν στείλει τα μέλη. Ψάξε ανά μάρκα και μοντέλο και πάτα ένα για όλες τις φωτογραφίες του.</p>
+  <nav class="subnav"><a href="#cotw">Ψήφισε (αρχική)</a><a href="#members">Garage μελών</a><a href="#family">Οι 4 μάρκες</a></nav>
 </div></div>
-
-<section id="cotw">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>Car of the Week</div>
-      <h2>Ανέβασε. Ψήφισε. Κέρδισε.</h2>
-      <p>Κάθε αυτοκίνητο έχει τον αριθμό του. Διάλεξε τα αγαπημένα σου, στείλε την ψήφο με DM και την Κυριακή ανακοινώνουμε τον νικητή στο Instagram του club.</p>
-    </div>
-    <div class="vote-layout">
-      <div>
-        <div class="carousel" id="carousel">
-          <div class="slides" id="slides"></div>
-          <button class="car-nav prev" id="prev" aria-label="Προηγούμενο αυτοκίνητο">‹</button>
-          <button class="car-nav next" id="nextb" aria-label="Επόμενο αυτοκίνητο">›</button>
-        </div>
-        <div class="strip" id="strip" aria-label="Όλα τα αυτοκίνητα"></div>
-      </div>
-      <aside class="board">
-        <h3>Οι ψήφοι σου <small>έως 3</small></h3>
-        <ol id="board"></ol>
-        <div class="dm-preview" id="voteDm"></div>
-        <div class="btns" style="margin-top:0">
-          <button class="btn hot" type="button" id="voteCopy">Αντιγραφή ψήφου</button>
-          <a class="btn" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">Στείλε με DM</a>
-        </div>
-        <p class="note">Η ψήφος μετράει όταν φτάσει με DM στο <b>@abarth_club_gr</b>. Ο νικητής ανακοινώνεται κάθε Κυριακή.</p>
-        <div class="upload">
-          <h4>Ανέβασε το αυτοκίνητό σου</h4>
-          <p>Μία φωτογραφία ανά μέλος την εβδομάδα. Τη νύχτα βγαίνουν καλύτερα.</p>
-          <div class="row">
-            <label class="sr" for="up-brand">Μάρκα</label>
-            <select class="field" id="up-brand"><option>Abarth</option><option>Fiat</option><option>Alfa Romeo</option><option>Lancia</option></select>
-            <label class="sr" for="up-model">Μοντέλο</label>
-            <input class="field" type="text" id="up-model" placeholder="Μοντέλο">
-          </div>
-          <label class="sr" for="up-owner">Instagram</label>
-          <input class="field" type="text" id="up-owner" placeholder="@το_instagram_σου">
-          <p class="note photo-rules"><b>Κανόνες φωτογραφίας:</b> μόνο αυτοκίνητα, χωρίς πρόσωπα, και η πινακίδα να μη φαίνεται. Θα σου ζητήσουμε να τη θολώσεις πριν ανέβει.</p>
-          <label class="file" for="up-file">Επιλογή φωτογραφίας</label>
-          <input class="hidden-file" type="file" id="up-file" accept="image/*">
-          <div class="msg" id="up-msg"></div>
-        </div>
-      </aside>
-    </div>
-    <div class="vote-rules">
-      <div><b>1. Ανεβάζεις</b><p>Μία φωτογραφία του αυτοκινήτου σου με το @ του Instagram σου.</p></div>
-      <div><b>2. Ψηφίζεις με DM</b><p>Διαλέγεις έως 3 αυτοκίνητα και στέλνεις το έτοιμο μήνυμα με τους αριθμούς τους.</p></div>
-      <div><b>3. Ο νικητής στο προφίλ</b><p>Το Car of the Week ανεβαίνει στο Instagram και κερδίζει δωρεάν αυτοκόλλητο.</p></div>
-    </div>
-  </div>
-</section>
 
 <section class="garage" id="members">
   <div class="wrap">
@@ -1251,7 +1255,7 @@ function copy(text,el,ok){const sel=()=>{const r=document.createRange();r.select
 
 /* ---------- Router ---------- */
 const pages=['home','meets','cars','merch','guide','play','club'];
-const alias={top:'home',varkiza:'meets',meet1:'meets',album:'meets',cotw:'cars',garage:'cars',members:'cars',family:'cars',sticker:'merch',preorder:'merch',mylist:'merch',models:'guide',routes:'guide',shops:'guide',spot:'play',card:'play',quiz:'play',story:'club',partners:'club',join:'club',faq:'club'};
+const alias={top:'home',varkiza:'meets',meet1:'meets',album:'meets',cotw:'home',garage:'cars',members:'cars',family:'cars',sticker:'merch',preorder:'merch',mylist:'merch',models:'guide',routes:'guide',shops:'guide',spot:'play',card:'play',quiz:'play',story:'club',partners:'club',join:'club',faq:'club'};
 let current=null;
 function route(){const h=(location.hash||'#home').slice(1);const p=pages.includes(h)?h:(alias[h]||'home');
  if(p!==current){$$('.page').forEach(el=>el.classList.toggle('on',el.id==='p-'+p));$$('#navlinks a').forEach(a=>a.setAttribute('aria-current',a.dataset.p===p?'page':'false'));current=p;window.scrollTo(0,0);if(p==='home')armTacho();if(p==='play')drawCard()}
@@ -1360,10 +1364,9 @@ function renderCotw(){
  $('#voteDm').textContent=mine.length?`Ψηφίζω για Car of the Week: ${mine.map(c=>'Νο '+num(c)+' ('+c.model+')').join(', ')} 🔥`:'Το μήνυμα με τις ψήφους σου θα εμφανιστεί εδώ.';
  $('#voteCopy').disabled=!mine.length;
  go(idx);
- const F=cars[Math.floor(Date.now()/864e5)%Math.min(cars.length,62)];
- $('#homeLeader').innerHTML=`<img src="${F.photos[0]}" alt=""><div><small>Αυτοκίνητο της ημέρας · Νο ${num(F)}</small><b>${esc(F.model)}</b><span class="u">${esc(F.color)} · Ο νικητής του Car of the Week ανακοινώνεται κάθε Κυριακή στο Instagram</span></div><span class="btn hot">Ψήφισε</span>`;
+ const F=cars[Math.floor(Date.now()/864e5)%Math.min(cars.length,62)];const HL=$('#homeLeader');if(HL)HL.innerHTML=`<img src="${F.photos[0]}" alt=""><div><small>Αυτοκίνητο της ημέρας · Νο ${num(F)}</small><b>${esc(F.model)}</b><span class="u">${esc(F.color)} · Ο νικητής του Car of the Week ανακοινώνεται κάθε Κυριακή στο Instagram</span></div><span class="btn hot">Ψήφισε</span>`;
 }
-function go(i){idx=(i+cars.length)%cars.length;$('#slides').style.transform=`translateX(-${idx*100}%)`;$$('#strip button').forEach((b,j)=>b.setAttribute('aria-current',j===idx));const cur=$$('#strip button')[idx];if(cur&&current==='cars'){const s=$('#strip');s.scrollTo({left:cur.offsetLeft-s.clientWidth/2+32,behavior:reduce?'auto':'smooth'})}}
+function go(i){idx=(i+cars.length)%cars.length;$('#slides').style.transform=`translateX(-${idx*100}%)`;$$('#strip button').forEach((b,j)=>b.setAttribute('aria-current',j===idx));const cur=$$('#strip button')[idx];if(cur&&current==='home'){const s=$('#strip');s.scrollTo({left:cur.offsetLeft-s.clientWidth/2+32,behavior:reduce?'auto':'smooth'})}}
 $('#prev').onclick=()=>go(idx-1);$('#nextb').onclick=()=>go(idx+1);
 $('#strip').addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(+b.dataset.i)});
 $('#board').addEventListener('click',e=>{const li=e.target.closest('li');if(li){go(cars.findIndex(c=>c.id===li.dataset.id));$('#carousel').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})}});
@@ -1381,7 +1384,7 @@ let gFilter='Όλα',gQuery='';
 function renderFilters(){const brands=['Όλα','Abarth','Fiat','Alfa Romeo','Lancia'];
  $('#filters').innerHTML=brands.map(b=>{const n=b==='Όλα'?cars.length:cars.filter(c=>c.brand===b).length;return `<button class="chip-btn" data-f="${b}" aria-pressed="${gFilter===b}">${b}<span class="n">${n}</span></button>`}).join('')+'<label class="sr" for="gSearch">Αναζήτηση</label><input class="field" id="gSearch" placeholder="Αναζήτηση μοντέλου, χρώματος" value="'+esc(gQuery)+'">';
  $('#gSearch').addEventListener('input',e=>{gQuery=e.target.value;renderGrid()})}
-function renderGrid(){const q=gQuery.trim().toLowerCase();
+function renderGrid(){const ct=$('#carTotal');if(ct)ct.textContent=cars.length;const q=gQuery.trim().toLowerCase();
  const list=cars.filter(c=>(gFilter==='Όλα'||c.brand===gFilter)&&(!q||(c.model+' '+c.color+' '+c.note+' '+(c.owner||'')).toLowerCase().includes(q)));
  $('#garageGrid').innerHTML=list.length?list.map(c=>`<button class="gcard b-${c.brand.split(' ')[0]}" data-car="${c.id}"><div class="ph"><img src="${c.photos[0]}" alt="${esc(c.model)}" loading="lazy"><span class="brand-pill">${esc(c.brand)}</span>${c.photos.length>1?`<span class="cnt">${c.photos.length} φωτό</span>`:''}</div><div class="meta"><b>${esc(c.model)}</b><span>${esc(c.color)} · ${esc(c.note)}</span><span class="v">${heart} Νο ${num(c)}</span></div></button>`).join(''):'<p class="note">Κανένα αυτοκίνητο δεν ταιριάζει στην αναζήτηση.</p>';
  $('#carCount').textContent=cars.length}
