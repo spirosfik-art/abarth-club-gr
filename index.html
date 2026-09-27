@@ -647,7 +647,7 @@ a.partner{color:inherit}
 @keyframes smoke{0%{opacity:.8;transform:translate(-190px,0) scale(.4)}100%{opacity:0;transform:translate(-260px,-24px) scale(2.4)}}
 @keyframes spin{to{transform:rotate(360deg)}}
 /* ambient cruiser in hero */
-.hero-road{position:absolute;left:0;right:0;bottom:0;height:40px;z-index:3;pointer-events:none;overflow:hidden}
+.hero-road{position:absolute;left:0;right:0;bottom:0;height:56px;z-index:3;pointer-events:none;overflow:hidden}
 .hero-road::before{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;background:repeating-linear-gradient(90deg,rgba(243,241,236,.25) 0 22px,transparent 22px 44px)}
 .cruiser{position:absolute;bottom:6px;left:0;width:96px;animation:cruise 14s linear infinite}
 .cruiser .car-svg{width:100%;height:auto;display:block;animation:bob .5s ease-in-out infinite alternate}
@@ -712,7 +712,7 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
 @keyframes puff2{0%{opacity:.9;transform:translate(0,0) scale(.35)}100%{opacity:0;transform:translate(-46px,-14px) scale(2.6)}}
 /* extra roads on every page */
 .page-hero,footer{position:relative;overflow:hidden}
-.page-hero .hero-road,footer .hero-road{height:36px}
+.page-hero .hero-road,footer .hero-road{height:52px}
 footer .hero-road{top:0;bottom:auto}
 .hero-road.r2 .cruiser{animation-duration:11s;animation-delay:-3s}
 .hero-road.r3 .cruiser{animation-duration:17s;animation-delay:-9s}
