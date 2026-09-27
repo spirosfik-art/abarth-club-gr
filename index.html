@@ -1577,7 +1577,7 @@ $('#copy-dm').onclick=()=>copy($('#dm').textContent,$('#dm'),'Αντιγράφη
 /* ---------- Preorders ---------- */
 const products=[
  {id:'tee',name:'T-shirt ABARTH CLUB GR',desc:'Μαύρο βαμβακερό. Μπροστά το λογότυπο, πίσω τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Σημαιάκι στο μανίκι και σκορπιός στο κάτω μέρος.',imgs:['m2-tee-woman','m2-tee-back','m2-tee-mockup','m2-tee-collage'],opts:['S','M','L','XL','XXL'],optLabel:'Μέγεθος'},
- {id:'lanyard',name:'Lanyard ABARTH_CLUB_GR',desc:'Μαύρο κορδόνι λαιμού με το ABARTH_CLUB_GR, τα σήματα των 4 μαρκών και ιταλικές ρίγες. Αποσπώμενο κούμπωμα και κρίκος για κλειδιά.',imgs:['m2-lanyard-car','m2-lanyard-studio'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'}];
+ {id:'lanyard',name:'Lanyard ABARTH_CLUB_GR',desc:'Μαύρο κορδόνι λαιμού με το ABARTH_CLUB_GR, τα σήματα των 4 μαρκών και ιταλικές ρίγες. Αποσπώμενο κούμπωμα και κρίκος για κλειδιά.',imgs:['m2-lanyard-hang','m2-lanyard-car','m2-lanyard-studio'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'}];
 const pick={};let po=store.get('acg3-preorders',[]);
 $('#shop').innerHTML=products.map(p=>{pick[p.id]=p.opts[0];return `<article class="prod" data-prod="${p.id}"><div class="pimg"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}" data-main loading="lazy"><span class="tag next">Coming soon</span><span class="so-mark cs-mark" aria-hidden="true">Coming soon</span></div>
  ${p.imgs.length>1?`<div class="pthumbs">${p.imgs.map((m,i)=>`<button type="button" data-img="img/${m}.jpg" aria-pressed="${i===0}"><img src="img/${m}.jpg" alt=""></button>`).join('')}</div>`:''}
