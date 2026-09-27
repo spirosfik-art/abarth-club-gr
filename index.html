@@ -689,6 +689,21 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
 #intro .in-photo~.smoke{top:calc(50% - 30px + min(210px,46vw))}
 #intro:has(.in-photo) .in-road{top:calc(50% - 30px + min(236px,52vw))}
 #intro:has(.in-photo) .in-sub{top:calc(50% + min(240px,54vw))}
+
+/* merch sold out */
+.so-banner{margin-top:20px;display:flex;align-items:center;gap:18px;background:rgba(229,32,46,.12);border:1px solid rgba(229,32,46,.5);border-radius:16px;padding:16px 18px;max-width:720px}
+.so-banner b{font:400 28px/1.05 var(--display);display:block;color:var(--chalk)}
+.so-banner p{margin:4px 0 0;color:var(--smoke);font-size:15px}
+.so-stamp{flex-shrink:0;font:400 26px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--rosso);padding:10px 14px 8px;border-radius:8px;transform:rotate(-6deg);box-shadow:0 6px 18px rgba(229,32,46,.4)}
+.tag.so{background:var(--rosso);color:#fff}
+.sticker-hero,.prod .pimg{position:relative}
+.so-mark{position:absolute;z-index:2;top:50%;left:50%;transform:translate(-50%,-50%) rotate(-12deg);font:400 clamp(40px,7vw,72px)/1 var(--display);letter-spacing:.06em;text-transform:uppercase;color:#fff;border:5px solid #fff;border-radius:10px;padding:8px 18px 4px;background:rgba(229,32,46,.82);pointer-events:none;white-space:nowrap;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.soldout .sticker-hero img,.soldout .prod .pimg img{filter:grayscale(.55) brightness(.75)}
+.soldout .order .qty,.soldout .order input,.soldout #copy-dm,.soldout .order .row,.soldout .order .total,.soldout .order .dm-preview,.soldout .order a.btn,.soldout .sizes{opacity:.4;pointer-events:none}
+.soldout .price b{text-decoration:line-through;text-decoration-thickness:6px;text-decoration-color:var(--rosso)}
+.so-note{margin:0;color:var(--rosso);font-weight:600}
+.so-banner>div{min-width:0}
+@media (max-width:520px){.so-banner{flex-wrap:wrap;gap:12px}.so-banner b{font-size:24px}.so-stamp{font-size:22px}.so-mark{font-size:38px;border-width:4px}}
 </style>
 <style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <script data-goatcounter="https://abarthclubgr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -854,7 +869,7 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
     <div class="tiles">
       <a class="tile" href="#meets"><img src="img/meet-farma-wide.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Meets</b><span>Varkiza 17/10, «Έρχομαι», album της βραδιάς</span></div></a>
       <a class="tile" href="#cars"><img src="img/c-gpa-black-stripe.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Garage</b><span>Όλα τα αυτοκίνητα των μελών, με φίλτρα ανά μάρκα</span></div></a>
-      <a class="tile" href="#merch"><img src="img/m-tee-mockup.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Merch</b><span>Αυτοκόλλητα, μπλούζες, lanyard, μπρελόκ</span></div></a>
+      <a class="tile" href="#merch"><img src="img/m-tee-mockup.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Merch</b><span>Sold out · έρχεται σύντομα ανανέωση</span></div></a>
       <a class="tile" href="#guide"><img src="img/c-mito-red-forest.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Οδηγοί</b><span>Μοντέλα, διαδρομές για cruise, συνεργεία</span></div></a>
       <a class="tile" href="#play"><img src="img/sticker-595.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Παιχνίδια</b><span>Κάρτα μέλους και quiz</span></div></a>
       <a class="tile" href="#club"><img src="img/banner.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Το Club</b><span>Η ιστορία μας, συνεργάτες, επικοινωνία</span></div></a>
@@ -1012,19 +1027,20 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
 </div>
 
 <!-- ================= MERCH ================= -->
-<div class="page" id="p-merch">
+<div class="page soldout" id="p-merch">
 <div class="page-hero"><div class="wrap">
   <div class="eyebrow"><span class="tri"></span>Official merch</div>
   <h1>Wear your passion.</h1>
-  <p>Το αυτοκόλλητο κυκλοφορεί ήδη. Μπλούζες, lanyard και μπρελόκ έρχονται: κράτα το δικό σου τώρα, για να ξέρουμε πόσα να φτιάξουμε. Οι παραγγελίες γίνονται με DM στο Instagram και στέλνονται με BOX NOW.</p>
-  <nav class="subnav"><a href="#sticker">Αυτοκόλλητο</a><a href="#preorder">Προπαραγγελίες</a><a href="#mylist">Οι κρατήσεις μου</a></nav>
+  <div class="so-banner" role="status"><span class="so-stamp">Sold out</span><div><b>Όλα τα προϊόντα εξαντλήθηκαν!</b><p>Θα τα ανανεώσουμε το συντομότερο δυνατό. Ευχαριστούμε πολύ για τη στήριξή σας!</p></div></div>
+  <p>Αυτοκόλλητα, μπλούζες, lanyard και μπρελόκ του club. Όταν ξαναβγούν, οι παραγγελίες θα γίνονται με DM στο Instagram και θα στέλνονται με BOX NOW.</p>
+  <nav class="subnav"><a href="#sticker">Αυτοκόλλητο</a><a href="#preorder">Μπλούζες και αξεσουάρ</a></nav>
 </div></div>
 
 <section id="sticker">
   <div class="wrap">
     <div class="merch-grid">
       <div>
-        <div class="sticker-hero"><img id="st-main" src="img/sticker-spec.jpg" alt="Σχέδιο αυτοκόλλητου ABARTH_CLUB_GR, 20 × 5 cm"></div>
+        <div class="sticker-hero"><span class="so-mark" aria-hidden="true">Sold out</span><img id="st-main" src="img/sticker-spec.jpg" alt="Σχέδιο αυτοκόλλητου ABARTH_CLUB_GR, 20 × 5 cm"></div>
         <div class="sticker-thumbs" id="st-thumbs">
           <button aria-pressed="true" data-src="img/sticker-spec.jpg"><img src="img/sticker-spec.jpg" alt="Διαστάσεις"></button>
           <button aria-pressed="false" data-src="img/sticker-595.jpg"><img src="img/sticker-595.jpg" alt="Σε Abarth 595"></button>
@@ -1034,7 +1050,7 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
         </div>
       </div>
       <div class="product">
-        <span class="tag live">Διαθέσιμο τώρα</span>
+        <span class="tag so">Εξαντλήθηκε</span>
         <div class="sticker-word" aria-label="ABARTH_CLUB_GR"><span class="r">ABARTH</span>_CLUB_<span class="g">GR</span></div>
         <div class="price"><b>2€</b><span>ανά τεμάχιο<br>+ έξοδα BOX NOW</span></div>
         <dl class="specs">
@@ -1045,6 +1061,7 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
         </dl>
         <div class="order">
           <h4>Φτιάξε την παραγγελία σου</h4>
+          <p class="so-note">Προσωρινά εξαντλημένο. Θα ξαναβγεί σύντομα.</p>
           <div class="row"><label>Τεμάχια</label>
             <div class="qty"><button type="button" id="q-minus" aria-label="Λιγότερα">−</button><output id="q-val">2</output><button type="button" id="q-plus" aria-label="Περισσότερα">+</button></div>
           </div>
@@ -1068,12 +1085,12 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
 <section class="garage" id="preorder">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>Limited edition · Coming soon</div>
-      <h2>Κράτα το δικό σου.</h2>
-      <p>Διάλεξε μέγεθος ή σχέδιο και πάτα «Κράτησέ το». Φτιάχνουμε έτοιμο μήνυμα για DM, ώστε ο Κωνσταντίνος να ξέρει πόσα κομμάτια να τυπώσει πριν ανοίξει η παραγωγή. Δεν πληρώνεις τίποτα τώρα.</p>
+      <div class="eyebrow"><span class="tri"></span>Sold out · Έρχεται σύντομα</div>
+      <h2>Η συλλογή.</h2>
+      <p>Όλα εξαντλήθηκαν. Ακολούθησε το @abarth_club_gr για να μάθεις πρώτος πότε ξαναβγαίνουν.</p>
     </div>
     <div class="shop" id="shop"></div>
-    <div class="order" id="mylist" style="margin-top:22px">
+    <div class="order" id="mylist" hidden style="margin-top:22px">
       <h4>Οι κρατήσεις μου</h4>
       <div class="preorder-list" id="poList"></div>
       <div class="dm-preview" id="poDm"></div>
@@ -1314,7 +1331,7 @@ try{if('scrollRestoration' in history)history.scrollRestoration='manual'}catch(e
 (function intro(){let seen=false;try{seen=sessionStorage.getItem('acg-intro')==='1';sessionStorage.setItem('acg-intro','1')}catch(e){}
  if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  const d=document.createElement('div');d.id='intro';d.setAttribute('aria-hidden','true');
- d.innerHTML='<div class="in-road"></div><div class="in-title">ABARTH<span>_CLUB_</span><b>GR</b></div><div class="in-car in-photo"><span class="speed"></span><img src="img/intro-595.jpg" alt=""></div><i class="smoke"></i><i class="smoke s2"></i><div class="in-sub">Athens · Est. 2026</div><button class="in-skip" type="button">Παράλειψη ›</button>';
+ d.innerHTML='<div class="in-road"></div><div class="in-title">ABARTH<span>_CLUB_</span><b>GR</b></div><div class="in-car"><svg class="car-svg" viewBox="0 0 124 52" aria-hidden="true"><defs><linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></linearGradient></defs><path class="beam" d="M114 27 L124 20 L124 38 Z" fill="url(#beam)"/><path d="M6 36 Q6 27 15 25 L33 23 Q43 11 59 10 L79 10 Q92 11 100 23 L109 25.5 Q116 27.5 116 35 L116 39 L6 39 Z" fill="#e5202e"/><path d="M40 23 Q47 14.5 59 13.5 L65 13.5 L65 23 Z M69 13.5 L79 13.5 Q89 14.5 95 23 L69 23 Z" fill="#1a2230"/><rect x="10" y="29" width="34" height="3" fill="#10a352"/><rect x="44" y="29" width="34" height="3" fill="#f3f1ec"/><rect x="78" y="29" width="34" height="3" fill="#b3121e"/><rect x="6" y="28" width="4" height="4" rx="1" fill="#ff5a5a"/><circle cx="112" cy="30" r="2.6" fill="#ffe9a8"/><g transform="translate(30 39)"><g class="wheel"><circle r="9.5" fill="#111"/><circle r="5.5" fill="#9a9a9e"/><path d="M0-5.5V5.5M-5.5 0H5.5M-3.9-3.9 3.9 3.9M-3.9 3.9 3.9-3.9" stroke="#333" stroke-width="1.4"/></g></g><g transform="translate(94 39)"><g class="wheel"><circle r="9.5" fill="#111"/><circle r="5.5" fill="#9a9a9e"/><path d="M0-5.5V5.5M-5.5 0H5.5M-3.9-3.9 3.9 3.9M-3.9 3.9 3.9-3.9" stroke="#333" stroke-width="1.4"/></g></g></svg></div><i class="smoke"></i><i class="smoke s2"></i><div class="in-sub">Athens · Est. 2026</div><button class="in-skip" type="button">Παράλειψη ›</button>';
  document.body.appendChild(d);document.body.style.overflow='hidden';
  const end=()=>{if(!d.isConnected)return;d.remove();document.body.style.overflow='';window.scrollTo(0,0)};
  d.addEventListener('click',end);setTimeout(end,2900)})();
@@ -1522,11 +1539,11 @@ const products=[
  {id:'strap',name:'Key strap',desc:'Ιμάντας κλειδιών με γάντζο και κρίκο. ABARTH_CLUB_GR με τα χρώματα της σημαίας.',imgs:['m-strap'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'},
  {id:'keys',name:'Μπρελόκ μάρκας',desc:'Μαύρο δέρμα, μεταλλικό πλαίσιο, το σήμα της μάρκας σου και η τρίχρωμη ρίγα. Drive · Share · Belong.',imgs:['merch-keychains'],opts:['Abarth','Fiat','Lancia','Alfa Romeo'],optLabel:'Μάρκα'}];
 const pick={};let po=store.get('acg3-preorders',[]);
-$('#shop').innerHTML=products.map(p=>{pick[p.id]=p.opts[0];return `<article class="prod" data-prod="${p.id}"><div class="pimg"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}" data-main loading="lazy"><span class="tag next">Coming soon</span></div>
+$('#shop').innerHTML=products.map(p=>{pick[p.id]=p.opts[0];return `<article class="prod" data-prod="${p.id}"><div class="pimg"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}" data-main loading="lazy"><span class="tag so">Εξαντλήθηκε</span><span class="so-mark" aria-hidden="true">Sold out</span></div>
  ${p.imgs.length>1?`<div class="pthumbs">${p.imgs.map((m,i)=>`<button type="button" data-img="img/${m}.jpg" aria-pressed="${i===0}"><img src="img/${m}.jpg" alt=""></button>`).join('')}</div>`:''}
  <div class="pbody"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="price-line">Τιμή σύντομα<small>ανακοινώνεται στο Instagram</small></div>
  <div><div class="note" style="margin-bottom:6px">${p.optLabel}</div><div class="sizes">${p.opts.map((o,i)=>`<button type="button" data-opt="${esc(o)}" aria-pressed="${i===0}">${esc(o)}</button>`).join('')}</div></div>
- <button class="btn hot" type="button" data-reserve="${p.id}">Κράτησέ το</button></div></article>`}).join('');
+ <button class="btn hot" type="button" data-reserve="${p.id}" disabled>Εξαντλήθηκε</button></div></article>`}).join('');
 $('#shop').addEventListener('click',e=>{const art=e.target.closest('[data-prod]');if(!art)return;const id=art.dataset.prod;
  const t=e.target.closest('[data-img]');if(t){art.querySelector('[data-main]').src=t.dataset.img;art.querySelectorAll('[data-img]').forEach(x=>x.setAttribute('aria-pressed',x===t));art.querySelector('[data-main]').parentElement.dataset.lb=t.dataset.img;return}
  const o=e.target.closest('[data-opt]');if(o){pick[id]=o.dataset.opt;art.querySelectorAll('[data-opt]').forEach(x=>x.setAttribute('aria-pressed',x===o));return}
