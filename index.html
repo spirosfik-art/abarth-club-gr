@@ -743,6 +743,9 @@ footer .hero-road{top:0;bottom:auto}
 @media (max-width:860px){.nm-badge{top:0;right:4px;font-size:8px;padding:2px 4px}.navlinks a.nav-merch::before,.navlinks a.nav-merch::after{border-radius:10px}}
 @media (prefers-reduced-motion: reduce){.navlinks a.nav-merch,.navlinks a.nav-merch::before,.navlinks a.nav-merch::after,.nm-badge{animation:none}}
 @media (min-width:861px){.navlinks{overflow:visible;padding-block:10px}}
+.prod .pimg img{aspect-ratio:4/5;object-position:50% 30%}
+.prod[data-prod="lanyard"] .pimg img{aspect-ratio:4/5;object-position:40% 50%}
+.prod .cs-mark{top:auto;left:auto;right:14px;bottom:18px;transform:rotate(-6deg);font-size:clamp(26px,3.4vw,38px);border-width:3px;padding:6px 12px 3px}
 </style>
 <style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <script data-goatcounter="https://abarthclubgr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -908,7 +911,7 @@ footer .hero-road{top:0;bottom:auto}
     <div class="tiles">
       <a class="tile" href="#meets"><img src="img/meet-farma-wide.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Meets</b><span>Varkiza 17/10, «Έρχομαι», album της βραδιάς</span></div></a>
       <a class="tile" href="#cars"><img src="img/c-gpa-black-stripe.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Garage</b><span>Όλα τα αυτοκίνητα των μελών, με φίλτρα ανά μάρκα</span></div></a>
-      <a class="tile" href="#merch"><img src="img/m-tee-mockup.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Merch</b><span>Νέα προϊόντα έρχονται σύντομα</span></div></a>
+      <a class="tile" href="#merch"><img src="img/m2-tee-woman.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Merch</b><span>Νέα προϊόντα έρχονται σύντομα</span></div></a>
       <a class="tile" href="#guide"><img src="img/c-mito-red-forest.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Οδηγοί</b><span>Μοντέλα, διαδρομές για cruise, συνεργεία</span></div></a>
       <a class="tile" href="#play"><img src="img/sticker-595.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Παιχνίδια</b><span>Κάρτα μέλους και quiz</span></div></a>
       <a class="tile" href="#club"><img src="img/banner.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Το Club</b><span>Η ιστορία μας, συνεργάτες, επικοινωνία</span></div></a>
@@ -1070,8 +1073,8 @@ footer .hero-road{top:0;bottom:auto}
 <div class="page-hero"><div class="wrap">
   <div class="eyebrow"><span class="tri"></span>Official merch</div>
   <h1>Wear your passion.</h1>
-  <div class="so-banner" role="status"><span class="so-stamp">Sold out</span><div><b>Το αυτοκόλλητο εξαντλήθηκε!</b><p>Θα το ανανεώσουμε το συντομότερο δυνατό. Ευχαριστούμε πολύ για τη στήριξή σας! Μπλούζες, lanyard, key strap και μπρελόκ έρχονται σύντομα.</p></div></div>
-  <p>Αυτοκόλλητα, μπλούζες, lanyard και μπρελόκ του club. Οι παραγγελίες γίνονται με DM στο Instagram και στέλνονται με BOX NOW.</p>
+  <div class="so-banner" role="status"><span class="so-stamp">Sold out</span><div><b>Το αυτοκόλλητο εξαντλήθηκε!</b><p>Θα το ανανεώσουμε το συντομότερο δυνατό. Ευχαριστούμε πολύ για τη στήριξή σας! Μπλούζες και lanyard έρχονται σύντομα.</p></div></div>
+  <p>Αυτοκόλλητα, μπλούζες και lanyard του club. Οι παραγγελίες γίνονται με DM στο Instagram και στέλνονται με BOX NOW.</p>
   <nav class="subnav"><a href="#sticker">Αυτοκόλλητο</a><a href="#preorder">Μπλούζες και αξεσουάρ</a></nav>
 </div></div>
 
@@ -1573,10 +1576,8 @@ $('#copy-dm').onclick=()=>copy($('#dm').textContent,$('#dm'),'Αντιγράφη
 
 /* ---------- Preorders ---------- */
 const products=[
- {id:'tee',name:'T-shirt ABARTH CLUB GR',desc:'Μαύρο βαμβακερό. Μπροστά το λογότυπο, πίσω τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Σημαιάκι στο μανίκι και σκορπιός στο κάτω μέρος.',imgs:['m-tee-mockup','m-tee-poster','m-tee-poster2'],opts:['S','M','L','XL','XXL'],optLabel:'Μέγεθος'},
- {id:'lanyard',name:'Lanyard ABARTH_CLUB_GR',desc:'Κορδόνι λαιμού με το σήμα Athens Est. 2026, ιταλικές ρίγες και αποσπώμενο κούμπωμα για κλειδιά.',imgs:['m-lanyard-set','m-lanyard-white'],opts:['Lanyard','Lanyard + strap'],optLabel:'Επιλογή'},
- {id:'strap',name:'Key strap',desc:'Ιμάντας κλειδιών με γάντζο και κρίκο. ABARTH_CLUB_GR με τα χρώματα της σημαίας.',imgs:['m-strap'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'},
- {id:'keys',name:'Μπρελόκ μάρκας',desc:'Μαύρο δέρμα, μεταλλικό πλαίσιο, το σήμα της μάρκας σου και η τρίχρωμη ρίγα. Drive · Share · Belong.',imgs:['merch-keychains'],opts:['Abarth','Fiat','Lancia','Alfa Romeo'],optLabel:'Μάρκα'}];
+ {id:'tee',name:'T-shirt ABARTH CLUB GR',desc:'Μαύρο βαμβακερό. Μπροστά το λογότυπο, πίσω τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Σημαιάκι στο μανίκι και σκορπιός στο κάτω μέρος.',imgs:['m2-tee-woman','m2-tee-back','m2-tee-mockup','m2-tee-collage'],opts:['S','M','L','XL','XXL'],optLabel:'Μέγεθος'},
+ {id:'lanyard',name:'Lanyard ABARTH_CLUB_GR',desc:'Μαύρο κορδόνι λαιμού με το ABARTH_CLUB_GR, τα σήματα των 4 μαρκών και ιταλικές ρίγες. Αποσπώμενο κούμπωμα και κρίκος για κλειδιά.',imgs:['m2-lanyard-car','m2-lanyard-studio'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'}];
 const pick={};let po=store.get('acg3-preorders',[]);
 $('#shop').innerHTML=products.map(p=>{pick[p.id]=p.opts[0];return `<article class="prod" data-prod="${p.id}"><div class="pimg"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}" data-main loading="lazy"><span class="tag next">Coming soon</span><span class="so-mark cs-mark" aria-hidden="true">Coming soon</span></div>
  ${p.imgs.length>1?`<div class="pthumbs">${p.imgs.map((m,i)=>`<button type="button" data-img="img/${m}.jpg" aria-pressed="${i===0}"><img src="img/${m}.jpg" alt=""></button>`).join('')}</div>`:''}
