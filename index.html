@@ -681,6 +681,14 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
 
 @media (max-width:350px){.navlinks a{font-size:8.5px}.navlinks a svg{width:16px;height:16px}}
 @media (max-height:500px) and (orientation:landscape){.wordmark{font-size:clamp(44px,8vw,96px)}.navlinks a{padding:5px 1px}.navlinks a svg{width:15px;height:15px}body{padding-bottom:56px}}
+
+#intro .in-photo{width:min(260px,58vw);margin-left:calc(min(260px,58vw) / -2);top:calc(50% - 30px)}
+#intro .in-photo img{display:block;width:100%;aspect-ratio:486/436;object-fit:cover;border-radius:22px;border:3px solid #f3f1ec;box-shadow:0 18px 50px rgba(0,0,0,.7),0 0 0 6px rgba(229,32,46,.35);animation:inDip 2.3s ease forwards}
+#intro .in-photo .speed{position:absolute;right:100%;top:18%;width:60vw;height:64%;background:repeating-linear-gradient(180deg,transparent 0 10px,rgba(243,241,236,.18) 10px 12px);-webkit-mask:linear-gradient(90deg,transparent,#000);mask:linear-gradient(90deg,transparent,#000);animation:speedFade 2.3s ease forwards}
+@keyframes speedFade{0%,38%{opacity:1}46%,64%{opacity:0}78%,100%{opacity:1}}
+#intro .in-photo~.smoke{top:calc(50% - 30px + min(210px,46vw))}
+#intro:has(.in-photo) .in-road{top:calc(50% - 30px + min(236px,52vw))}
+#intro:has(.in-photo) .in-sub{top:calc(50% + min(240px,54vw))}
 </style>
 <style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <script data-goatcounter="https://abarthclubgr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -1306,7 +1314,7 @@ try{if('scrollRestoration' in history)history.scrollRestoration='manual'}catch(e
 (function intro(){let seen=false;try{seen=sessionStorage.getItem('acg-intro')==='1';sessionStorage.setItem('acg-intro','1')}catch(e){}
  if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  const d=document.createElement('div');d.id='intro';d.setAttribute('aria-hidden','true');
- d.innerHTML='<div class="in-road"></div><div class="in-title">ABARTH<span>_CLUB_</span><b>GR</b></div><div class="in-car"><svg class="car-svg" viewBox="0 0 124 52" aria-hidden="true"><defs><linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></linearGradient></defs><path class="beam" d="M114 27 L124 20 L124 38 Z" fill="url(#beam)"/><path d="M6 36 Q6 27 15 25 L33 23 Q43 11 59 10 L79 10 Q92 11 100 23 L109 25.5 Q116 27.5 116 35 L116 39 L6 39 Z" fill="#e5202e"/><path d="M40 23 Q47 14.5 59 13.5 L65 13.5 L65 23 Z M69 13.5 L79 13.5 Q89 14.5 95 23 L69 23 Z" fill="#1a2230"/><rect x="10" y="29" width="34" height="3" fill="#10a352"/><rect x="44" y="29" width="34" height="3" fill="#f3f1ec"/><rect x="78" y="29" width="34" height="3" fill="#b3121e"/><rect x="6" y="28" width="4" height="4" rx="1" fill="#ff5a5a"/><circle cx="112" cy="30" r="2.6" fill="#ffe9a8"/><g transform="translate(30 39)"><g class="wheel"><circle r="9.5" fill="#111"/><circle r="5.5" fill="#9a9a9e"/><path d="M0-5.5V5.5M-5.5 0H5.5M-3.9-3.9 3.9 3.9M-3.9 3.9 3.9-3.9" stroke="#333" stroke-width="1.4"/></g></g><g transform="translate(94 39)"><g class="wheel"><circle r="9.5" fill="#111"/><circle r="5.5" fill="#9a9a9e"/><path d="M0-5.5V5.5M-5.5 0H5.5M-3.9-3.9 3.9 3.9M-3.9 3.9 3.9-3.9" stroke="#333" stroke-width="1.4"/></g></g></svg></div><i class="smoke"></i><i class="smoke s2"></i><div class="in-sub">Athens · Est. 2026</div><button class="in-skip" type="button">Παράλειψη ›</button>';
+ d.innerHTML='<div class="in-road"></div><div class="in-title">ABARTH<span>_CLUB_</span><b>GR</b></div><div class="in-car in-photo"><span class="speed"></span><img src="img/intro-595.jpg" alt=""></div><i class="smoke"></i><i class="smoke s2"></i><div class="in-sub">Athens · Est. 2026</div><button class="in-skip" type="button">Παράλειψη ›</button>';
  document.body.appendChild(d);document.body.style.overflow='hidden';
  const end=()=>{if(!d.isConnected)return;d.remove();document.body.style.overflow='';window.scrollTo(0,0)};
  d.addEventListener('click',end);setTimeout(end,2900)})();
