@@ -1,0 +1,1564 @@
+<!doctype html>
+<html lang="el">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ABARTH_CLUB_GR</title>
+<meta name="description" content="Η κοινότητα της Αθήνας για Abarth, Fiat, Lancia και Alfa Romeo. Meets, garage μελών, Car of the Week, merch.">
+<meta property="og:title" content="ABARTH_CLUB_GR · Athens">
+<meta property="og:description" content="Η κοινότητα των ιταλικών αυτοκινήτων. Meets, garage, Car of the Week, merch.">
+<meta property="og:image" content="https://spirosfik-art.github.io/abarth-club-gr/img/cover.jpg">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0c0c0e">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700;800&family=Permanent+Marker&display=swap">
+<meta property="og:url" content="https://spirosfik-art.github.io/abarth-club-gr/">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<link rel="icon" type="image/png" href="img/logo.png">
+<link rel="apple-touch-icon" href="img/logo.png">
+<style>
+:root{
+  color-scheme: dark;
+  --asphalt:#0c0c0e;
+  --tarmac:#141417;
+  --kerb:#1d1d22;
+  --line:#2c2c33;
+  --chalk:#f3f1ec;
+  --smoke:#a9a7a3;
+  --dim:#6f6d6a;
+  --rosso:#e5202e;
+  --rosso-deep:#9e0f1a;
+  --verde:#10a352;
+  --giallo:#f6c21a;
+  --glow-r: 0 0 24px rgba(229,32,46,.55);
+  --display:"Bebas Neue", "Oswald", Impact, "Arial Narrow", sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", sans-serif;
+  --body:"Barlow", "Helvetica Neue", Arial, sans-serif;
+  --hand:"Permanent Marker", "Comic Sans MS", cursive;
+  --gut: clamp(16px, 4vw, 48px);
+  --max: 1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{background:var(--asphalt);color:var(--chalk);font:400 17px/1.6 var(--body);margin:0;overflow-x:hidden;
+  background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:4px 4px}
+a{color:inherit}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--giallo);outline-offset:3px}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gut)}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;line-height:.92;margin:0;text-wrap:balance}
+p{margin:0}
+.tri{background:linear-gradient(90deg,var(--verde) 0 33.3%,var(--chalk) 33.3% 66.6%,var(--rosso) 66.6%);height:4px;width:72px;border-radius:2px}
+.eyebrow{font:700 13px/1 var(--cond);letter-spacing:.22em;text-transform:uppercase;color:var(--smoke);display:flex;align-items:center;gap:12px}
+.hand{font-family:var(--hand);color:var(--chalk);transform:rotate(-4deg);display:inline-block}
+.u{color:var(--dim)}
+.r{color:var(--rosso)} .g{color:var(--verde)}
+
+/* NAV */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(12,12,14,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.brand img{width:40px;height:40px}
+.brand span{font:400 24px/1 var(--display);letter-spacing:.02em}
+.navlinks{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+.navlinks::-webkit-scrollbar{display:none}
+.navlinks a{font:600 15px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--smoke);padding:10px 12px;border-radius:6px;white-space:nowrap}
+.navlinks a:hover{color:var(--chalk);background:var(--kerb)}
+.navcta{font:700 14px/1 var(--cond);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:var(--rosso);color:#fff;padding:11px 16px;border-radius:6px;white-space:nowrap;flex-shrink:0}
+@media (max-width:860px){.navlinks{display:none}.navcta{margin-left:auto}}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero-bg{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);opacity:.28;filter:saturate(1.2)}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,14,.55) 0%,rgba(12,12,14,.8) 55%,var(--asphalt) 100%)}
+.hero .wrap{position:relative;z-index:2;padding-block:clamp(40px,7vw,96px) clamp(36px,5vw,64px);display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero-bg{grid-template-columns:repeat(2,1fr)}}
+.wordmark{font-family:var(--display);font-size:clamp(54px,11vw,152px);line-height:.86;letter-spacing:.005em;margin:18px 0 6px;display:flex;flex-wrap:wrap}
+.wordmark .a{color:var(--rosso);text-shadow:var(--glow-r)}
+.wordmark .c{color:var(--chalk)}
+.wordmark .gr{color:var(--verde);text-shadow:0 0 24px rgba(16,163,82,.45)}
+.wordmark .us{color:var(--chalk)}
+.hero-tag{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;margin-top:18px}
+.hero-tag .hand{font-size:clamp(20px,2.4vw,28px)}
+.hero-lede{max-width:56ch;color:var(--smoke);font-size:clamp(17px,1.5vw,19px);margin-top:22px}
+.hero-lede b{color:var(--chalk);font-weight:600}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{font:700 16px/1 var(--cond);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;padding:16px 22px;border-radius:8px;border:1px solid var(--line);background:var(--kerb);color:var(--chalk);cursor:pointer;display:inline-flex;align-items:center;gap:10px;transition:transform .15s, background .15s}
+.btn:hover{transform:translateY(-2px);background:#26262c}
+.btn.hot{background:var(--rosso);border-color:var(--rosso);color:#fff;box-shadow:0 8px 30px rgba(229,32,46,.35)}
+.btn.hot:hover{background:#f23241}
+.btn.green{background:var(--verde);border-color:var(--verde);color:#fff}
+
+.logo-stage{position:relative;justify-self:center;width:min(420px,80vw)}
+.logo-stage img{width:100%;filter:drop-shadow(0 20px 60px rgba(0,0,0,.7));animation:float 6s ease-in-out infinite}
+.logo-stage::before{content:"";position:absolute;inset:8%;border-radius:50%;background:conic-gradient(from 0deg,var(--verde),var(--chalk),var(--rosso),var(--verde));filter:blur(40px);opacity:.35;animation:spin 14s linear infinite}
+@keyframes float{50%{transform:translateY(-10px) rotate(1deg)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* COUNTDOWN STRIP */
+.next{background:var(--tarmac);border-bottom:1px solid var(--line)}
+.next .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:18px 32px;align-items:center;padding-block:22px}
+@media (max-width:900px){.next .wrap{grid-template-columns:1fr}}
+.next-label{font:700 13px/1.2 var(--cond);letter-spacing:.2em;text-transform:uppercase;color:var(--giallo)}
+.next-title{font:400 clamp(26px,3vw,34px)/1 var(--display)}
+.next-sub{color:var(--smoke);font-size:15px;margin-top:4px}
+.cd{display:flex;gap:8px}
+.cd div{background:var(--asphalt);border:1px solid var(--line);border-radius:8px;min-width:68px;padding:10px 8px 8px;text-align:center}
+.cd b{display:block;font:400 38px/1 var(--display);font-variant-numeric:tabular-nums;color:var(--chalk)}
+.cd span{font:600 11px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+
+/* MARQUEE */
+.marquee{overflow:hidden;border-bottom:1px solid var(--line);background:var(--rosso);color:#fff}
+.marquee-track{display:flex;gap:40px;width:max-content;padding-block:12px;animation:mq 38s linear infinite;font:400 26px/1 var(--display);letter-spacing:.04em}
+.marquee-track span{display:flex;align-items:center;gap:40px;white-space:nowrap}
+.marquee-track span::after{content:"";width:10px;height:10px;background:#fff;transform:rotate(45deg)}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding-block:clamp(64px,9vw,120px)}
+.sec-head{display:grid;gap:14px;margin-bottom:clamp(28px,4vw,48px);max-width:760px}
+.sec-head h2{font-size:clamp(48px,7vw,92px)}
+.sec-head p{color:var(--smoke);max-width:62ch}
+.kicker-num{font:400 clamp(20px,2vw,24px)/1 var(--display);color:var(--dim);letter-spacing:.06em}
+
+/* TACHO STATS */
+.stats{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,3vw,40px);align-items:center}
+@media (max-width:900px){.stats{grid-template-columns:1fr}}
+.tacho{background:radial-gradient(circle at 50% 60%,#1b1b20 0%,var(--tarmac) 70%);border:1px solid var(--line);border-radius:24px;padding:24px 24px 18px;position:relative}
+.tacho svg{width:100%;height:auto;display:block}
+.tacho .readout{text-align:center;margin-top:-6px;padding-bottom:14px}
+.tacho .readout b{display:block;font:400 clamp(64px,9vw,104px)/.9 var(--display);font-variant-numeric:tabular-nums}
+.tacho .readout span{font:700 13px/1 var(--cond);letter-spacing:.24em;text-transform:uppercase;color:var(--smoke)}
+.tacho-foot{display:flex;justify-content:space-between;gap:12px;font:600 14px/1.3 var(--cond);letter-spacing:.06em;text-transform:uppercase;color:var(--smoke);border-top:1px dashed var(--line);padding-top:14px;margin-top:4px}
+.tacho-foot b{color:var(--giallo)}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.stat{background:var(--asphalt);padding:22px 22px 20px;display:grid;gap:6px}
+.stat b{font:400 clamp(48px,6vw,72px)/.9 var(--display);font-variant-numeric:tabular-nums}
+.stat span{font:700 13px/1.2 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--smoke)}
+.stat small{color:var(--dim);font-size:14px;line-height:1.4}
+
+/* COLLAB */
+.collab{background:linear-gradient(180deg,var(--asphalt),#101012 30%,var(--asphalt));position:relative;overflow:hidden}
+.collab::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(221,0,0,.12) 0%,transparent 35%,transparent 65%,rgba(16,163,82,.14) 100%);pointer-events:none}
+.collab .wrap{position:relative}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:clamp(12px,3vw,40px);margin-bottom:40px}
+.vs img{width:100%;max-width:260px;justify-self:center}
+.vs .x{font:400 clamp(80px,12vw,160px)/.8 var(--display);background:linear-gradient(135deg,var(--verde) 0 40%,var(--chalk) 40% 60%,var(--rosso) 60%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.vs-lab{text-align:center;display:grid;gap:4px;margin-top:10px}
+.vs-lab b{font:400 26px/1 var(--display)}
+.vs-lab span{font:600 14px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--smoke)}
+.collab-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,40px);align-items:start}
+@media (max-width:900px){.collab-grid{grid-template-columns:1fr}}
+.poster{border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.facts{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.fact{background:var(--tarmac);display:grid;grid-template-columns:110px 1fr;gap:16px;padding:18px 20px;align-items:baseline}
+.fact dt{font:700 13px/1.3 var(--cond);letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.fact dd{margin:0;font:600 20px/1.3 var(--cond);letter-spacing:.02em}
+.fact dd small{display:block;font:400 15px/1.45 var(--body);color:var(--smoke);letter-spacing:0;margin-top:2px}
+.rules{margin-top:22px;border:1px solid rgba(246,194,26,.35);background:rgba(246,194,26,.06);border-radius:14px;padding:18px 20px;display:grid;gap:10px}
+.rules h3{font-size:24px;color:var(--giallo)}
+.rules ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+.rules li{display:flex;gap:12px;align-items:flex-start;font-size:16px}
+.rules li::before{content:"";flex:0 0 8px;height:8px;margin-top:9px;background:var(--giallo);transform:rotate(45deg)}
+.collab-note{color:var(--smoke);font-size:15px;margin-top:16px}
+
+/* GARAGE VOTE */
+.garage{background:var(--tarmac);border-block:1px solid var(--line)}
+.demo-badge{justify-self:start;max-width:100%;line-height:1.35;display:inline-flex;align-items:center;gap:8px;font:700 12px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;background:rgba(246,194,26,.12);color:var(--giallo);border:1px solid rgba(246,194,26,.4);padding:7px 12px;border-radius:99px}
+.vote-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(20px,3vw,36px);align-items:start}
+@media (max-width:980px){.vote-layout{grid-template-columns:1fr}}
+.carousel{position:relative;border-radius:20px;overflow:hidden;background:var(--asphalt);border:1px solid var(--line)}
+.slides{display:flex;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+.slide{flex:0 0 100%;position:relative;aspect-ratio:1/1;max-width:100%}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.85))}
+.slide-info{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px;display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap}
+.slide-info h3{font-size:clamp(28px,3.4vw,40px)}
+.slide-info p{color:var(--smoke);font:600 14px/1.3 var(--cond);letter-spacing:.1em;text-transform:uppercase;margin-top:4px}
+.rank-pill{position:absolute;top:16px;left:16px;z-index:2;font:400 22px/1 var(--display);background:var(--giallo);color:#111;padding:8px 12px 6px;border-radius:8px;letter-spacing:.04em}
+.vote-btn{font:400 24px/1 var(--display);letter-spacing:.04em;display:inline-flex;align-items:center;gap:10px;padding:14px 18px 12px;border-radius:12px;border:2px solid var(--rosso);background:rgba(229,32,46,.18);color:#fff;cursor:pointer;transition:transform .12s,background .15s}
+.vote-btn:hover{background:rgba(229,32,46,.35)}
+.vote-btn:active{transform:scale(.94)}
+.vote-btn.voted{background:var(--rosso)}
+.vote-btn svg{width:22px;height:22px}
+.car-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:3;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.55);color:#fff;font:400 26px/1 var(--display);cursor:pointer;display:grid;place-items:center}
+.car-nav.prev{left:12px}.car-nav.next{right:12px}
+.dots{display:flex;gap:6px;justify-content:center;padding:14px;flex-wrap:wrap}
+.dots button{width:9px;height:9px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0}
+.dots button[aria-current="true"]{background:var(--rosso);width:26px;border-radius:5px}
+.board{background:var(--asphalt);border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;gap:14px}
+.board h3{font-size:32px;display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.board h3 small{font:600 13px/1 var(--cond);letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
+.board ol{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.board li{display:grid;grid-template-columns:34px 52px 1fr auto;gap:12px;align-items:center;padding:8px;border-radius:12px;background:var(--tarmac);cursor:pointer;border:1px solid transparent;transition:border-color .15s}
+.board li:hover{border-color:var(--line)}
+.board li.first{border-color:rgba(246,194,26,.5);background:linear-gradient(90deg,rgba(246,194,26,.12),var(--tarmac))}
+.board .pos{font:400 26px/1 var(--display);text-align:center;color:var(--dim)}
+.board li.first .pos{color:var(--giallo)}
+.board img{width:52px;height:52px;object-fit:cover;border-radius:8px}
+.board .nm{font:600 17px/1.2 var(--cond);letter-spacing:.02em}
+.board .nm small{display:block;color:var(--dim);font-weight:500;font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+.board .vt{font:400 26px/1 var(--display);font-variant-numeric:tabular-nums}
+.bar{height:4px;background:var(--line);border-radius:2px;overflow:hidden;grid-column:3/5;margin-top:-2px}
+.bar i{display:block;height:100%;background:var(--rosso);transition:width .4s}
+.upload{border:2px dashed var(--line);border-radius:16px;padding:18px;display:grid;gap:12px;text-align:left}
+.upload h4{margin:0;font:400 24px/1 var(--display)}
+.upload p{color:var(--smoke);font-size:15px}
+.upload label.file{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 15px/1 var(--cond);letter-spacing:.1em;text-transform:uppercase;padding:14px 16px;border-radius:10px;background:var(--verde);color:#fff;cursor:pointer}
+.upload input[type=file]{position:absolute;width:1px;height:1px;opacity:0}
+.upload input[type=text], .order input, .order select{width:100%;background:var(--tarmac);border:1px solid var(--line);color:var(--chalk);border-radius:10px;padding:12px 14px;font:500 16px/1.2 var(--body)}
+.upload .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:480px){.upload .row{grid-template-columns:1fr}}
+.upload .msg{font-size:14px;color:var(--verde);min-height:1.2em}
+.vote-rules{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+@media (max-width:760px){.vote-rules{grid-template-columns:1fr}}
+.vote-rules div{border-top:3px solid var(--rosso);padding-top:12px}
+.vote-rules div:nth-child(2){border-color:var(--chalk)}
+.vote-rules div:nth-child(3){border-color:var(--verde)}
+.vote-rules b{font:400 24px/1.1 var(--display);display:block;margin-bottom:4px}
+.vote-rules p{color:var(--smoke);font-size:15px}
+
+/* GALLERY */
+.meet-head{display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end;margin-bottom:32px}
+@media (max-width:760px){.meet-head{grid-template-columns:1fr}}
+.route{display:flex;align-items:stretch;gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--tarmac);flex-wrap:wrap}
+.route div{padding:14px 18px;display:grid;gap:4px;border-right:1px solid var(--line);flex:1 1 150px}
+.route div:last-child{border-right:0}
+.route b{font:400 30px/1 var(--display);font-variant-numeric:tabular-nums}
+.route span{font:600 13px/1.25 var(--cond);letter-spacing:.08em;text-transform:uppercase;color:var(--smoke)}
+.gal{columns:4 240px;column-gap:12px}
+.gal button{display:block;width:100%;margin:0 0 12px;padding:0;border:0;background:none;cursor:zoom-in;border-radius:12px;overflow:hidden;break-inside:avoid;position:relative}
+.gal img{width:100%;transition:transform .5s}
+.gal button:hover img{transform:scale(1.04)}
+.gal .cap{position:absolute;left:10px;bottom:10px;font:700 12px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;background:rgba(0,0,0,.7);padding:6px 8px;border-radius:5px;color:#fff}
+.quote-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+@media (max-width:860px){.quote-row{grid-template-columns:1fr 1fr}}
+.quote{background:var(--tarmac);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:8px}
+.quote p{font-size:17px}
+.quote span{font:600 13px/1 var(--cond);letter-spacing:.08em;color:var(--dim)}
+
+/* LIGHTBOX */
+.lb{position:fixed;inset:0;z-index:80;background:rgba(0,0,0,.94);display:grid;place-items:center;padding:24px}
+.lb img{max-height:86vh;max-width:min(94vw,1100px);border-radius:10px}
+.lb button{position:absolute;top:calc(16px + env(safe-area-inset-top,0px));right:16px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:transparent;color:#fff;font:400 26px/1 var(--display);cursor:pointer}
+
+/* MERCH */
+.merch-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(20px,3vw,40px);align-items:start}
+@media (max-width:980px){.merch-grid{grid-template-columns:1fr}}
+.sticker-hero{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--line)}
+.sticker-thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:8px}
+.sticker-thumbs button{padding:0;border:2px solid transparent;border-radius:10px;overflow:hidden;cursor:pointer;background:none;aspect-ratio:1/1;max-width:100%}
+.sticker-thumbs button[aria-pressed="true"]{border-color:var(--rosso)}
+.sticker-thumbs img{width:100%;height:100%;object-fit:cover}
+.product{display:grid;gap:18px}
+.product .price{display:flex;align-items:baseline;gap:14px}
+.product .price b{font:400 96px/.8 var(--display);color:var(--chalk)}
+.product .price span{font:600 15px/1.3 var(--cond);letter-spacing:.1em;text-transform:uppercase;color:var(--smoke)}
+.sticker-word{font:400 clamp(34px,4.4vw,56px)/1 var(--display);letter-spacing:.01em;padding:14px 18px;border-radius:10px;background:#000;border:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center}
+.specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.specs div{background:var(--tarmac);padding:12px 14px;display:grid;gap:2px}
+.specs dt{font:700 12px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.specs dd{margin:0;font:600 18px/1.3 var(--cond)}
+.order{background:var(--tarmac);border:1px solid var(--line);border-radius:16px;padding:18px;display:grid;gap:12px}
+.order h4{margin:0;font:400 28px/1 var(--display)}
+.order .row{display:grid;grid-template-columns:130px 1fr;gap:10px;align-items:center}
+.order label{font:600 14px/1.2 var(--cond);letter-spacing:.08em;text-transform:uppercase;color:var(--smoke)}
+.qty{display:flex;align-items:center;gap:0;border:1px solid var(--line);border-radius:10px;overflow:hidden;width:max-content}
+.qty button{width:48px;height:48px;border:0;background:var(--kerb);color:var(--chalk);font:400 26px/1 var(--display);cursor:pointer}
+.qty output{min-width:56px;text-align:center;font:400 30px/1 var(--display);font-variant-numeric:tabular-nums}
+.total{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed var(--line);padding-top:12px}
+.total b{font:400 44px/1 var(--display);font-variant-numeric:tabular-nums}
+.total span{color:var(--smoke);font-size:14px}
+.dm-preview{background:var(--asphalt);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:500 15px/1.5 var(--body);color:var(--smoke);white-space:pre-wrap}
+.copy-msg{font-size:14px;color:var(--verde);min-height:1.2em}
+.soon{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:40px}
+@media (max-width:760px){.soon{grid-template-columns:1fr}}
+.soon-card{background:var(--tarmac);border:1px solid var(--line);border-radius:18px;padding:22px;display:grid;gap:12px;position:relative;overflow:hidden;min-height:220px;align-content:end}
+.soon-card .big{position:absolute;top:-10px;right:-6px;font:400 150px/1 var(--display);color:rgba(255,255,255,.04);pointer-events:none}
+.soon-card h3{font-size:36px}
+.soon-card p{color:var(--smoke);font-size:15px}
+.tag{font:700 12px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;padding:6px 9px;border-radius:5px;width:max-content}
+.tag.live{background:var(--verde);color:#fff}
+.tag.next{background:var(--giallo);color:#111}
+.tag.later{background:var(--kerb);color:var(--smoke);border:1px solid var(--line)}
+.boxnow{margin-top:24px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:linear-gradient(90deg,rgba(16,163,82,.16),transparent);border:1px solid rgba(16,163,82,.35);border-radius:18px;padding:16px}
+.boxnow img{width:110px;height:110px;object-fit:cover;border-radius:12px}
+.boxnow b{font:400 30px/1 var(--display);display:block;margin-bottom:6px}
+.boxnow p{color:var(--smoke);font-size:15px}
+@media (max-width:480px){.boxnow{grid-template-columns:1fr}}
+
+/* FAMILY / MARQUES */
+.marques{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+@media (max-width:900px){.marques{grid-template-columns:1fr 1fr}}
+@media (max-width:480px){.marques{grid-template-columns:1fr}}
+.marque{background:var(--asphalt);padding:24px 22px;display:grid;gap:12px;align-content:start;position:relative;transition:background .2s}
+.marque:hover{background:var(--tarmac)}
+.marque h3{font-size:clamp(40px,4vw,54px)}
+.marque .since{font:600 13px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.marque p{color:var(--smoke);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips span{font:600 13px/1 var(--cond);letter-spacing:.06em;text-transform:uppercase;padding:7px 9px;border-radius:6px;background:var(--kerb);border:1px solid var(--line)}
+.marque::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+.marque:nth-child(1)::before{background:var(--rosso)}
+.marque:nth-child(2)::before{background:var(--chalk)}
+.marque:nth-child(3)::before{background:var(--giallo)}
+.marque:nth-child(4)::before{background:var(--verde)}
+
+/* TIMELINE */
+.tl{position:relative;display:grid;gap:0;margin-top:8px}
+.tl::before{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;background:repeating-linear-gradient(180deg,var(--chalk) 0 12px,transparent 12px 24px);opacity:.25}
+.tl-item{display:grid;grid-template-columns:40px 150px 1fr;gap:18px;padding-block:18px;align-items:start;border-bottom:1px solid var(--line)}
+@media (max-width:640px){.tl-item{grid-template-columns:40px 1fr}.tl-item .tl-body{grid-column:2}}
+.tl-dot{width:40px;height:40px;border-radius:50%;background:var(--asphalt);border:2px solid var(--line);display:grid;place-items:center;position:relative;z-index:1}
+.tl-dot::after{content:"";width:12px;height:12px;border-radius:50%;background:var(--dim)}
+.tl-item.done .tl-dot{border-color:var(--verde)} .tl-item.done .tl-dot::after{background:var(--verde)}
+.tl-item.now .tl-dot{border-color:var(--rosso);box-shadow:var(--glow-r)} .tl-item.now .tl-dot::after{background:var(--rosso);animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.5);opacity:.6}}
+.tl-date{font:400 26px/1.1 var(--display);font-variant-numeric:tabular-nums;padding-top:6px}
+.tl-body h3{font-size:30px;margin-bottom:4px}
+.tl-body p{color:var(--smoke);font-size:16px;max-width:62ch}
+
+/* JOIN */
+.join{position:relative;overflow:hidden;background:var(--rosso-deep)}
+.join::before{content:"";position:absolute;inset:0;background:url("img/meet-mito-crew.jpg") center/cover;opacity:.18;mix-blend-mode:luminosity}
+.join .wrap{position:relative;display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,4vw,56px);align-items:center}
+@media (max-width:900px){.join .wrap{grid-template-columns:1fr}}
+.join h2{font-size:clamp(60px,9vw,128px)}
+.join .hand{font-size:clamp(22px,2.6vw,32px);margin-top:12px}
+.channels{display:grid;gap:12px}
+.channel{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:14px;align-items:center;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.15);border-radius:14px;padding:14px 16px;text-decoration:none;transition:background .15s,transform .15s}
+a.channel:hover{background:rgba(0,0,0,.65);transform:translateX(4px)}
+.channel .ic{width:52px;height:52px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.1)}
+.channel .ic svg{width:26px;height:26px}
+.channel b{font:400 26px/1 var(--display);display:block}
+.channel span{font-size:14px;color:rgba(255,255,255,.72)}
+.channel .num{font:400 30px/1 var(--display);font-variant-numeric:tabular-nums}
+.copybtn{font:700 13px/1 var(--cond);letter-spacing:.1em;text-transform:uppercase;background:#fff;color:#111;border:0;border-radius:8px;padding:10px 12px;cursor:pointer}
+.email-text{user-select:all;-webkit-user-select:all;word-break:break-all}
+
+/* FAQ */
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:860px){.faq{grid-template-columns:1fr}}
+details{background:var(--tarmac);border:1px solid var(--line);border-radius:14px;padding:0 18px}
+summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center;padding:18px 0;font:600 19px/1.3 var(--cond);letter-spacing:.02em}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font:400 30px/1 var(--display);color:var(--rosso);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--smoke);padding-bottom:18px;font-size:16px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding-block:48px 40px;background:var(--asphalt)}
+footer .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center}
+@media (max-width:760px){footer .wrap{grid-template-columns:1fr}}
+footer img{width:84px}
+.foot-mid{display:grid;gap:8px}
+.foot-mid b{font:400 34px/1 var(--display)}
+.foot-mid small{color:var(--dim);font-size:13px;line-height:1.5;max-width:70ch}
+.foot-hand{font-family:var(--hand);font-size:22px;transform:rotate(-4deg);color:var(--chalk);line-height:1.2}
+
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,140%);background:var(--chalk);color:#111;font:700 15px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;padding:14px 18px;border-radius:10px;z-index:90;transition:transform .3s;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.toast.show{transform:translate(-50%,0)}
+.lb[hidden],.modal[hidden],[hidden]{display:none!important}
+.sec-head>*,.stats>*,.collab-grid>*,.vote-layout>*,.merch-grid>*,.hero .wrap>*,.join .wrap>*,.meet-head>*,.next .wrap>*{min-width:0}
+@media (max-width:480px){.brand span{display:none}.cd div{min-width:0;flex:1}.fact{grid-template-columns:1fr;gap:4px}.order .row{grid-template-columns:1fr}}
+.marques-band{width:100%;border-radius:20px;margin-bottom:16px;border:1px solid var(--line);aspect-ratio:1420/390;object-fit:cover}
+.keys{margin-top:24px;display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(20px,3vw,36px);align-items:center;background:var(--asphalt);border:1px solid var(--line);border-radius:20px;padding:16px}
+.keys>*{min-width:0}
+@media (max-width:860px){.keys{grid-template-columns:1fr}}
+.keys-img{padding:0;border:0;background:none;cursor:zoom-in;border-radius:14px;overflow:hidden}
+.keys-copy{display:grid;gap:12px;padding:8px}
+.keys-copy h3{font-size:clamp(36px,4vw,52px)}
+.keys-copy p{color:var(--smoke)}
+.story-banner{display:block;width:100%;padding:0;border:1px solid var(--line);background:none;border-radius:20px;overflow:hidden;cursor:zoom-in;margin-bottom:32px}
+.tl-thumb{display:block;margin-top:12px;padding:0;border:1px solid var(--line);background:none;border-radius:10px;overflow:hidden;width:140px;cursor:zoom-in}
+.partners{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:860px){.partners{grid-template-columns:1fr}}
+.partner{display:grid;grid-template-rows:180px auto;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:var(--asphalt);text-decoration:none}
+.partner img{width:100%;height:180px;object-fit:contain;background:#050506}
+.partner.light img{background:#fff;padding:18px}
+.partner>div:last-child{padding:16px 18px;display:grid;gap:4px}
+.partner b{font:400 30px/1 var(--display)}
+.partner span{color:var(--smoke);font-size:15px}
+.partner.cta{border-style:dashed;transition:background .15s}
+.partner.cta:hover{background:var(--kerb)}
+.partner .plus{display:grid;place-items:center;font:400 90px/1 var(--display);color:var(--rosso)}
+.board .rm-vote{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:var(--asphalt);color:var(--smoke);font:400 22px/1 var(--display);cursor:pointer}
+.photo-rules{border-left:3px solid var(--giallo);padding-left:10px}
+.pc-box{background:var(--tarmac);border:1px solid var(--line);border-radius:20px;max-width:720px;width:100%;padding:20px;display:grid;gap:12px;max-height:calc(100vh - 32px);overflow-y:auto}
+.pc-box h3{font-size:36px}
+.pc-canvas{background:#000;border-radius:12px;overflow:hidden;display:grid;place-items:center}
+#pcCanvas{max-width:100%;max-height:55vh;width:auto;height:auto;touch-action:none;cursor:crosshair;display:block}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--chalk);cursor:pointer}
+.chk input{width:20px;height:20px;accent-color:var(--rosso);flex:0 0 auto;margin-top:1px}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+.cookie{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:70;max-width:720px;margin-inline:auto;display:grid;grid-template-columns:64px 1fr;gap:12px 16px;align-items:center;background:var(--tarmac);border:1px solid var(--line);border-radius:18px;padding:16px;box-shadow:0 20px 60px rgba(0,0,0,.6);animation:ckin .5s cubic-bezier(.2,1.4,.4,1)}
+.cookie .btns{grid-column:1/-1}
+.ck-ic{width:64px;height:64px;animation:ckspin 6s linear infinite}
+.ck-ic.eaten{animation:cheat .6s steps(3) forwards}
+.ck-txt b{font:400 28px/1 var(--display)}
+.ck-txt p{color:var(--smoke);font-size:14px;margin-top:4px}
+@keyframes ckin{from{transform:translateY(120%)}}
+@keyframes ckspin{to{transform:rotate(360deg)}}
+@keyframes cheat{to{transform:scale(0) rotate(90deg);opacity:0}}
+@media (max-width:860px){.cookie{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ===== v3: multi-page ===== */
+.page{display:none}
+.page.on{display:block;animation:pgin .35s ease}
+@keyframes pgin{from{opacity:.4;transform:translateY(8px)}to{opacity:1;transform:none}}
+.navlinks a[aria-current="page"]{color:#fff;background:var(--rosso)}
+@media (max-width:860px){
+  .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(12,12,14,.97)}
+  .navlinks{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:45;margin:0;gap:0;justify-content:space-around;background:rgba(12,12,14,.96);border-top:1px solid var(--line);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px));backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+  .navlinks a{padding:8px 1px;font-size:10.5px;letter-spacing:0;flex:1 1 0;min-width:0;text-align:center;display:grid;gap:3px;justify-items:center}
+  .navlinks a svg{display:block}
+  body{padding-bottom:72px}
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+}
+.navlinks a svg{width:18px;height:18px;display:none}
+@media (max-width:860px){.navlinks a svg{display:block}}
+.page-hero{padding-block:clamp(40px,6vw,72px) clamp(20px,3vw,32px);border-bottom:1px solid var(--line);background:radial-gradient(ellipse at 20% 0%,rgba(229,32,46,.14),transparent 55%),radial-gradient(ellipse at 90% 100%,rgba(16,163,82,.12),transparent 55%)}
+.page-hero h1{font-size:clamp(56px,9vw,120px);margin-top:12px}
+.page-hero p{color:var(--smoke);max-width:62ch;margin-top:12px}
+.subnav{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.subnav a{font:700 13px/1 var(--cond);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid var(--line);border-radius:99px;padding:9px 13px;color:var(--smoke)}
+.subnav a:hover{color:var(--chalk);border-color:var(--smoke)}
+
+/* home tiles */
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media (max-width:900px){.tiles{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.tiles{grid-template-columns:1fr}}
+.tile{position:relative;border-radius:18px;overflow:hidden;min-height:230px;display:grid;align-content:end;text-decoration:none;border:1px solid var(--line);isolation:isolate}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform .6s}
+.tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.05) 30%,rgba(0,0,0,.88))}
+.tile:hover img{transform:scale(1.06)}
+.tile div{padding:18px;display:grid;gap:4px}
+.tile b{font:400 36px/1 var(--display)}
+.tile span{color:rgba(255,255,255,.8);font-size:15px}
+.tile .arrow{position:absolute;top:14px;right:14px;width:40px;height:40px;border-radius:50%;background:var(--rosso);display:grid;place-items:center;font:400 22px/1 var(--display);color:#fff}
+.leader{display:grid;grid-template-columns:200px 1fr auto;gap:20px;align-items:center;background:var(--tarmac);border:1px solid rgba(246,194,26,.4);border-radius:20px;padding:14px;margin-top:20px}
+.leader img{width:200px;height:140px;object-fit:cover;border-radius:12px}
+.leader b{font:400 34px/1 var(--display);display:block}
+.leader small{font:700 12px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--giallo)}
+@media (max-width:640px){.leader{grid-template-columns:1fr}.leader img{width:100%;height:200px}}
+
+/* RSVP */
+.rsvp{margin-top:22px;display:grid;gap:12px;background:var(--tarmac);border:1px solid var(--line);border-radius:16px;padding:18px}
+.rsvp h3{font-size:30px}
+.rsvp .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.btn.going{background:var(--verde);border-color:var(--verde);color:#fff}
+.note{font-size:14px;color:var(--dim);line-height:1.5}
+.note b{color:var(--smoke);font-weight:600}
+
+/* upload grid / album */
+.album{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:10px}
+.album button{padding:0;border:0;background:none;border-radius:12px;overflow:hidden;aspect-ratio:1/1;cursor:zoom-in;position:relative;max-width:100%}
+.album img{width:100%;height:100%;object-fit:cover}
+.album .who{position:absolute;left:8px;bottom:8px;font:700 11px/1 var(--cond);letter-spacing:.1em;text-transform:uppercase;background:rgba(0,0,0,.7);color:#fff;padding:5px 7px;border-radius:4px}
+.dropzone{border:2px dashed var(--line);border-radius:16px;padding:18px;display:grid;gap:12px}
+.dropzone.drag{border-color:var(--verde);background:rgba(16,163,82,.08)}
+.dropzone h4{margin:0;font:400 26px/1 var(--display)}
+.dropzone .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:520px){.dropzone .row{grid-template-columns:1fr}}
+.field{width:100%;background:var(--tarmac);border:1px solid var(--line);color:var(--chalk);border-radius:10px;padding:12px 14px;font:500 16px/1.2 var(--body)}
+select.field{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--smoke) 50%),linear-gradient(135deg,var(--smoke) 50%,transparent 50%);background-position:calc(100% - 18px) 50%,calc(100% - 13px) 50%;background-size:5px 5px;background-repeat:no-repeat;padding-right:34px}
+label.file{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 15px/1 var(--cond);letter-spacing:.1em;text-transform:uppercase;padding:14px 16px;border-radius:10px;background:var(--verde);color:#fff;cursor:pointer;width:max-content;max-width:100%}
+input[type=file].hidden-file{position:absolute;width:1px;height:1px;opacity:0}
+.okmsg{font-size:14px;color:var(--verde);min-height:1.2em}
+
+/* thumbs strip for car of the week */
+.strip{display:flex;gap:8px;overflow-x:auto;padding:12px 2px 4px;scrollbar-width:thin}
+.strip button{flex:0 0 64px;height:64px;padding:0;border:2px solid transparent;border-radius:10px;overflow:hidden;cursor:pointer;background:none}
+.strip button[aria-current="true"]{border-color:var(--rosso)}
+.strip img{width:100%;height:100%;object-fit:cover}
+.slide img{object-position:center 60%}
+
+/* garage */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:18px}
+.chip-btn{font:700 14px/1 var(--cond);letter-spacing:.1em;text-transform:uppercase;padding:10px 14px;border-radius:99px;border:1px solid var(--line);background:var(--tarmac);color:var(--smoke);cursor:pointer}
+.chip-btn[aria-pressed="true"]{background:var(--chalk);color:#111;border-color:var(--chalk)}
+.chip-btn .n{opacity:.6;margin-left:6px}
+.filters .field{max-width:260px;margin-left:auto}
+@media (max-width:640px){.filters .field{max-width:none;margin-left:0}}
+.garage-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:14px}
+.gcard{border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--asphalt);cursor:pointer;text-align:left;padding:0;color:inherit;display:grid;grid-template-columns:minmax(0,1fr);transition:transform .2s,border-color .2s}
+.gcard:hover{transform:translateY(-3px);border-color:var(--smoke)}
+.gcard .ph{aspect-ratio:4/5;max-width:100%;position:relative;overflow:hidden}
+.gcard .ph img{width:100%;height:100%;object-fit:cover}
+.gcard .brand-pill{position:absolute;top:10px;left:10px;font:700 11px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;padding:6px 8px;border-radius:5px;background:rgba(0,0,0,.72);color:#fff}
+.gcard .cnt{position:absolute;top:10px;right:10px;font:700 11px/1 var(--cond);letter-spacing:.1em;padding:6px 8px;border-radius:5px;background:rgba(0,0,0,.72);color:#fff}
+.gcard .meta{padding:12px 14px;display:grid;gap:3px}
+.gcard .meta b{font:400 24px/1.05 var(--display)}
+.gcard .meta span{font-size:14px;color:var(--smoke)}
+.gcard .meta .v{display:flex;align-items:center;gap:6px;font:600 14px/1 var(--cond);color:var(--rosso);margin-top:4px}
+.b-Abarth .brand-pill{background:var(--rosso)}
+.b-Fiat .brand-pill{background:#f3f1ec;color:#111}
+.b-Alfa .brand-pill{background:var(--verde)}
+.b-Lancia .brand-pill{background:var(--giallo);color:#111}
+
+/* modal */
+.modal{position:fixed;inset:0;z-index:85;background:rgba(0,0,0,.86);display:grid;place-items:center;padding:16px;overflow-y:auto}
+.modal-box{background:var(--tarmac);border:1px solid var(--line);border-radius:20px;max-width:980px;width:100%;display:grid;grid-template-columns:1.3fr 1fr;overflow:hidden;position:relative;max-height:calc(100vh - 32px)}
+@media (max-width:760px){.modal-box{grid-template-columns:1fr;max-height:none}}
+.modal-photos{background:#000;display:grid;align-content:start;gap:4px;overflow-y:auto}
+.modal-photos img{width:100%}
+.modal-info{padding:22px;display:grid;gap:14px;align-content:start;overflow-y:auto}
+.modal-info h3{font-size:44px}
+.modal-close{position:absolute;top:10px;right:10px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:rgba(0,0,0,.6);color:#fff;font:400 24px/1 var(--display);cursor:pointer}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:8px 12px;font-size:15px}
+.kv dt{font:700 12px/1.5 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+.kv dd{margin:0}
+
+/* merch cards */
+.shop{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media (max-width:860px){.shop{grid-template-columns:1fr}}
+.shop>*{min-width:0}
+.prod{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--asphalt);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1fr}
+.prod .pimg{position:relative;background:#0a0a0a}
+.prod .pimg img{width:100%;aspect-ratio:4/3;object-fit:cover;max-width:100%}
+.prod .pimg .tag{position:absolute;top:12px;left:12px}
+.prod .pthumbs{display:flex;gap:6px;padding:8px;background:var(--tarmac)}
+.prod .pthumbs button{width:54px;height:54px;padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;cursor:pointer;background:none}
+.prod .pthumbs button[aria-pressed="true"]{border-color:var(--rosso)}
+.prod .pthumbs img{width:100%;height:100%;object-fit:cover}
+.prod .pbody{padding:18px;display:grid;grid-template-columns:minmax(0,1fr);gap:12px;align-content:start}
+.prod h3{font-size:38px}
+.prod p{color:var(--smoke);font-size:15px}
+.prod .price-line{font:400 30px/1 var(--display)}
+.prod .price-line small{font:600 13px/1 var(--cond);letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-left:8px}
+.sizes{display:flex;flex-wrap:wrap;gap:6px}
+.sizes button{min-width:48px;height:44px;border-radius:8px;border:1px solid var(--line);background:var(--tarmac);color:var(--chalk);font:700 15px/1 var(--cond);cursor:pointer;padding:0 10px}
+.sizes button[aria-pressed="true"]{background:var(--rosso);border-color:var(--rosso);color:#fff}
+.preorder-list{display:grid;gap:8px}
+.preorder-list div{display:flex;justify-content:space-between;gap:10px;background:var(--tarmac);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:15px}
+.preorder-list button{background:none;border:0;color:var(--dim);cursor:pointer;font-size:14px}
+
+/* guides */
+.guide{display:grid;gap:10px}
+.guide details{padding:0 18px}
+.guide summary{font:400 30px/1 var(--display);letter-spacing:.01em}
+.guide summary small{font:600 13px/1 var(--cond);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-left:10px}
+.guide-body{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:18px}
+@media (max-width:860px){.guide-body{grid-template-columns:1fr}}
+.guide-body h4{margin:0 0 6px;font:700 13px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase}
+.guide-body h4.r{color:var(--rosso)} .guide-body h4.g{color:var(--verde)} .guide-body h4.y{color:var(--giallo)}
+.guide-body ul{margin:0;padding-left:18px;color:var(--smoke);font-size:15px;display:grid;gap:5px}
+.routes{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.route-card{border:1px solid var(--line);border-radius:18px;padding:18px;background:var(--tarmac);display:grid;gap:10px;align-content:start;position:relative;overflow:hidden}
+.route-card .km{font:400 54px/.9 var(--display);font-variant-numeric:tabular-nums}
+.route-card .km small{font-size:20px;color:var(--dim);margin-left:4px}
+.route-card h3{font-size:30px}
+.route-card p{color:var(--smoke);font-size:15px}
+.route-card svg{position:absolute;right:-10px;top:-10px;width:140px;opacity:.12}
+.shops-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.shop-card{border:1px solid var(--line);border-radius:16px;padding:16px;background:var(--asphalt);display:grid;gap:6px}
+.shop-card b{font:400 26px/1 var(--display)}
+.shop-card span{color:var(--smoke);font-size:14px}
+.shop-card .ex{font:700 11px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--giallo)}
+
+/* play */
+.play-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,3vw,36px);align-items:start}
+@media (max-width:900px){.play-grid{grid-template-columns:1fr}}
+.play-grid>*{min-width:0}
+#cardCanvas{width:100%;height:auto;border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.6);display:block}
+.quiz{background:var(--tarmac);border:1px solid var(--line);border-radius:20px;padding:20px;display:grid;gap:14px}
+.quiz .qn{font:700 13px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.quiz h3{font-size:32px;line-height:1}
+.opts{display:grid;gap:8px}
+.opts button{text-align:left;padding:14px 16px;border-radius:12px;border:1px solid var(--line);background:var(--asphalt);color:var(--chalk);font:500 16px/1.35 var(--body);cursor:pointer}
+.opts button:hover{border-color:var(--smoke)}
+.opts button.right{border-color:var(--verde);background:rgba(16,163,82,.15)}
+.opts button.wrong{border-color:var(--rosso);background:rgba(229,32,46,.15)}
+.qbar{height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.qbar i{display:block;height:100%;background:linear-gradient(90deg,var(--verde),var(--chalk),var(--rosso));transition:width .3s}
+.result-big{font:400 clamp(48px,7vw,80px)/.9 var(--display)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.spot-board{display:grid;gap:8px}
+.spot-board div{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;background:var(--tarmac);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.spot-board .pos{font:400 24px/1 var(--display);color:var(--giallo);text-align:center}
+.spot-board b{font:400 26px/1 var(--display)}
+.merch-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media (max-width:760px){.merch-strip{grid-template-columns:1fr 1fr}}
+.merch-strip a{border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative;display:block;aspect-ratio:1/1;max-width:100%}
+.merch-strip img{width:100%;height:100%;object-fit:cover}
+.merch-strip span{position:absolute;left:8px;bottom:8px;font:700 12px/1 var(--cond);letter-spacing:.12em;text-transform:uppercase;background:rgba(0,0,0,.75);padding:6px 8px;border-radius:5px;color:#fff}
+a.partner{color:inherit}
+.partner .visit{font:700 12px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--rosso);margin-top:6px}
+.section-tight{padding-block:clamp(40px,6vw,72px)}
+</style>
+<style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+<script data-goatcounter="https://abarthclubgr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+</head>
+<body>
+
+<nav class="nav" aria-label="Κύριο μενού">
+  <div class="wrap">
+    <a class="brand" href="#home"><img src="img/logo.png" alt=""><span>ABARTH_CLUB_GR</span></a>
+    <div class="navlinks" id="navlinks">
+      <a href="#home" data-p="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7v9h-6v-6H9v6H3z"/></svg>Αρχική</a>
+      <a href="#meets" data-p="meets"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Meets</a>
+      <a href="#cars" data-p="cars"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 16h14l-1.5-6a2 2 0 0 0-2-1.5h-7a2 2 0 0 0-2 1.5z"/><circle cx="7.5" cy="17" r="2"/><circle cx="16.5" cy="17" r="2"/></svg>Garage</a>
+      <a href="#merch" data-p="merch"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3 3 6l2 4 2-1v12h10V9l2 1 2-4-5-3a4 4 0 0 1-8 0z"/></svg>Merch</a>
+      <a href="#guide" data-p="guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5"/></svg>Οδηγοί</a>
+      <a href="#play" data-p="play"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="7" width="18" height="11" rx="4"/><path d="M8 11v3M6.5 12.5h3M15 12h.01M17.5 13.5h.01"/></svg>Play</a>
+      <a href="#club" data-p="club"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 14.5c3 0 6 1.8 6 5.5"/></svg>Club</a>
+    </div>
+    <a class="navcta" href="#club" data-go="join">Γίνε μέλος</a>
+  </div>
+</nav>
+
+<main>
+<!-- ================= HOME ================= -->
+<div class="page" id="p-home">
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <img src="img/c-gpa-widebody-garage.jpg" alt=""><img src="img/c-595-grey-2.jpg" alt=""><img src="img/meet-farma-wide.jpg" alt=""><img src="img/c-147-black-bridge.jpg" alt="">
+  </div>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow"><span class="tri"></span>Athens · Est. 2026 · Passion unites us</div>
+      <h1 class="wordmark" aria-label="ABARTH_CLUB_GR"><span class="a">ABARTH</span><span class="us">_</span><span class="c">CLUB</span><span class="us">_</span><span class="gr">GR</span></h1>
+      <div class="hero-tag"><span class="hand">One Team. One Family. One Purpose.</span></div>
+      <p class="hero-lede">Η κοινότητα της Αθήνας για όσους αγαπάνε τα ιταλικά αυτοκίνητα: <b>Abarth, Fiat, Lancia και Alfa Romeo</b>. Ξεκινήσαμε τον Αύγουστο του 2026 και στο πρώτο μας car meet ήρθαν <b>πάνω από 50 αυτοκίνητα</b>. Αυτό είναι μόνο η αρχή.</p>
+      <div class="btns">
+        <a class="btn hot" href="#meets">Varkiza · 17 Οκτωβρίου</a>
+        <a class="btn" href="#cars">Ψήφισε το Car of the Week</a>
+      </div>
+    </div>
+    <div class="logo-stage"><img src="img/logo.png" alt="Λογότυπο Abarth Club GR Athens, Est. 2026"></div>
+  </div>
+</header>
+
+<div class="next" role="region" aria-label="Αντίστροφη μέτρηση">
+  <div class="wrap">
+    <div>
+      <div class="next-label">Επόμενο car meet</div>
+      <div class="next-title">ONLY VAG ATHENS × ABARTH CLUB GR</div>
+      <div class="next-sub">Σάββατο 17 Οκτωβρίου · 20:00 · Parking μετά το Varkiza Resort, Βάρκιζα</div>
+    </div>
+    <div></div>
+    <div class="cd">
+      <div><b data-cd="d">20</b><span>Μέρες</span></div>
+      <div><b data-cd="h">21</b><span>Ώρες</span></div>
+      <div><b data-cd="m">06</b><span>Λεπτά</span></div>
+      <div><b data-cd="s">00</b><span>Δευτ.</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Cars</span><span>People</span><span>Places</span><span>Stories</span><span>Good cars better people</span><span>Italian spirit</span><span>Small sticker big family</span><span>Diversi nello stile, uniti dalla passione</span>
+    <span>Cars</span><span>People</span><span>Places</span><span>Stories</span><span>Good cars better people</span><span>Italian spirit</span><span>Small sticker big family</span><span>Diversi nello stile, uniti dalla passione</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Ο πίνακας οργάνων</div>
+      <h2>Δύο μήνες. Full throttle.</h2>
+      <p>Από το πρώτο post στις αρχές Αυγούστου μέχρι σήμερα. Ο δείκτης δείχνει πόσο κοντά είμαστε στους 1.000 ακόλουθους. Πάτα τον για γκάζι.</p>
+    </div>
+    <div class="stats">
+      <div class="tacho">
+        <svg viewBox="0 0 400 250" role="img" aria-label="Στροφόμετρο: 460 ακόλουθοι από στόχο 1000">
+          <defs><linearGradient id="arcg" x1="0" x2="1"><stop offset="0" stop-color="#10a352"/><stop offset=".55" stop-color="#f3f1ec"/><stop offset="1" stop-color="#e5202e"/></linearGradient></defs>
+          <path d="M40 215 A160 160 0 0 1 360 215" fill="none" stroke="#2c2c33" stroke-width="18" stroke-linecap="round"/>
+          <path id="arc" d="M40 215 A160 160 0 0 1 360 215" fill="none" stroke="url(#arcg)" stroke-width="18" stroke-linecap="round" pathLength="1000" stroke-dasharray="460 1000"/>
+          <g id="ticks" fill="#a9a7a3" font-family="Bebas Neue, Impact, sans-serif" font-size="18" text-anchor="middle"></g>
+          <g id="needle" transform="rotate(-7.2 200 215)">
+            <line x1="200" y1="215" x2="200" y2="72" stroke="#e5202e" stroke-width="5" stroke-linecap="round"/>
+            <circle cx="200" cy="215" r="14" fill="#1d1d22" stroke="#e5202e" stroke-width="3"/>
+          </g>
+        </svg>
+        <div class="readout"><b id="followers">460</b><span>Ακόλουθοι στο Instagram</span></div>
+        <div class="tacho-foot"><span>× 100 followers</span><span>Στόχος: <b>1.000</b></span></div>
+      </div>
+      <div class="statgrid">
+        <div class="stat"><b class="r">50+</b><span>Αυτοκίνητα</span><small>στο πρώτο car meet, 19/09/2026</small></div>
+        <div class="stat"><b>250+</b><span>Μέλη στο Telegram</span><small>και άλλα 250+ στην ομαδική του Instagram</small></div>
+        <div class="stat"><b class="g">~20</b><span>Αυτοκόλλητα</span><small>πουλήθηκαν μέσα σε ένα βράδυ</small></div>
+        <div class="stat"><b>4.000</b><span>Ακόλουθοι Only VAG</span><small>ο πρώτος μας συνεργάτης για τις 17/10</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="garage section-tight">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Τι θα βρεις εδώ</div>
+      <h2>Διάλεξε διαδρομή.</h2>
+    </div>
+    <div class="tiles">
+      <a class="tile" href="#meets"><img src="img/meet-farma-wide.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Meets</b><span>Varkiza 17/10, «Έρχομαι», album της βραδιάς</span></div></a>
+      <a class="tile" href="#cars"><img src="img/c-gpa-black-stripe.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Αυτοκίνητα</b><span>Car of the Week και το garage των μελών</span></div></a>
+      <a class="tile" href="#merch"><img src="img/m-tee-mockup.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Merch</b><span>Αυτοκόλλητα, μπλούζες, lanyard, μπρελόκ</span></div></a>
+      <a class="tile" href="#guide"><img src="img/c-mito-red-forest.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Οδηγοί</b><span>Μοντέλα, διαδρομές για cruise, συνεργεία</span></div></a>
+      <a class="tile" href="#play"><img src="img/sticker-595.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Παιχνίδια</b><span>Spot the Sticker, κάρτα μέλους, quiz</span></div></a>
+      <a class="tile" href="#club"><img src="img/banner.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Το Club</b><span>Η ιστορία μας, συνεργάτες, επικοινωνία</span></div></a>
+    </div>
+    <a class="leader" href="#cars" style="text-decoration:none;color:inherit" id="homeLeader"></a>
+  </div>
+</section>
+</div>
+
+<!-- ================= MEETS ================= -->
+<div class="page" id="p-meets">
+<div class="page-hero"><div class="wrap">
+  <div class="eyebrow"><span class="tri"></span>Car meets</div>
+  <h1>Meets.</h1>
+  <p>Το επόμενο meet, το πρόγραμμα, οι κανόνες και οι φωτογραφίες από όσα έχουμε κάνει. Δήλωσε ότι έρχεσαι και ανέβασε τις δικές σου λήψεις.</p>
+  <nav class="subnav"><a href="#varkiza">Varkiza 17/10</a><a href="#meet1">Meet #1</a><a href="#album">Album</a></nav>
+</div></div>
+
+<section class="collab" id="varkiza">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>The biggest collaboration ever</div>
+      <h2>German engineering. Italian passion.</h2>
+      <p>Δύο κοινότητες, δύο κουλτούρες, μία βραδιά. Γερμανικά και ιταλικά αυτοκίνητα στο ίδιο parking, δίπλα στη θάλασσα της Βάρκιζας.</p>
+    </div>
+    <div class="vs">
+      <div><img src="img/logo-vag.png" alt="Λογότυπο Only VAG Athens"><div class="vs-lab"><b>ONLY VAG ATHENS</b><span>VW · Audi · Seat · Skoda</span></div></div>
+      <div class="x" aria-hidden="true">X</div>
+      <div><img src="img/logo.png" alt="Λογότυπο Abarth Club GR"><div class="vs-lab"><b>ABARTH CLUB GR</b><span>Abarth · Fiat · Lancia · Alfa</span></div></div>
+    </div>
+    <div class="collab-grid">
+      <button class="poster" data-lb="img/poster-collab.jpg" style="padding:0;cursor:zoom-in;background:none"><img src="img/poster-collab.jpg" alt="Αφίσα: Only VAG Athens × Abarth Club GR, Σάββατο 17 Οκτωβρίου, 20:00, Varkiza Resort"></button>
+      <div>
+        <div class="cd" style="margin-bottom:16px">
+          <div><b data-cd="d">20</b><span>Μέρες</span></div><div><b data-cd="h">21</b><span>Ώρες</span></div><div><b data-cd="m">06</b><span>Λεπτά</span></div><div><b data-cd="s">00</b><span>Δευτ.</span></div>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Πότε</dt><dd>Σάββατο 17 Οκτωβρίου 2026<small>Ώρα έναρξης 20:00</small></dd></div>
+          <div class="fact"><dt>Πού</dt><dd>Parking μετά το Varkiza Resort<small>Βάρκιζα, παραλιακή Αθηνών–Σουνίου</small></dd></div>
+          <div class="fact"><dt>Ποιοι</dt><dd>Γερμανικά και ιταλικά αυτοκίνητα<small>Ανοιχτό σε όλους.</small></dd></div>
+          <div class="fact"><dt>Κόστος</dt><dd>Δωρεάν<small>Φέρε το αυτοκίνητο και την παρέα σου.</small></dd></div>
+        </dl>
+        <div class="rsvp">
+          <h3>Έρχεσαι;</h3>
+          <div class="row">
+            <button class="btn hot" type="button" id="rsvpBtn">Έρχομαι</button>
+            <a class="btn" id="calBtn" target="_blank" rel="noopener" href="#">+ Google Calendar</a>
+            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Varkiza+Resort" target="_blank" rel="noopener">Χάρτης</a>
+          </div>
+          <div class="row" id="rsvpCar" hidden>
+            <label class="sr" for="rsvpModel">Με ποιο αυτοκίνητο</label>
+            <input class="field" id="rsvpModel" placeholder="Με ποιο αυτοκίνητο έρχεσαι; (π.χ. MiTo QV)" style="flex:1;min-width:0">
+          </div>
+          <p class="note" id="rsvpNote">Πάτα «Έρχομαι» για να κρατήσεις τη θέση σου και να μπει το meet στο ημερολόγιό σου.</p>
+        </div>
+        <div class="rules">
+          <h3>Κανόνες του meet</h3>
+          <ul>
+            <li>Τηρούμε αυστηρά τον Κ.Ο.Κ., πριν, κατά και μετά το meet.</li>
+            <li>Σεβόμαστε τον χώρο και τον περιβάλλοντα χώρο.</li>
+            <li>Όχι κόντρες, όχι burnouts. Αφήνουμε τον χώρο όπως τον βρήκαμε.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="meet1">
+  <div class="wrap">
+    <div class="meet-head">
+      <div class="sec-head" style="margin-bottom:0">
+        <div class="eyebrow"><span class="tri"></span>Car meet #1 · 19/09/2026</div>
+        <h2>Τι κάναμε.</h2>
+        <p>Το πρώτο μας car meet ξεπέρασε κάθε προσδοκία. Δεν μαζευτήκαμε απλώς για να δούμε αυτοκίνητα. Γράψαμε ιστορία για το Abarth Club GR και για την κοινότητα που χτίζουμε όλοι μαζί.</p>
+      </div>
+      <div class="route" aria-label="Πρόγραμμα βραδιάς">
+        <div><b>21:30</b><span>Συνάντηση<br>Roisters 3</span></div>
+        <div><b>23:00</b><span>Cruise προς<br>Λαύριο</span></div>
+        <div><b class="r">50+</b><span>Αυτοκίνητα<br>στο parking</span></div>
+      </div>
+    </div>
+    <div class="gal" id="gal"></div>
+    <div class="quote-row" aria-label="Σχόλια από το Instagram">
+      <div class="quote"><p>🇮🇹 Έλα λίγο οι Ιταλοί</p><span>@nick_dmm</span></div>
+      <div class="quote"><p>Πότε θα ξανά κάνετε? 🖤</p><span>@iwannaaa_ktr</span></div>
+      <div class="quote"><p>🇮🇹🔥💪</p><span>@_.mixalis147_</span></div>
+      <div class="quote"><p>🔥💪</p><span>@nikosk___</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="garage" id="album">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Κοινό album</div>
+      <h2>Οι δικές σας λήψεις.</h2>
+      <p>Ήσουν στο meet; Ανέβασε τις φωτογραφίες σου εδώ, χωρίς να τις στέλνεις στο DM. Οι καλύτερες ανεβαίνουν στο Instagram του club με tag.</p>
+    </div>
+    <div class="vote-layout">
+      <div class="album" id="albumGrid"></div>
+      <div class="dropzone" id="albumDrop">
+        <h4>Ανέβασε φωτογραφίες</h4>
+        <p class="note">Διάλεξε μία ή περισσότερες, ή σύρε τες εδώ.</p>
+        <label class="sr" for="albumMeet">Meet</label>
+        <select class="field" id="albumMeet"><option>Car meet #1 · 19/09</option><option>Varkiza · 17/10</option></select>
+        <label class="sr" for="albumWho">Instagram</label>
+        <input class="field" id="albumWho" placeholder="@το_instagram_σου">
+        <p class="note photo-rules"><b>Κανόνες φωτογραφίας:</b> μόνο αυτοκίνητα, χωρίς πρόσωπα, και η πινακίδα να μη φαίνεται. Θα σου ζητήσουμε να τη θολώσεις πριν ανέβει.</p>
+        <label class="file" for="albumFile">Επιλογή φωτογραφιών</label>
+        <input class="hidden-file" type="file" id="albumFile" accept="image/*" multiple>
+        <div class="okmsg" id="albumMsg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= CARS ================= -->
+<div class="page" id="p-cars">
+<div class="page-hero"><div class="wrap">
+  <div class="eyebrow"><span class="tri"></span>Η οικογένεια σε τέσσερις τροχούς</div>
+  <h1>Αυτοκίνητα.</h1>
+  <p>Όλα τα αυτοκίνητα που μας έχουν στείλει τα μέλη. Ψήφισε το Car of the Week και ψάξε στο garage ανά μάρκα και μοντέλο.</p>
+  <nav class="subnav"><a href="#cotw">Car of the Week</a><a href="#members">Garage μελών</a><a href="#family">Οι 4 μάρκες</a></nav>
+</div></div>
+
+<section id="cotw">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Car of the Week</div>
+      <h2>Ανέβασε. Ψήφισε. Κέρδισε.</h2>
+      <p>Κάθε αυτοκίνητο έχει τον αριθμό του. Διάλεξε τα αγαπημένα σου, στείλε την ψήφο με DM και την Κυριακή ανακοινώνουμε τον νικητή στο Instagram του club.</p>
+    </div>
+    <div class="vote-layout">
+      <div>
+        <div class="carousel" id="carousel">
+          <div class="slides" id="slides"></div>
+          <button class="car-nav prev" id="prev" aria-label="Προηγούμενο αυτοκίνητο">‹</button>
+          <button class="car-nav next" id="nextb" aria-label="Επόμενο αυτοκίνητο">›</button>
+        </div>
+        <div class="strip" id="strip" aria-label="Όλα τα αυτοκίνητα"></div>
+      </div>
+      <aside class="board">
+        <h3>Οι ψήφοι σου <small>έως 3</small></h3>
+        <ol id="board"></ol>
+        <div class="dm-preview" id="voteDm"></div>
+        <div class="btns" style="margin-top:0">
+          <button class="btn hot" type="button" id="voteCopy">Αντιγραφή ψήφου</button>
+          <a class="btn" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">Στείλε με DM</a>
+        </div>
+        <p class="note">Η ψήφος μετράει όταν φτάσει με DM στο <b>@abarth_club_gr</b>. Ο νικητής ανακοινώνεται κάθε Κυριακή.</p>
+        <div class="upload">
+          <h4>Ανέβασε το αυτοκίνητό σου</h4>
+          <p>Μία φωτογραφία ανά μέλος την εβδομάδα. Τη νύχτα βγαίνουν καλύτερα.</p>
+          <div class="row">
+            <label class="sr" for="up-brand">Μάρκα</label>
+            <select class="field" id="up-brand"><option>Abarth</option><option>Fiat</option><option>Alfa Romeo</option><option>Lancia</option></select>
+            <label class="sr" for="up-model">Μοντέλο</label>
+            <input class="field" type="text" id="up-model" placeholder="Μοντέλο">
+          </div>
+          <label class="sr" for="up-owner">Instagram</label>
+          <input class="field" type="text" id="up-owner" placeholder="@το_instagram_σου">
+          <p class="note photo-rules"><b>Κανόνες φωτογραφίας:</b> μόνο αυτοκίνητα, χωρίς πρόσωπα, και η πινακίδα να μη φαίνεται. Θα σου ζητήσουμε να τη θολώσεις πριν ανέβει.</p>
+          <label class="file" for="up-file">Επιλογή φωτογραφίας</label>
+          <input class="hidden-file" type="file" id="up-file" accept="image/*">
+          <div class="msg" id="up-msg"></div>
+        </div>
+      </aside>
+    </div>
+    <div class="vote-rules">
+      <div><b>1. Ανεβάζεις</b><p>Μία φωτογραφία του αυτοκινήτου σου με το @ του Instagram σου.</p></div>
+      <div><b>2. Ψηφίζεις με DM</b><p>Διαλέγεις έως 3 αυτοκίνητα και στέλνεις το έτοιμο μήνυμα με τους αριθμούς τους.</p></div>
+      <div><b>3. Ο νικητής στο προφίλ</b><p>Το Car of the Week ανεβαίνει στο Instagram και κερδίζει δωρεάν αυτοκόλλητο.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="garage" id="members">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Garage μελών</div>
+      <h2><span id="carCount">62</span> αυτοκίνητα. Μία οικογένεια.</h2>
+      <p>Πάτα σε ένα αυτοκίνητο για όλες τις φωτογραφίες και τα στοιχεία του. Είναι δικό σου; Στείλε μας DM να συμπληρώσουμε το @ σου και τις μετατροπές.</p>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="garage-grid" id="garageGrid"></div>
+  </div>
+</section>
+
+<section id="family">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Ποιοι χωράνε στην οικογένεια</div>
+      <h2>Τέσσερις μάρκες. Μία καρδιά.</h2>
+      <p>Δεν χρειάζεται να έχεις Abarth. Αν οδηγάς κάτι ιταλικό και το αγαπάς, είσαι ήδη ένας από εμάς.</p>
+    </div>
+    <img class="marques-band" src="img/marques.jpg" alt="Τα σήματα των Abarth, Fiat, Alfa Romeo και Lancia σε φόντο με τα χρώματα της ιταλικής σημαίας" loading="lazy">
+    <div class="marques">
+      <div class="marque"><span class="since">Bologna · Torino · 1949</span><h3>Abarth</h3><p>Ο σκορπιός. Μικρά αυτοκίνητα, μεγάλος θόρυβος.</p><div class="chips"><span>595</span><span>695</span><span>Grande Punto Abarth</span><span>Punto Evo Abarth</span><span>124 Spider</span></div></div>
+      <div class="marque"><span class="since">Torino · 1899</span><h3>Fiat</h3><p>Εκεί που ξεκίνησαν οι περισσότεροι από εμάς.</p><div class="chips"><span>Grande Punto</span><span>Punto GT</span><span>Punto Evo</span><span>Bravo</span><span>Panda 100HP</span></div></div>
+      <div class="marque"><span class="since">Torino · 1906</span><h3>Lancia</h3><p>Ράλι στο DNA. Θρύλος σε κάθε meet.</p><div class="chips"><span>Delta</span><span>Delta Integrale</span><span>Ypsilon</span><span>Fulvia</span></div></div>
+      <div class="marque"><span class="since">Milano · 1910</span><h3>Alfa Romeo</h3><p>Cuore sportivo. Η πιο πολυπληθής παρέα του garage.</p><div class="chips"><span>MiTo</span><span>Giulietta</span><span>Giulia</span><span>147</span><span>159</span></div></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= MERCH ================= -->
+<div class="page" id="p-merch">
+<div class="page-hero"><div class="wrap">
+  <div class="eyebrow"><span class="tri"></span>Official merch</div>
+  <h1>Wear your passion.</h1>
+  <p>Το αυτοκόλλητο κυκλοφορεί ήδη. Μπλούζες, lanyard και μπρελόκ έρχονται: κράτα το δικό σου τώρα, για να ξέρουμε πόσα να φτιάξουμε. Οι παραγγελίες γίνονται με DM στο Instagram και στέλνονται με BOX NOW.</p>
+  <nav class="subnav"><a href="#sticker">Αυτοκόλλητο</a><a href="#preorder">Προπαραγγελίες</a><a href="#mylist">Οι κρατήσεις μου</a></nav>
+</div></div>
+
+<section id="sticker">
+  <div class="wrap">
+    <div class="merch-grid">
+      <div>
+        <div class="sticker-hero"><img id="st-main" src="img/sticker-spec.jpg" alt="Σχέδιο αυτοκόλλητου ABARTH_CLUB_GR, 20 × 5 cm"></div>
+        <div class="sticker-thumbs" id="st-thumbs">
+          <button aria-pressed="true" data-src="img/sticker-spec.jpg"><img src="img/sticker-spec.jpg" alt="Διαστάσεις"></button>
+          <button aria-pressed="false" data-src="img/sticker-595.jpg"><img src="img/sticker-595.jpg" alt="Σε Abarth 595"></button>
+          <button aria-pressed="false" data-src="img/sticker-mito.jpg"><img src="img/sticker-mito.jpg" alt="Σε Alfa Romeo MiTo"></button>
+          <button aria-pressed="false" data-src="img/sticker-spoiler.jpg"><img src="img/sticker-spoiler.jpg" alt="Κάτω από την αεροτομή"></button>
+          <button aria-pressed="false" data-src="img/sticker-pack.jpg"><img src="img/sticker-pack.jpg" alt="Έτοιμα για αποστολή"></button>
+        </div>
+      </div>
+      <div class="product">
+        <span class="tag live">Διαθέσιμο τώρα</span>
+        <div class="sticker-word" aria-label="ABARTH_CLUB_GR"><span class="r">ABARTH</span>_CLUB_<span class="g">GR</span></div>
+        <div class="price"><b>2€</b><span>ανά τεμάχιο<br>+ έξοδα BOX NOW</span></div>
+        <dl class="specs">
+          <div><dt>Διαστάσεις</dt><dd>20 × 5 cm</dd></div>
+          <div><dt>Υλικό</dt><dd>Κομμένο βινύλιο</dd></div>
+          <div><dt>Χρώματα</dt><dd>Κόκκινο · λευκό · πράσινο</dd></div>
+          <div><dt>Τοποθέτηση</dt><dd>Τζάμι, από έξω</dd></div>
+        </dl>
+        <div class="order">
+          <h4>Φτιάξε την παραγγελία σου</h4>
+          <div class="row"><label>Τεμάχια</label>
+            <div class="qty"><button type="button" id="q-minus" aria-label="Λιγότερα">−</button><output id="q-val">2</output><button type="button" id="q-plus" aria-label="Περισσότερα">+</button></div>
+          </div>
+          <div class="row"><label for="o-city">Πόλη</label><input class="field" id="o-city" type="text" placeholder="π.χ. Αθήνα, Πάτρα, Θεσσαλονίκη"></div>
+          <div class="total"><span>Σύνολο προϊόντων</span><b id="o-total">4€</b></div>
+          <div class="dm-preview" id="dm"></div>
+          <div class="btns" style="margin-top:0">
+            <button class="btn hot" type="button" id="copy-dm">Αντιγραφή μηνύματος</button>
+            <a class="btn" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">Άνοιγμα DM</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="boxnow">
+      <img src="img/boxnow.jpg" alt="Αυτόματο locker BOX NOW">
+      <div><b>Αποστολή με BOX NOW</b><p>Παραλαμβάνεις από το locker που θέλεις, 24/7, σε όλη την Ελλάδα. Λαμβάνεις μήνυμα, βάζεις τον κωδικό, παίρνεις το δέμα.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="garage" id="preorder">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Limited edition · Coming soon</div>
+      <h2>Κράτα το δικό σου.</h2>
+      <p>Διάλεξε μέγεθος ή σχέδιο και πάτα «Κράτησέ το». Φτιάχνουμε έτοιμο μήνυμα για DM, ώστε ο Κωνσταντίνος να ξέρει πόσα κομμάτια να τυπώσει πριν ανοίξει η παραγωγή. Δεν πληρώνεις τίποτα τώρα.</p>
+    </div>
+    <div class="shop" id="shop"></div>
+    <div class="order" id="mylist" style="margin-top:22px">
+      <h4>Οι κρατήσεις μου</h4>
+      <div class="preorder-list" id="poList"></div>
+      <div class="dm-preview" id="poDm"></div>
+      <div class="btns" style="margin-top:0">
+        <button class="btn hot" type="button" id="poCopy">Αντιγραφή μηνύματος</button>
+        <a class="btn" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">Άνοιγμα DM</a>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= GUIDE ================= -->
+<div class="page" id="p-guide">
+<div class="page-hero"><div class="wrap">
+  <div class="eyebrow"><span class="tri"></span>Ξέρε το αυτοκίνητό σου</div>
+  <h1>Οδηγοί.</h1>
+  <p>Τι να προσέξεις σε κάθε μοντέλο, από πού να ξεκινήσεις τις μετατροπές, πού να πας για cruise και ποια συνεργεία προτείνει η κοινότητα.</p>
+  <nav class="subnav"><a href="#models">Μοντέλα</a><a href="#routes">Διαδρομές</a><a href="#shops">Συνεργεία</a></nav>
+</div></div>
+
+<section id="models">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Οδηγοί μοντέλων</div>
+      <h2>Πριν αγοράσεις. Πριν πειράξεις.</h2>
+      <p>Γενικές συμβουλές από την κοινότητα. Πριν από κάθε αγορά, πήγαινε το αυτοκίνητο για έλεγχο σε μηχανικό που ξέρει ιταλικά.</p>
+    </div>
+    <div class="guide" id="guideList"></div>
+  </div>
+</section>
+
+<section class="garage" id="routes">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Cruise routes</div>
+      <h2>Πού πάμε βόλτα.</h2>
+      <p>Οι αγαπημένες διαδρομές της παρέας γύρω από την Αθήνα. Οι αποστάσεις είναι περίπου, από το Σύνταγμα. Οδηγούμε με τον Κ.Ο.Κ., όπως πάντα.</p>
+    </div>
+    <div class="routes" id="routeList"></div>
+  </div>
+</section>
+
+<section id="shops">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Συνεργεία της κοινότητας</div>
+      <h2>Εκεί που εμπιστευόμαστε.</h2>
+      <p>Η λίστα χτίζεται από τα μέλη. Πρότεινε το συνεργείο που σε έχει εξυπηρετήσει. Στόχος μας είναι έκπτωση για όσους έχουν κάρτα μέλους.</p>
+    </div>
+    <div class="vote-layout">
+      <div class="shops-list" id="shopList"></div>
+      <div class="dropzone">
+        <h4>Πρότεινε συνεργείο</h4>
+        <label class="sr" for="shName">Όνομα</label><input class="field" id="shName" placeholder="Όνομα συνεργείου">
+        <div class="row">
+          <label class="sr" for="shArea">Περιοχή</label><input class="field" id="shArea" placeholder="Περιοχή">
+          <label class="sr" for="shType">Ειδικότητα</label><select class="field" id="shType"><option>Μηχανικός</option><option>Ηλεκτρολόγος</option><option>Φανοποιός</option><option>Ελαστικά</option><option>Tuning / remap</option><option>Detailing</option></select>
+        </div>
+        <label class="sr" for="shWhy">Γιατί το προτείνεις</label><input class="field" id="shWhy" placeholder="Γιατί το προτείνεις (μία φράση)">
+        <button class="btn green" type="button" id="shAdd">Πρόσθεσε στη λίστα</button>
+        <div class="okmsg" id="shMsg"></div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= PLAY ================= -->
+<div class="page" id="p-play">
+<div class="page-hero"><div class="wrap">
+  <div class="eyebrow"><span class="tri"></span>Για να περνάμε καλά</div>
+  <h1>Παιχνίδια.</h1>
+  <p>Κυνήγα αυτοκόλλητα στον δρόμο, φτιάξε την κάρτα μέλους σου και δες πόσα ξέρεις για τα ιταλικά.</p>
+  <nav class="subnav"><a href="#spot">Spot the Sticker</a><a href="#card">Κάρτα μέλους</a><a href="#quiz">Quiz</a></nav>
+</div></div>
+
+<section id="spot">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Spot the Sticker</div>
+      <h2>Το είδες; Φωτογράφισέ το.</h2>
+      <p>Είδες το αυτοκόλλητο ABARTH_CLUB_GR σε αυτοκίνητο στον δρόμο; Βγάλε φωτογραφία και ανέβασέ τη. Όποιος εντοπίσει τα περισσότερα μέσα στον μήνα κερδίζει merch.</p>
+    </div>
+    <div class="vote-layout">
+      <div>
+        <div class="album" id="spotGrid"></div>
+      </div>
+      <div style="display:grid;gap:16px">
+        <div class="board">
+          <h3>Κυνηγοί <small>Οκτώβριος</small></h3>
+          <div class="spot-board" id="spotBoard"></div>
+        </div>
+        <div class="dropzone">
+          <h4>Ανέβασε εντοπισμό</h4>
+          <div class="row">
+            <label class="sr" for="spWho">Instagram</label><input class="field" id="spWho" placeholder="@το_instagram_σου">
+            <label class="sr" for="spWhere">Πού</label><input class="field" id="spWhere" placeholder="Πού το είδες">
+          </div>
+          <p class="note photo-rules"><b>Κανόνες φωτογραφίας:</b> μόνο αυτοκίνητα, χωρίς πρόσωπα, και η πινακίδα να μη φαίνεται. Θα σου ζητήσουμε να τη θολώσεις πριν ανέβει.</p>
+          <label class="file" for="spFile">Φωτογραφία</label>
+          <input class="hidden-file" type="file" id="spFile" accept="image/*">
+          <div class="okmsg" id="spMsg"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="garage" id="card">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Κάρτα μέλους</div>
+      <h2>Η κάρτα σου.</h2>
+      <p>Γράψε το όνομά σου και το αυτοκίνητό σου και η κάρτα φτιάχνεται μόνη της. Κράτα τη με screenshot. Σύντομα θα δίνει εκπτώσεις στους συνεργάτες μας.</p>
+    </div>
+    <div class="play-grid">
+      <canvas id="cardCanvas" width="1000" height="620" aria-label="Προεπισκόπηση κάρτας μέλους"></canvas>
+      <div class="order">
+        <h4>Στοιχεία κάρτας</h4>
+        <div class="row"><label for="cName">Όνομα</label><input class="field" id="cName" placeholder="Κωνσταντίνος" maxlength="22"></div>
+        <div class="row"><label for="cIg">Instagram</label><input class="field" id="cIg" placeholder="@abarth_club_gr" maxlength="24"></div>
+        <div class="row"><label for="cCar">Αυτοκίνητο</label><input class="field" id="cCar" placeholder="Grande Punto Abarth" maxlength="26"></div>
+        <div class="row"><label for="cBrand">Μάρκα</label><select class="field" id="cBrand"><option>Abarth</option><option>Fiat</option><option>Alfa Romeo</option><option>Lancia</option></select></div>
+        <p class="note">Ο αριθμός μέλους είναι προσωρινός. Ο οριστικός δίνεται από το club όταν γραφτείς.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quiz">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Quiz</div>
+      <h2>Πόσο ιταλός είσαι;</h2>
+    </div>
+    <div class="play-grid">
+      <div class="quiz" id="quizPersona"></div>
+      <div class="quiz" id="quizTrivia"></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- ================= CLUB ================= -->
+<div class="page" id="p-club">
+<div class="page-hero"><div class="wrap">
+  <div class="eyebrow"><span class="tri"></span>More than a club</div>
+  <h1>Το Club.</h1>
+  <p>Ποιοι είμαστε, πώς ξεκινήσαμε, ποιοι μας στηρίζουν και πώς μπαίνεις στην παρέα.</p>
+  <nav class="subnav"><a href="#story">Η ιστορία</a><a href="#partners">Συνεργάτες</a><a href="#join">Γίνε μέλος</a><a href="#faq">Ερωτήσεις</a></nav>
+</div></div>
+
+<section id="story">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Η διαδρομή μας</div>
+      <h2>Από το μηδέν στα 50+ αυτοκίνητα.</h2>
+      <p>Ένα club που ξεκίνησε από ένα προφίλ στο Instagram και έγινε παρέα σε λιγότερο από δύο μήνες.</p>
+    </div>
+    <button class="story-banner" data-lb="img/banner.jpg"><img src="img/banner.jpg" alt="Abarth Club GR, Passion unites us: τρία Abarth 595 μπροστά στην Ακρόπολη" loading="lazy"></button>
+    <div class="tl">
+      <div class="tl-item done"><div class="tl-dot"></div><div class="tl-date">Αύγ 2026</div><div class="tl-body"><h3>Γεννιέται το Abarth Club GR</h3><p>Πρώτο post: «Καλώς ήρθατε στην παρέα του Abarth Athens!». Λίγες μέρες μετά, η ομάδα σε μία φωτογραφία: Punto, 595 και MiTo.</p></div></div>
+      <div class="tl-item done"><div class="tl-dot"></div><div class="tl-date">12 Σεπ</div><div class="tl-body"><h3>400 followers</h3><p>Σε λιγότερο από δύο μήνες. Οι ομαδικές σε Instagram και Telegram ξεπερνούν τα 250 άτομα η καθεμία.</p><button class="tl-thumb" data-lb="img/poster-400.jpg"><img src="img/poster-400.jpg" alt="Αφίσα 400 followers" loading="lazy"></button></div></div>
+      <div class="tl-item done"><div class="tl-dot"></div><div class="tl-date">19 Σεπ</div><div class="tl-body"><h3>Το πρώτο car meet</h3><p>Roisters 3 στις 21:30, cruise προς Λαύριο στις 23:00. Πάνω από 50 αυτοκίνητα. Περίπου 20 αυτοκόλλητα πουλήθηκαν επιτόπου.</p></div></div>
+      <div class="tl-item now"><div class="tl-dot"></div><div class="tl-date">Σεπ–Οκτ</div><div class="tl-body"><h3>Online παραγγελίες και νέο merch</h3><p>Τα αυτοκόλλητα φεύγουν με BOX NOW σε όλη την Ελλάδα. Μπλούζες, lanyard και μπρελόκ σε προπαραγγελία.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">17 Οκτ</div><div class="tl-body"><h3>Only VAG × Abarth Club GR</h3><p>Η πρώτη μας συνεργασία, με μια κοινότητα 4.000 ακολούθων. Βάρκιζα, 20:00.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Επόμενα</div><div class="tl-body"><h3>1.000 followers και πολλά ακόμα</h3><p>Περισσότερα meets, Car of the Week κάθε εβδομάδα, κάρτα μέλους με εκπτώσεις.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="garage" id="partners">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Συνεργάτες</div>
+      <h2>Αυτοί μας στηρίζουν.</h2>
+      <p>Επιχειρήσεις που είναι δίπλα στο club από την αρχή. Στήριξέ τους, στηρίζουν την κοινότητα.</p>
+    </div>
+    <div class="partners">
+      <a class="partner light" href="https://zapnik.gr/" target="_blank" rel="noopener"><img src="img/partner-zapnik.jpg" alt="Λογότυπο ΖΑΠ-ΝΙΚ, Επιγραφές παντός τύπου"><div><b>ΖΑΠ-ΝΙΚ</b><span>Επιγραφές παντός τύπου</span><span class="visit">zapnik.gr ›</span></div></a>
+      <div class="partner"><img src="img/partner-hugas.jpg" alt="Λογότυπο HUGAS"><div><b>HUGAS</b><span>Συνεργάτης του club</span></div></div>
+      <a class="partner cta" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener"><div class="plus" aria-hidden="true">+</div><div><b>Η επιχείρησή σου εδώ</b><span>Χορηγίες σε meets, merch και posts. Στείλε DM.</span></div></a>
+    </div>
+  </div>
+</section>
+
+<section class="join" id="join">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow" style="color:rgba(255,255,255,.8)"><span class="tri"></span>More than a club</div>
+      <h2>Μπες στην παρέα.</h2>
+      <p class="hand">Good cars. Better people.</p>
+      <p style="margin-top:22px;max-width:52ch;color:rgba(255,255,255,.85)">Κάνε follow, μπες στις ομαδικές και έλα στο επόμενο meet. Η συμμετοχή είναι δωρεάν. Για το link των ομαδικών στείλε μας DM.</p>
+    </div>
+    <div class="channels">
+      <a class="channel" href="https://www.instagram.com/abarth_club_gr/" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#fff"/></svg></div>
+        <div><b>@abarth_club_gr</b><span>Το προφίλ μας στο Instagram</span></div><div class="num">460</div>
+      </a>
+      <a class="channel" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></div>
+        <div><b>Ομαδική Instagram</b><span>Ζήτα πρόσκληση με DM</span></div><div class="num">250+</div>
+      </a>
+      <a class="channel" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"/></svg></div>
+        <div><b>Ομαδική Telegram</b><span>Ζήτα το link με DM</span></div><div class="num">250+</div>
+      </a>
+      <div class="channel">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
+        <div><b>Email</b><span class="email-text" id="email">Abarthclubgr@gmail.com</span></div>
+        <button class="copybtn" type="button" id="copy-email">Αντιγραφή</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Ερωτήσεις</div>
+      <h2>Πριν έρθεις.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>Πρέπει να έχω Abarth για να έρθω;</summary><p>Όχι. Το club είναι για όλα τα ιταλικά: Abarth, Fiat, Lancia και Alfa Romeo. Στο meet της 17ης Οκτωβρίου είναι ευπρόσδεκτα και τα γερμανικά, μαζί με το Only VAG Athens.</p></details>
+      <details><summary>Κοστίζει κάτι η συμμετοχή;</summary><p>Τίποτα. Τα meets και οι ομαδικές είναι δωρεάν. Πληρώνεις μόνο το merch, αν το θέλεις.</p></details>
+      <details><summary>Πώς παραγγέλνω merch;</summary><p>Στη σελίδα Merch φτιάχνεις την παραγγελία ή την κράτησή σου, αντιγράφεις το έτοιμο μήνυμα και το στέλνεις με DM στο @abarth_club_gr. Αποστολή με BOX NOW.</p></details>
+      <details><summary>Γιατί δεν αγοράζω απευθείας από το site;</summary><p>Προς το παρόν οι παραγγελίες γίνονται μόνο με προσωπικό μήνυμα. Online πληρωμές θα προστεθούν όταν το club αποκτήσει εταιρική μορφή.</p></details>
+      <details><summary>Πώς μπαίνει το αυτοκίνητό μου στο garage;</summary><p>Ανέβασέ το στο Car of the Week ή στείλε μας φωτογραφία με DM, μαζί με μοντέλο, χρώμα και μετατροπές.</p></details>
+      <details><summary>Τι γίνεται με την οδήγηση στα meets;</summary><p>Τηρούμε τον Κ.Ο.Κ. χωρίς εξαιρέσεις. Όχι κόντρες, όχι burnouts, όχι φασαρία στις γειτονιές. Αφήνουμε τον χώρο όπως τον βρήκαμε, για να μας ξαναδεχτεί.</p></details>
+    </div>
+  </div>
+</section>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo.png" alt="">
+    <div class="foot-mid">
+      <b>ABARTH_CLUB_GR · Athens · Est. 2026</b>
+      <small>Ανεξάρτητη κοινότητα φίλων των ιταλικών αυτοκινήτων. Δεν συνδέεται με την Abarth, τη Fiat, τη Lancia, την Alfa Romeo ή τη Stellantis. Τα σήματα ανήκουν στους κατόχους τους. Ψήφοι, φωτογραφίες και κρατήσεις φτάνουν σε εμάς μόνο με DM στο Instagram. Ό,τι ανεβάζεις εδώ μένει στη δική σου συσκευή.</small>
+    </div>
+    <div class="foot-hand">One Team<br>One Family<br>One Purpose</div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden><button type="button" id="lb-close" aria-label="Κλείσιμο">×</button><img id="lb-img" alt=""></div>
+<div class="modal" id="modal" hidden><div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mTitle"><button class="modal-close" type="button" id="mClose" aria-label="Κλείσιμο">×</button><div class="modal-photos" id="mPhotos"></div><div class="modal-info" id="mInfo"></div></div></div>
+<div class="modal" id="pc" hidden><div class="pc-box" role="dialog" aria-modal="true" aria-labelledby="pcT">
+  <h3 id="pcT">Έλεγχος φωτογραφίας</h3>
+  <p class="note">Σύρε το δάχτυλο (ή το ποντίκι) πάνω από την πινακίδα και θα θολώσει. Κάν’ το όσες φορές χρειάζεται.</p>
+  <div class="pc-canvas"><canvas id="pcCanvas"></canvas></div>
+  <div class="btns" style="margin-top:0"><button class="btn" type="button" id="pcUndo">Αναίρεση</button></div>
+  <label class="chk"><input type="checkbox" id="pc1"> Δείχνει αυτοκίνητο, χωρίς πρόσωπα και χωρίς άσχετο περιεχόμενο.</label>
+  <label class="chk"><input type="checkbox" id="pc2"> Η πινακίδα δεν φαίνεται (τη θόλωσα ή δεν υπάρχει).</label>
+  <div class="btns" style="margin-top:0"><button class="btn hot" type="button" id="pcOk" disabled>Ανέβασμα</button><button class="btn" type="button" id="pcCancel">Ακύρωση</button></div>
+</div></div>
+<div class="cookie" id="cookie" hidden role="dialog" aria-labelledby="ckT">
+  <svg class="ck-ic" id="ckIc" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4a28 28 0 1 0 28 28 9 9 0 0 1-9-9 9 9 0 0 1-9-9 9 9 0 0 1-10-10z" fill="#c98a45"/><circle cx="22" cy="24" r="3.5" fill="#4a2a12"/><circle cx="36" cy="38" r="4" fill="#4a2a12"/><circle cx="20" cy="42" r="3" fill="#4a2a12"/><circle cx="44" cy="26" r="2.5" fill="#4a2a12"/><circle cx="30" cy="52" r="2.5" fill="#4a2a12"/></svg>
+  <div class="ck-txt"><b id="ckT">Biscotti italiani;</b><p>Κρατάμε λίγα «cookies» μόνο στη συσκευή σου, για να θυμόμαστε τις ψήφους, τις κρατήσεις και την κάρτα μέλους σου. Κανένα tracking, καμία διαφήμιση. Μόνο βενζίνη.</p></div>
+  <div class="btns" style="margin-top:0"><button class="btn hot" type="button" id="ckYes">Γκάζι, δέχομαι</button><button class="btn" type="button" id="ckNo">Μόνο τα απαραίτητα</button></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+document.documentElement.lang='el';
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){if(k!=='acg3-cookies'&&store.get('acg3-cookies',null)==='min')return false;try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}};
+const toast=t=>{const el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('show'),2300)};
+const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const hash=s=>{let h=0;for(const c of String(s))h=(h*31+c.charCodeAt(0))|0;return Math.abs(h)};
+function readImage(file,max=900,q=.78){return new Promise((res,rej)=>{const rd=new FileReader();rd.onerror=rej;rd.onload=()=>{const img=new Image();img.onerror=rej;img.onload=()=>{const sc=Math.min(1,max/Math.max(img.width,img.height));const cv=document.createElement('canvas');cv.width=Math.round(img.width*sc);cv.height=Math.round(img.height*sc);cv.getContext('2d').drawImage(img,0,0,cv.width,cv.height);res(cv.toDataURL('image/jpeg',q))};img.src=rd.result};rd.readAsDataURL(file)})}
+function copy(text,el,ok){const sel=()=>{const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);toast('Επιλέχθηκε. Πάτα αντιγραφή.')};
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(()=>toast(ok)).catch(sel)}else sel()}
+
+/* ---------- Router ---------- */
+const pages=['home','meets','cars','merch','guide','play','club'];
+const alias={top:'home',varkiza:'meets',meet1:'meets',album:'meets',cotw:'cars',garage:'cars',members:'cars',family:'cars',sticker:'merch',preorder:'merch',mylist:'merch',models:'guide',routes:'guide',shops:'guide',spot:'play',card:'play',quiz:'play',story:'club',partners:'club',join:'club',faq:'club'};
+let current=null;
+function route(){const h=(location.hash||'#home').slice(1);const p=pages.includes(h)?h:(alias[h]||'home');
+ if(p!==current){$$('.page').forEach(el=>el.classList.toggle('on',el.id==='p-'+p));$$('#navlinks a').forEach(a=>a.setAttribute('aria-current',a.dataset.p===p?'page':'false'));current=p;window.scrollTo(0,0);if(p==='home')armTacho();if(p==='play')drawCard()}
+ if(!pages.includes(h)&&alias[h]){const t=document.getElementById(h);if(t)setTimeout(()=>t.scrollIntoView({behavior:reduce?'auto':'smooth'}),60)}}
+addEventListener('hashchange',route);
+document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();location.hash=a.dataset.go}});
+
+/* ---------- Countdown ---------- */
+const target=new Date('2026-10-17T20:00:00+03:00').getTime();const pad=n=>String(n).padStart(2,'0');
+function tick(){let d=Math.max(0,target-Date.now());const D=Math.floor(d/864e5);d-=D*864e5;const H=Math.floor(d/36e5);d-=H*36e5;const M=Math.floor(d/6e4);d-=M*6e4;const S=Math.floor(d/1e3);
+ const v={d:D,h:pad(H),m:pad(M),s:pad(S)};$$('[data-cd]').forEach(b=>b.textContent=v[b.dataset.cd])}
+tick();setInterval(tick,1000);
+
+/* ---------- Tacho ---------- */
+const ticks=$('#ticks');const cx=200,cy=215,R=160;
+for(let i=0;i<=10;i++){const a=Math.PI-(i/10)*Math.PI;const mk=(n,at)=>{const e=document.createElementNS('http://www.w3.org/2000/svg',n);for(const k in at)e.setAttribute(k,at[k]);ticks.appendChild(e);return e};
+ mk('line',{x1:cx+Math.cos(a)*(R-30),y1:cy-Math.sin(a)*(R-30),x2:cx+Math.cos(a)*(R-44),y2:cy-Math.sin(a)*(R-44),stroke:i>=8?'#e5202e':'#6f6d6a','stroke-width':3});
+ const t=mk('text',{x:cx+Math.cos(a)*(R-60),y:cy-Math.sin(a)*(R-60)+6});t.textContent=i;if(i>=8)t.setAttribute('fill','#e5202e')}
+const FOL=460,GOAL=1000;
+function setNeedle(v){$('#needle').setAttribute('transform',`rotate(${-90+(v/GOAL)*180} 200 215)`);$('#arc').setAttribute('stroke-dasharray',`${v} 1000`);$('#followers').textContent=Math.round(v)}
+setNeedle(FOL);
+function rev(){if(reduce)return;const st=performance.now(),dur=2200;(function f(t){const p=Math.min(1,(t-st)/dur);let v;if(p<.45)v=(p/.45)*GOAL*.93;else{const q=(p-.45)/.55;v=GOAL*.93+(FOL-GOAL*.93)*(1-Math.pow(1-q,3))+Math.sin(q*18)*(1-q)*20}setNeedle(Math.max(0,v));if(p<1)requestAnimationFrame(f);else setNeedle(FOL)})(st)}
+let revved=false;function armTacho(){if(revved)return;revved=true;setTimeout(rev,400)}
+$('.tacho').addEventListener('click',rev);
+
+/* ---------- Car data ---------- */
+const B={A:'Abarth',F:'Fiat',R:'Alfa Romeo',L:'Lancia'};
+const baseCars=[
+ ['delta-integrale','L','Lancia Delta HF Integrale','Κόκκινο','Ο θρύλος του ράλι, σε άψογη κατάσταση',['c-delta-integrale-red']],
+ ['delta-blue','L','Lancia Delta','Μπλε','Λευκές ζάντες rally, μπροστά στη γέφυρα Ρίου–Αντιρρίου',['c-delta-blue-rio']],
+ ['delta-yellow','L','Lancia Delta','Κίτρινο','Ασημί ζάντες, πλήρες body kit',['c-delta-yellow']],
+ ['595-pista-grey','A','Abarth 595 Pista','Γκρι','Scuderia Italia, αεροτομή, μαύρες ζάντες',['c-595-pista-grey','c-595-pista-grey-night']],
+ ['595-pista-white','A','Abarth 595 Pista','Γκρι Campovolo','Μαύρες ζάντες, κόκκινος διαχύτης',['c-595-pista-white']],
+ ['595-blue','A','Abarth 595','Μπλε & μαύρο','Δίχρωμο, πολυακτινωτές ζάντες',['c-595-blue']],
+ ['595-black','A','Abarth 595','Μαύρο','Κόκκινοι καθρέφτες και δαγκάνες',['c-595-black']],
+ ['giulia-red','R','Alfa Romeo Giulia','Κόκκινο','Χαμηλωμένη, ζάντες με γυαλιστερό χείλος',['c-giulia-red']],
+ ['156-gta','R','Alfa Romeo 156 GTA Sportwagon','Μπλε','Ο V6 των 250 PS',['c-156-gta-sw']],
+ ['156-blue','R','Alfa Romeo 156','Μπλε','Ηλιοβασίλεμα στα πεύκα',['c-156-blue']],
+ ['spider','R','Alfa Romeo Spider','Κίτρινο','Ανοιχτό, με τις κλασικές ζάντες Alfa',['c-spider-yellow']],
+ ['mito-red-qv','R','Alfa Romeo MiTo','Κόκκινο','Μαύρες ζάντες, splitter',['c-mito-red-qv']],
+ ['mito-white-night','R','Alfa Romeo MiTo','Λευκό','Νυχτερινή λήψη',['c-mito-white-night']],
+ ['giulietta-tree','R','Alfa Romeo Giulietta','Μαύρο','Κόκκινη γραμμή, κάτω από τα αρμυρίκια',['c-giulietta-black-tree']],
+ ['gp-alitalia','F','Fiat Grande Punto T-Jet','Κόκκινο','Livery Alitalia, ζάντες με χείλος',['c-gp-alitalia']],
+ ['punto-yellow-2','F','Fiat Punto GT','Κίτρινο','Κίτρινες δαγκάνες, αεραγωγοί στο καπό',['c-punto-gt-yellow-2']],
+ ['punto-grey-atk','F','Fiat Punto Evo','Γκρι','Μαύρες ζάντες, splitter',['c-punto-grey-atk']],
+ ['punto-grey-night','F','Fiat Punto','Γκρι','Κίτρινες δαγκάνες, Scuderia Italia',['c-punto-grey-night']],
+ ['punto-silver','F','Fiat Punto','Ασημί','Ιταλική ρίγα στο πλάι',['c-punto-silver']],
+ ['bravo-2','F','Fiat Bravo','Λευκό','Ηλιοροφή, γκρι ζάντες',['c-bravo-white-2']],
+ ['tipo','F','Fiat Tipo','Γκρι','Sedan, πεντακάθαρο',['c-tipo-grey']],
+ ['500x','F','Fiat 500X','Λευκό','Μαύρες ζάντες, ρίγες 500',['c-500x-white']],
+ ['widebody','A','Grande Punto widebody','Λευκό','Φαρδιά φτερά, λευκές ζάντες, LED φανάρια',['c-gpa-widebody-garage','meet-punto-widebody']],
+ ['595-grey','A','Abarth 595','Γκρι','Μαύρες ζάντες, διπλές ρίγες',['c-595-grey-2','car-595-sunset']],
+ ['gpa-stripe','A','Grande Punto Abarth','Μαύρο','Λευκές ζάντες, κόκκινη ρίγα ABARTH',['c-gpa-black-stripe']],
+ ['mito-red','R','Alfa Romeo MiTo','Κόκκινο','Βόλτα στο δάσος',['c-mito-red-forest']],
+ ['giulia','R','Alfa Romeo Giulia','Λευκό','Μαύρη οροφή και καθρέφτες, splitter',['c-giulia-white']],
+ ['gpa-red-village','A','Grande Punto Abarth','Κόκκινο','Side skirts, splitter, κόκκινες δαγκάνες',['c-gpa-red-village']],
+ ['mito-black','R','Alfa Romeo MiTo','Μαύρο','Ασημί καθρέφτες, κόκκινες δαγκάνες',['c-mito-black','c-mito-black-2']],
+ ['159','R','Alfa Romeo 159','Μαύρο','Κόκκινες δαγκάνες, lip spoiler',['c-159-black']],
+ ['147-bridge','R','Alfa Romeo 147','Μαύρο','Νυχτερινή λήψη κάτω από τη γέφυρα',['c-147-black-bridge']],
+ ['gp-orange','F','Fiat Grande Punto','Πορτοκαλί','Μαύρες ζάντες, χαμηλωμένο',['c-gp-orange']],
+ ['evo-night','A','Punto Evo Abarth','Λευκό','Ρίγες και σκορπιός στο καπό',['c-evo-white-night']],
+ ['mito-grey','R','Alfa Romeo MiTo','Γκρι','Κίτρινες δαγκάνες, μαύρες ζάντες',['c-mito-grey']],
+ ['gpa-wash','A','Grande Punto Abarth','Κόκκινο','Φρεσκοπλυμένο',['c-gpa-red-wash']],
+ ['gpa-white','A','Grande Punto Abarth','Λευκό','Κόκκινοι καθρέφτες, ρίγα ABARTH',['c-gpa-white']],
+ ['giulietta-black','R','Alfa Romeo Giulietta','Μαύρο','Μαύρες ζάντες, κόκκινη γραμμή',['c-giulietta-black']],
+ ['punto-blue','F','Fiat Punto GT Turbo','Μπλε','Αεροτομή, μεγάλη εξάτμιση',['c-punto-gt-blue']],
+ ['gp-red','F','Fiat Grande Punto T-Jet','Κόκκινο','Μαύρες ζάντες, κόκκινες δαγκάνες',['c-gp-red']],
+ ['mito-white','R','Alfa Romeo MiTo','Λευκό','Με θέα τα χιονισμένα βουνά',['c-mito-white']],
+ ['bravo','F','Fiat Bravo','Λευκό','Μαύρες ζάντες, μαύρη οροφή',['c-bravo-white']],
+ ['147-red','R','Alfa Romeo 147','Κόκκινο','Κλασικές ζάντες Alfa',['c-147-red']],
+ ['giulietta-grey','R','Alfa Romeo Giulietta','Γκρι','Κόκκινη γραμμή στον προφυλακτήρα',['c-giulietta-grey']],
+ ['gp-graffiti','F','Fiat Grande Punto','Μαύρο','Μαύρες ζάντες, κόκκινες δαγκάνες',['c-gp-black-graffiti']],
+ ['gp-mykonos','F','Fiat Grande Punto','Λευκό','Χαμηλωμένο, μπρονζέ ζάντες',['c-gp-white-mykonos']],
+ ['gp-nke','F','Fiat Grande Punto','Λευκό','Μαύρη οροφή, φιμέ φανάρια',['c-gp-white-nke']],
+ ['147-rear','R','Alfa Romeo 147','Μαύρο','Αεροτομή, εξάτμιση σε αλλαγή',['c-147-black-rear']],
+ ['punto-yellow','F','Fiat Punto GT','Κίτρινο','Το κλασικό Punto GT',['c-punto-gt-yellow']],
+ ['punto-red','F','Fiat Punto','Κόκκινο','Μαύρο καπό, body kit',['c-punto-red-forest']],
+ ['gp-beach','F','Fiat Grande Punto','Μαύρο','Splitter μπροστά',['c-gp-black-beach']],
+ ['mito-silver','R','Alfa Romeo MiTo','Ασημί','Βροχερό βράδυ στην πόλη',['c-mito-silver']],
+ ['evo-rear','F','Fiat Punto Evo','Λευκό','Διπλή εξάτμιση',['c-evo-white-rear']],
+ ['gp-grey','F','Fiat Grande Punto','Γκρι','Project car σε εξέλιξη',['c-gp-grey']],
+ ['alfa-duo','R','Giulietta & 147','Ασημί & μαύρο','Φθινοπωρινό duo',['c-giulietta-147-duo']],
+ ['fiat-duo','F','Grande Punto & Punto','Μαύρο & ασημί','Νυχτερινό duo',['c-fiat-duo-night']],
+ ['595-yellow','A','Abarth 595','Κίτρινο','Στη σειρά του πρώτου meet',['meet-595-row']],
+ ['595-duo','A','Abarth 595 Competizione','Λευκό & γκρι','Διπλό',['meet-595-duo']],
+ ['gpa-meet','A','Grande Punto Abarth','Λευκό','Κόκκινες δαγκάνες',['meet-punto-white']],
+ ['mito-meet','R','Alfa Romeo MiTo','Rosso Alfa','Στο πρώτο meet',['meet-mito-red']],
+ ['giulietta-white','R','Alfa Romeo Giulietta','Λευκό','Αράχωβα',['car-giulietta']],
+ ['gp-silver','A','Grande Punto Abarth','Ασημί','Μαύρες ζάντες',['car-punto-grey']],
+ ['panda','F','Fiat Panda 100HP','Κόκκινο','Ο αουτσάιντερ',['meet-panda']]
+].map(([id,b,model,color,note,ph])=>({id,brand:B[b],model,color,note,photos:ph.map(p=>'img/'+p+'.jpg'),seed:4+hash(id)%38}));
+let cars=baseCars.concat(store.get('acg3-mycars',[]));
+let voted=store.get('acg3-voted',{});
+const num=c=>String(cars.indexOf(c)+1).padStart(2,'0');
+const myVotes=()=>cars.filter(c=>voted[c.id]);
+const heart='<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.5 1.1 4.4 2.5.9-1.4 2.3-2.5 4.4-2.5 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>';
+function toggleVote(id){const c=cars.find(x=>x.id===id);if(!c)return;if(voted[id]){delete voted[id];toast('Βγήκε από τις ψήφους σου')}else{if(myVotes().length>=3){toast('Έχεις ήδη 3 ψήφους. Βγάλε μία πρώτα.');return}voted[id]=1;toast('Νο '+num(c)+' στις ψήφους σου 🔥')}store.set('acg3-voted',voted);renderCars()}
+
+/* ---------- Car of the week ---------- */
+let idx=0;
+function renderCotw(){
+ $('#slides').innerHTML=cars.map(c=>`<div class="slide"><img src="${c.photos[0]}" alt="${esc(c.model)}" loading="lazy"><span class="rank-pill">Νο ${num(c)}</span><div class="slide-info"><div><h3>${esc(c.model)}</h3><p>${esc(c.color)}${c.owner?' · '+esc(c.owner):''}</p></div><button class="vote-btn ${voted[c.id]?'voted':''}" data-vote="${c.id}" aria-pressed="${!!voted[c.id]}">${heart}<span>${voted[c.id]?'Ψηφίστηκε':'Ψήφισε'}</span></button></div></div>`).join('');
+ $('#strip').innerHTML=cars.map((c,i)=>`<button data-i="${i}" aria-label="Νο ${num(c)} ${esc(c.model)}" aria-current="${i===idx}"><img src="${c.photos[0]}" alt="" loading="lazy"></button>`).join('');
+ const mine=myVotes();
+ $('#board').innerHTML=mine.length?mine.map(c=>`<li data-id="${c.id}"><span class="pos">${num(c)}</span><img src="${c.photos[0]}" alt=""><span class="nm">${esc(c.model)}<small>${esc(c.color)}</small></span><button class="rm-vote" type="button" data-vote="${c.id}" aria-label="Αφαίρεση">×</button></li>`).join(''):'<p class="note">Πάτα «Ψήφισε» στα αυτοκίνητα που σου αρέσουν. Έως 3 ψήφοι την εβδομάδα.</p>';
+ $('#voteDm').textContent=mine.length?`Ψηφίζω για Car of the Week: ${mine.map(c=>'Νο '+num(c)+' ('+c.model+')').join(', ')} 🔥`:'Το μήνυμα με τις ψήφους σου θα εμφανιστεί εδώ.';
+ $('#voteCopy').disabled=!mine.length;
+ go(idx);
+ const F=cars[Math.floor(Date.now()/864e5)%Math.min(cars.length,62)];
+ $('#homeLeader').innerHTML=`<img src="${F.photos[0]}" alt=""><div><small>Αυτοκίνητο της ημέρας · Νο ${num(F)}</small><b>${esc(F.model)}</b><span class="u">${esc(F.color)} · Ο νικητής του Car of the Week ανακοινώνεται κάθε Κυριακή στο Instagram</span></div><span class="btn hot">Ψήφισε</span>`;
+}
+function go(i){idx=(i+cars.length)%cars.length;$('#slides').style.transform=`translateX(-${idx*100}%)`;$$('#strip button').forEach((b,j)=>b.setAttribute('aria-current',j===idx));const cur=$$('#strip button')[idx];if(cur&&current==='cars'){const s=$('#strip');s.scrollTo({left:cur.offsetLeft-s.clientWidth/2+32,behavior:reduce?'auto':'smooth'})}}
+$('#prev').onclick=()=>go(idx-1);$('#nextb').onclick=()=>go(idx+1);
+$('#strip').addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(+b.dataset.i)});
+$('#board').addEventListener('click',e=>{const li=e.target.closest('li');if(li){go(cars.findIndex(c=>c.id===li.dataset.id));$('#carousel').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})}});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-vote]');if(b){e.stopImmediatePropagation();toggleVote(b.dataset.vote);if(!$('#modal').hidden&&b.closest('#mInfo'))openCar(b.dataset.vote)}},true);
+$('#voteCopy').onclick=()=>copy($('#voteDm').textContent,$('#voteDm'),'Αντιγράφηκε. Στείλ’ το με DM.');
+let sx=null;$('#carousel').addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+$('#carousel').addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(idx+(dx<0?1:-1));sx=null});
+$('#up-file').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;
+ try{const data=await checkPhoto(f);if(!data){e.target.value='';return}const c={id:'u'+Date.now(),brand:$('#up-brand').value,model:$('#up-model').value.trim()||'Το αυτοκίνητό μου',color:'Νέα συμμετοχή',note:'Ανέβηκε από μέλος',owner:$('#up-owner').value.trim(),photos:[data],seed:0};
+  const mine=store.get('acg3-mycars',[]);mine.push(c);const ok=store.set('acg3-mycars',mine);cars.push(c);idx=cars.length-1;renderCars();
+  $('#up-msg').textContent='Έτοιμο! Φαίνεται στη δική σου συσκευή. Για να μπει στο επίσημο garage, στείλε τη φωτογραφία με DM στο @abarth_club_gr.';e.target.value=''}catch(err){$('#up-msg').textContent='Δεν διαβάστηκε η φωτογραφία. Δοκίμασε JPG ή PNG.'}});
+
+/* ---------- Garage ---------- */
+let gFilter='Όλα',gQuery='';
+function renderFilters(){const brands=['Όλα','Abarth','Fiat','Alfa Romeo','Lancia'];
+ $('#filters').innerHTML=brands.map(b=>{const n=b==='Όλα'?cars.length:cars.filter(c=>c.brand===b).length;return `<button class="chip-btn" data-f="${b}" aria-pressed="${gFilter===b}">${b}<span class="n">${n}</span></button>`}).join('')+'<label class="sr" for="gSearch">Αναζήτηση</label><input class="field" id="gSearch" placeholder="Αναζήτηση μοντέλου, χρώματος" value="'+esc(gQuery)+'">';
+ $('#gSearch').addEventListener('input',e=>{gQuery=e.target.value;renderGrid()})}
+function renderGrid(){const q=gQuery.trim().toLowerCase();
+ const list=cars.filter(c=>(gFilter==='Όλα'||c.brand===gFilter)&&(!q||(c.model+' '+c.color+' '+c.note+' '+(c.owner||'')).toLowerCase().includes(q)));
+ $('#garageGrid').innerHTML=list.length?list.map(c=>`<button class="gcard b-${c.brand.split(' ')[0]}" data-car="${c.id}"><div class="ph"><img src="${c.photos[0]}" alt="${esc(c.model)}" loading="lazy"><span class="brand-pill">${esc(c.brand)}</span>${c.photos.length>1?`<span class="cnt">${c.photos.length} φωτό</span>`:''}</div><div class="meta"><b>${esc(c.model)}</b><span>${esc(c.color)} · ${esc(c.note)}</span><span class="v">${heart} Νο ${num(c)}</span></div></button>`).join(''):'<p class="note">Κανένα αυτοκίνητο δεν ταιριάζει στην αναζήτηση.</p>';
+ $('#carCount').textContent=cars.length}
+$('#filters').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;gFilter=b.dataset.f;$$('#filters [data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderGrid()});
+function renderCars(){renderCotw();renderFilters();renderGrid()}
+document.addEventListener('click',e=>{const g=e.target.closest('[data-car]');if(g)openCar(g.dataset.car)});
+function openCar(id){const c=cars.find(x=>x.id===id);if(!c)return;
+ $('#mPhotos').innerHTML=c.photos.map(p=>`<img src="${p}" alt="${esc(c.model)}">`).join('');
+ $('#mInfo').innerHTML=`<span class="tag ${c.brand==='Abarth'?'live':'later'}">${esc(c.brand)}</span><h3 id="mTitle">${esc(c.model)}</h3>
+ <dl class="kv"><dt>Χρώμα</dt><dd>${esc(c.color)}</dd><dt>Λεπτομέρειες</dt><dd>${esc(c.note)}</dd><dt>Ιδιοκτήτης</dt><dd>${c.owner?esc(c.owner):'Μέλος της κοινότητας'}</dd><dt>Αριθμός</dt><dd>Νο ${num(c)} στο Car of the Week</dd></dl>
+ <button class="vote-btn ${voted[c.id]?'voted':''}" data-vote="${c.id}" style="justify-self:start">${heart}<span>${voted[c.id]?'Ψηφίστηκε':'Ψήφισε'}</span></button>
+ <p class="note">Είναι δικό σου; Στείλε DM στο <b>@abarth_club_gr</b> για να προστεθεί το @ σου, η περιοχή και οι μετατροπές.</p>`;
+ $('#modal').hidden=false;document.body.style.overflow='hidden';$('#mClose').focus()}
+function closeModal(){$('#modal').hidden=true;document.body.style.overflow=''}
+$('#mClose').onclick=closeModal;$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+document.addEventListener('click',e=>{if(e.target.closest('#mInfo [data-vote]')){const id=e.target.closest('[data-vote]').dataset.vote;setTimeout(()=>{if(!$('#modal').hidden)openCar(id)},0)}});
+
+/* ---------- Meet gallery + album ---------- */
+const gal=[['meet-tikaname.jpg','Τι κάναμε'],['meet-abarth-lineup.jpg','Abarth line-up'],['meet-cruise.jpg','Cruise'],['meet-farma-wide.jpg','50+ αυτοκίνητα'],['meet-farma.jpg','Φάρμα Ρέρρα'],['meet-595-row.jpg','595 line-up'],['meet-palms.jpg','Grande Punto squad'],['meet-mito-red.jpg','MiTo'],['meet-punto-orange.jpg','Punto'],['meet-mito-crew.jpg','Alfa crew'],['meet-punto-widebody.jpg','Widebody'],['meet-595-duo.jpg','Competizione'],['meet-lavrio-row.jpg','Λαύριο'],['meet-panda.jpg','Panda 100HP'],['meet-mito-black.jpg','Black MiTos'],['meet-punto-white.jpg','Grande Punto Abarth'],['meet-punto-row.jpg','Palm row']];
+$('#gal').innerHTML=gal.map(([f,c])=>`<button data-lb="img/${f}"><img src="img/${f}" alt="${c}" loading="lazy"><span class="cap">${c}</span></button>`).join('');
+let album=store.get('acg3-album',[]);
+function renderAlbum(){const seed=['meet-mito-crew','meet-palms','meet-lavrio-row','meet-mito-black'].map(f=>({src:'img/'+f+'.jpg',who:'@abarth_club_gr',meet:'Car meet #1 · 19/09'}));
+ $('#albumGrid').innerHTML=album.concat(seed).map(a=>`<button data-lb="${a.src}"><img src="${a.src}" alt="Φωτογραφία από ${esc(a.meet)}" loading="lazy"><span class="who">${esc(a.who)}</span></button>`).join('')}
+async function addAlbum(files){const who=$('#albumWho').value.trim()||'μέλος';let n=0;
+ for(const f of files){if(!f.type.startsWith('image/'))continue;try{const src=await checkPhoto(f);if(src){album.unshift({src,who,meet:$('#albumMeet').value});n++}}catch(e){}}
+ const ok=store.set('acg3-album',album.slice(0,24));renderAlbum();$('#albumMsg').textContent=n?`Ανέβηκαν ${n} φωτογραφίες στη συσκευή σου. Στείλ’ τες και με DM για το επίσημο album.`:'Δεν ανέβηκε καμία φωτογραφία.'}
+$('#albumFile').addEventListener('change',e=>{addAlbum([...e.target.files]);e.target.value=''});
+const dz=$('#albumDrop');['dragenter','dragover'].forEach(t=>dz.addEventListener(t,e=>{e.preventDefault();dz.classList.add('drag')}));
+['dragleave','drop'].forEach(t=>dz.addEventListener(t,e=>{e.preventDefault();dz.classList.remove('drag')}));dz.addEventListener('drop',e=>addAlbum([...e.dataTransfer.files]));
+renderAlbum();
+
+/* ---------- RSVP + calendar ---------- */
+$('#calBtn').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Only VAG Athens × Abarth Club GR · Car meet')+'&dates=20261017T170000Z/20261017T210000Z&location='+encodeURIComponent('Parking μετά το Varkiza Resort, Βάρκιζα')+'&details='+encodeURIComponent('Γερμανικά και ιταλικά αυτοκίνητα. Τηρούμε τον Κ.Ο.Κ. instagram.com/abarth_club_gr');
+let rsvp=store.get('acg3-rsvp',null);
+function renderRsvp(){const b=$('#rsvpBtn');b.textContent=rsvp?'✓ Έρχεσαι!':'Έρχομαι';b.classList.toggle('going',!!rsvp);b.classList.toggle('hot',!rsvp);$('#rsvpCar').hidden=!rsvp;
+ if(rsvp){$('#rsvpModel').value=rsvp.car||'';$('#rsvpNote').innerHTML='Τα λέμε στη Βάρκιζα! Βάλε το meet στο ημερολόγιό σου και πες το στην παρέα σου. <b>Η συνολική καταμέτρηση για όλους ενεργοποιείται στην έκδοση με δικό της server.</b>'}
+ else $('#rsvpNote').textContent='Πάτα «Έρχομαι» για να κρατήσεις τη θέση σου και να μπει το meet στο ημερολόγιό σου.'}
+$('#rsvpBtn').onclick=()=>{rsvp=rsvp?null:{car:''};store.set('acg3-rsvp',rsvp);renderRsvp();toast(rsvp?'Δήλωσες ότι έρχεσαι 🔥':'Η δήλωση ακυρώθηκε')};
+$('#rsvpModel').addEventListener('change',e=>{if(rsvp){rsvp.car=e.target.value.trim();store.set('acg3-rsvp',rsvp);toast('Αποθηκεύτηκε')}});
+renderRsvp();
+
+/* ---------- Lightbox ---------- */
+document.addEventListener('click',e=>{const b=e.target.closest('[data-lb]');if(!b)return;$('#lb-img').src=b.dataset.lb;$('#lb').hidden=false});
+$('#lb').addEventListener('click',e=>{if(e.target.id!=='lb-img')$('#lb').hidden=true});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#lb').hidden=true;closeModal()}});
+
+/* ---------- Sticker order ---------- */
+$('#st-thumbs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$('#st-main').src=b.dataset.src;$$('#st-thumbs button').forEach(x=>x.setAttribute('aria-pressed',x===b))});
+let q=2;function upd(){$('#q-val').textContent=q;$('#o-total').textContent=(q*2)+'€';const city=$('#o-city').value.trim();
+ $('#dm').textContent=`Γεια σας! Θα ήθελα ${q} ${q===1?'αυτοκόλλητο':'αυτοκόλλητα'} ABARTH_CLUB_GR (${q*2}€ + BOX NOW)${city?` με αποστολή σε locker στην περιοχή ${city}`:''}. 🇮🇹🔥`}
+$('#q-minus').onclick=()=>{q=Math.max(1,q-1);upd()};$('#q-plus').onclick=()=>{q=Math.min(50,q+1);upd()};$('#o-city').addEventListener('input',upd);upd();
+$('#copy-dm').onclick=()=>copy($('#dm').textContent,$('#dm'),'Αντιγράφηκε. Στείλ’ το με DM.');
+
+/* ---------- Preorders ---------- */
+const products=[
+ {id:'tee',name:'T-shirt ABARTH CLUB GR',desc:'Μαύρο βαμβακερό. Μπροστά το λογότυπο, πίσω τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Σημαιάκι στο μανίκι και σκορπιός στο κάτω μέρος.',imgs:['m-tee-mockup','m-tee-poster','m-tee-poster2'],opts:['S','M','L','XL','XXL'],optLabel:'Μέγεθος'},
+ {id:'lanyard',name:'Lanyard ABARTH_CLUB_GR',desc:'Κορδόνι λαιμού με το σήμα Athens Est. 2026, ιταλικές ρίγες και αποσπώμενο κούμπωμα για κλειδιά.',imgs:['m-lanyard-set','m-lanyard-white'],opts:['Lanyard','Lanyard + strap'],optLabel:'Επιλογή'},
+ {id:'strap',name:'Key strap',desc:'Ιμάντας κλειδιών με γάντζο και κρίκο. ABARTH_CLUB_GR με τα χρώματα της σημαίας.',imgs:['m-strap'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'},
+ {id:'keys',name:'Μπρελόκ μάρκας',desc:'Μαύρο δέρμα, μεταλλικό πλαίσιο, το σήμα της μάρκας σου και η τρίχρωμη ρίγα. Drive · Share · Belong.',imgs:['merch-keychains'],opts:['Abarth','Fiat','Lancia','Alfa Romeo'],optLabel:'Μάρκα'}];
+const pick={};let po=store.get('acg3-preorders',[]);
+$('#shop').innerHTML=products.map(p=>{pick[p.id]=p.opts[0];return `<article class="prod" data-prod="${p.id}"><div class="pimg"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}" data-main loading="lazy"><span class="tag next">Coming soon</span></div>
+ ${p.imgs.length>1?`<div class="pthumbs">${p.imgs.map((m,i)=>`<button type="button" data-img="img/${m}.jpg" aria-pressed="${i===0}"><img src="img/${m}.jpg" alt=""></button>`).join('')}</div>`:''}
+ <div class="pbody"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="price-line">Τιμή σύντομα<small>ανακοινώνεται στο Instagram</small></div>
+ <div><div class="note" style="margin-bottom:6px">${p.optLabel}</div><div class="sizes">${p.opts.map((o,i)=>`<button type="button" data-opt="${esc(o)}" aria-pressed="${i===0}">${esc(o)}</button>`).join('')}</div></div>
+ <button class="btn hot" type="button" data-reserve="${p.id}">Κράτησέ το</button></div></article>`}).join('');
+$('#shop').addEventListener('click',e=>{const art=e.target.closest('[data-prod]');if(!art)return;const id=art.dataset.prod;
+ const t=e.target.closest('[data-img]');if(t){art.querySelector('[data-main]').src=t.dataset.img;art.querySelectorAll('[data-img]').forEach(x=>x.setAttribute('aria-pressed',x===t));art.querySelector('[data-main]').parentElement.dataset.lb=t.dataset.img;return}
+ const o=e.target.closest('[data-opt]');if(o){pick[id]=o.dataset.opt;art.querySelectorAll('[data-opt]').forEach(x=>x.setAttribute('aria-pressed',x===o));return}
+ if(e.target.closest('[data-reserve]')){const p=products.find(x=>x.id===id);const ex=po.find(x=>x.id===id&&x.opt===pick[id]);if(ex)ex.qty++;else po.push({id,name:p.name,opt:pick[id],qty:1});store.set('acg3-preorders',po);renderPo();toast('Κρατήθηκε: '+p.name+' · '+pick[id])}});
+function renderPo(){$('#poList').innerHTML=po.length?po.map((x,i)=>`<div><span>${x.qty} × ${esc(x.name)} · ${esc(x.opt)}</span><button type="button" data-rm="${i}">Αφαίρεση</button></div>`).join(''):'<p class="note">Δεν έχεις κρατήσει κάτι ακόμα. Διάλεξε από πάνω.</p>';
+ $('#poDm').textContent=po.length?'Γεια σας! Θέλω να κρατήσω από το νέο merch:\n'+po.map(x=>`• ${x.qty} × ${x.name} (${x.opt})`).join('\n')+'\nΕνημερώστε με για τιμή και διαθεσιμότητα. 🇮🇹':'Το μήνυμα θα εμφανιστεί εδώ μόλις κρατήσεις κάτι.';$('#poCopy').disabled=!po.length}
+$('#poList').addEventListener('click',e=>{const b=e.target.closest('[data-rm]');if(!b)return;po.splice(+b.dataset.rm,1);store.set('acg3-preorders',po);renderPo()});
+$('#poCopy').onclick=()=>copy($('#poDm').textContent,$('#poDm'),'Αντιγράφηκε. Στείλ’ το με DM.');
+renderPo();
+
+/* ---------- Guides ---------- */
+const guides=[
+ ['Abarth 595 / 695','1.4 T-Jet turbo',['Βενζινοκινητήρας 1.4 T-Jet με turbo','Από περίπου 135 έως 180 PS ανάλογα την έκδοση','Κάποιες εκδόσεις με αυτόματο κιβώτιο MTA'],['Ιστορικό σέρβις και αλλαγές λαδιών στην ώρα τους','Διαρροές σε σωληνώσεις turbo και intercooler','Θόρυβοι από βάσεις αμορτισέρ και ανάρτηση','Συμπλέκτης, ειδικά αν έχει γίνει remap','Αν είναι MTA, δοκίμασε τις αλλαγές σε κίνηση'],['Καλά λάστιχα πριν από οτιδήποτε άλλο','Τακάκια και υγρά φρένων','Εξάτμιση με λογικό θόρυβο και νόμιμη για ΚΤΕΟ','Remap μόνο από έμπειρο και με υγιή μηχανή']],
+ ['Grande Punto Abarth / Punto Evo Abarth','T-Jet και MultiAir',['Grande Punto Abarth: 1.4 T-Jet 155 PS (esseesse 180 PS)','Punto Evo Abarth: 1.4 MultiAir turbo 165 PS'],['Κατάσταση turbo και σωληνώσεων','Στο Evo, τη μονάδα MultiAir (ρελαντί, ανεβάσματα)','Συμπλέκτης και βολάν','Φρένα και ανάρτηση, αν έχει οδηγηθεί σε πίστα'],['Λάστιχα και φρένα','Service με σωστές προδιαγραφές λαδιού','Εισαγωγή αέρα και εξάτμιση με μέτρο']],
+ ['Fiat Grande Punto','Το πιο πολυπληθές του garage',['Βενζίνη 1.2, 1.4 8v/16v, 1.4 T-Jet','Diesel 1.3 και 1.9 Multijet'],['Ηλεκτρικό τιμόνι (μοτέρ στην κολόνα)','Στα diesel, EGR και φίλτρο σωματιδίων','Ηλεκτρικά μικροπροβλήματα και φώτα ταμπλό','Σκουριά κάτω από το αυτοκίνητο στα παλιά'],['Ζάντες και λάστιχα στη σωστή διάσταση','Φιμέ φανάρια και μαύρη οροφή μόνο νόμιμα','Χαμήλωμα με σωστά αμορτισέρ, όχι κομμένα ελατήρια']],
+ ['Alfa Romeo MiTo','Cuore sportivo σε μικρό μέγεθος',['1.4 ατμοσφαιρικό, 1.4 TB και 1.4 MultiAir','QV με 170 PS','Κάποια με κιβώτιο διπλού συμπλέκτη TCT'],['Μονάδα MultiAir (κοιτάμε ρελαντί και ανεβάσματα)','Κιβώτιο TCT: ομαλές αλλαγές σε χαμηλές ταχύτητες','Διακόπτης DNA να δουλεύει σε όλες τις θέσεις','Ιστορικό σέρβις'],['Λάστιχα και φρένα','Βαμμένες δαγκάνες και ζάντες','Service στο MultiAir με το σωστό λάδι']],
+ ['Alfa Romeo Giulietta','Το hatch με το μεγάλο «V»',['1.4 TB και MultiAir, 1750 TBi','Diesel 1.6 και 2.0 JTDm','Κάποιες με TCT'],['MultiAir και TCT όπως στο MiTo','Στα diesel, ιμάντας χρονισμού στην ώρα του','Φθορές σε ανάρτηση και σινεμπλόκ'],['Splitter και λεπτομέρειες σε κόκκινο','Ζάντες Alfa','Remap μόνο με υγιή μηχανή']],
+ ['Alfa Romeo 147','Κλασική πια',['1.6 και 2.0 Twin Spark','Diesel 1.9 JTD','GTA με 3.2 V6 250 PS'],['Ιμάντας χρονισμού και variator στα Twin Spark','Κατανάλωση λαδιού','Selespeed (αν έχει): έλεγχος αντλίας και αλλαγών','Ψαλίδια μπροστινής ανάρτησης'],['Ανανέωση ανάρτησης','Εξάτμιση με ωραίο ήχο','Φροντίδα βαφής και πλαστικών']],
+ ['Alfa Romeo 159','Η sedan της παρέας',['1750 TBi, 2.2 και 3.2 JTS','Diesel 1.9 και 2.4 JTDm'],['Αλυσίδα χρονισμού στα 2.2 JTS','Ανάρτηση και σινεμπλόκ (βαρύ αυτοκίνητο)','Ηλεκτρικά και αισθητήρες'],['Lip spoiler και ζάντες','Κόκκινες δαγκάνες','Σωστό service πριν από κάθε μετατροπή']],
+ ['Fiat Punto GT (176)','Old school turbo',['1.4 turbo γύρω στους 130 PS','Τα περισσότερα έχουν πια 25+ χρόνια'],['Σκουριά σε μαρσπιέ και πάτωμα','Κατάσταση turbo και διαρροές λαδιού','Αυθεντικά κομμάτια που λείπουν'],['Αναβάθμιση φρένων πρώτα','Ανανέωση λάστιχων και αμορτισέρ','Κράτα τα αυθεντικά κομμάτια']],
+ ['Lancia Delta / Ypsilon','Ο θρύλος του ράλι',['Delta HF 4WD και Integrale: 6 διαδοχικοί τίτλοι κατασκευαστών WRC (1987–1992)','Ypsilon: η πόλη με στιλ'],['Στο Integrale, σκουριά και αυθεντικότητα κομματιών','Ιστορικό και πιστοποίηση αν είναι συλλεκτικό','Στο Ypsilon, ηλεκτρικά και συμπλέκτης'],['Αποκατάσταση πριν από μετατροπή','Φέρ’ το στο meet, θα γίνει χαμός']]
+];
+$('#guideList').innerHTML=guides.map(([t,s,eng,watch,mods],i)=>`<details ${i===0?'open':''}><summary>${esc(t)}<small>${esc(s)}</small></summary><div class="guide-body"><div><h4 class="g">Κινητήρες</h4><ul>${eng.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h4 class="r">Τι να προσέξεις</h4><ul>${watch.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h4 class="y">Πρώτες μετατροπές</h4><ul>${mods.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div></details>`).join('');
+const routes=[['Σούνιο','70','Το κλασικό sunset cruise από την παραλιακή, με τελικό προορισμό τον Ναό του Ποσειδώνα.','Temple+of+Poseidon+Sounion'],['Πάρνηθα','35','Ανάβαση με στροφές και θέα όλη την Αθήνα από ψηλά. Ιδανική για πρωινό Κυριακής.','Mont+Parnes+Casino'],['Λίμνη Μαραθώνα','40','Ήρεμη διαδρομή μέσα από πεύκα μέχρι το φράγμα. Καλή για φωτογραφίες.','Marathon+Dam'],['Λαύριο','60','Η διαδρομή του πρώτου meet: Βάρκιζα, Σαρωνίδα, Λαύριο, δίπλα στη θάλασσα.','Lavrio+Port'],['Αράχωβα','170','Road trip για τον χειμώνα. Βουνό, στροφές και καφές με θέα τον Παρνασσό.','Arachova']];
+const routeSvg='<svg viewBox="0 0 100 100" fill="none" stroke="#fff" stroke-width="4"><path d="M10 90 C30 60 20 40 45 35 S80 30 90 10"/></svg>';
+$('#routeList').innerHTML=routes.map(([n,km,d,dst])=>`<div class="route-card">${routeSvg}<div class="km">~${km}<small>km</small></div><h3>${n}</h3><p>${d}</p><a class="btn" style="justify-self:start" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&origin=Syntagma+Square+Athens&destination=${dst}&travelmode=driving">Διαδρομή στον χάρτη</a></div>`).join('');
+let shops=store.get('acg3-shops',[]);
+function renderShops(){const ex={name:'Το συνεργείο σου',area:'Περιοχή',type:'Ειδικότητα',why:'Εδώ θα εμφανίζονται οι προτάσεις των μελών.',example:true};
+ $('#shopList').innerHTML=(shops.length?shops:[ex]).map(s=>`<div class="shop-card">${s.example?'<span class="ex">Παράδειγμα</span>':''}<b>${esc(s.name)}</b><span>${esc(s.type)} · ${esc(s.area)}</span><span>${esc(s.why)}</span></div>`).join('')}
+$('#shAdd').onclick=()=>{const name=$('#shName').value.trim();if(!name){$('#shMsg').textContent='Γράψε το όνομα του συνεργείου.';return}
+ shops.unshift({name,area:$('#shArea').value.trim()||'—',type:$('#shType').value,why:$('#shWhy').value.trim()||'Προτείνεται από μέλος'});store.set('acg3-shops',shops);renderShops();['#shName','#shArea','#shWhy'].forEach(s=>$(s).value='');$('#shMsg').textContent='Προστέθηκε. Ευχαριστούμε!'};
+renderShops();
+
+/* ---------- Spot the sticker ---------- */
+let spots=store.get('acg3-spots',[]);
+const seedSpots=[{src:'img/sticker-595.jpg',who:'@abarth_club_gr',where:'Αθήνα'},{src:'img/sticker-mito.jpg',who:'@abarth_club_gr',where:'Αθήνα'},{src:'img/sticker-spoiler.jpg',who:'@abarth_club_gr',where:'Λαύριο'},{src:'img/sticker-door.jpg',who:'@abarth_club_gr',where:'Βάρκιζα'}];
+function renderSpots(){const all=spots.concat(seedSpots);$('#spotGrid').innerHTML=all.map(s=>`<button data-lb="${s.src}"><img src="${s.src}" alt="Αυτοκόλλητο στον δρόμο, ${esc(s.where)}" loading="lazy"><span class="who">${esc(s.who)} · ${esc(s.where)}</span></button>`).join('');
+ const tally={};all.forEach(s=>tally[s.who]=(tally[s.who]||0)+1);const rows=Object.entries(tally).sort((a,b)=>b[1]-a[1]).slice(0,5);
+ $('#spotBoard').innerHTML=rows.map(([w,n],i)=>`<div><span class="pos">${i+1}</span><span>${esc(w)}</span><b>${n}</b></div>`).join('')}
+$('#spFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const src=await checkPhoto(f);if(!src){e.target.value='';return}spots.unshift({src,who:$('#spWho').value.trim()||'μέλος',where:$('#spWhere').value.trim()||'Ελλάδα'});store.set('acg3-spots',spots.slice(0,20));renderSpots();$('#spMsg').textContent='Καταγράφηκε στη συσκευή σου! Στείλ’ το και με DM για να μετρήσει στον διαγωνισμό.'}catch(err){$('#spMsg').textContent='Δεν διαβάστηκε η φωτογραφία.'}e.target.value=''});
+renderSpots();
+
+/* ---------- Photo check ---------- */
+function checkPhoto(file){return new Promise(async res=>{
+ if(!file||!file.type.startsWith('image/')){toast('Διάλεξε αρχείο φωτογραφίας.');return res(null)}
+ let src;try{src=await readImage(file,1100,.85)}catch(e){toast('Δεν διαβάστηκε η φωτογραφία.');return res(null)}
+ const img=new Image();img.onload=()=>{
+  const cv=$('#pcCanvas'),x=cv.getContext('2d');cv.width=img.width;cv.height=img.height;x.drawImage(img,0,0);
+  const hist=[x.getImageData(0,0,cv.width,cv.height)];let st=null;
+  const pt=e=>{const r=cv.getBoundingClientRect();return[(e.clientX-r.left)*cv.width/r.width,(e.clientY-r.top)*cv.height/r.height]};
+  const redraw=()=>x.putImageData(hist[hist.length-1],0,0);
+  cv.onpointerdown=e=>{st=pt(e);cv.setPointerCapture(e.pointerId)};
+  cv.onpointermove=e=>{if(!st)return;const p=pt(e);redraw();x.strokeStyle='#f6c21a';x.lineWidth=Math.max(3,cv.width/250);x.setLineDash([12,8]);x.strokeRect(st[0],st[1],p[0]-st[0],p[1]-st[1]);x.setLineDash([])};
+  cv.onpointerup=e=>{if(!st)return;const p=pt(e);redraw();let x0=Math.min(st[0],p[0]),y0=Math.min(st[1],p[1]),w=Math.abs(p[0]-st[0]),h=Math.abs(p[1]-st[1]);st=null;
+   if(w<8||h<8){const s=cv.width/9;x0=p[0]-s/2;y0=p[1]-s/4;w=s;h=s/2}
+   x0=Math.max(0,x0);y0=Math.max(0,y0);w=Math.min(cv.width-x0,w);h=Math.min(cv.height-y0,h);
+   const t=document.createElement('canvas');t.width=Math.max(1,w/12);t.height=Math.max(1,h/12);t.getContext('2d').drawImage(cv,x0,y0,w,h,0,0,t.width,t.height);
+   x.save();x.filter='blur(4px)';x.imageSmoothingEnabled=true;x.drawImage(t,0,0,t.width,t.height,x0,y0,w,h);x.restore();
+   hist.push(x.getImageData(0,0,cv.width,cv.height));$('#pc2').checked=true;sync();toast('Θόλωσε ✓')};
+  $('#pcUndo').onclick=()=>{if(hist.length>1){hist.pop();redraw()}};
+  const sync=()=>{$('#pcOk').disabled=!($('#pc1').checked&&$('#pc2').checked)};
+  $('#pc1').checked=false;$('#pc2').checked=false;$('#pc1').onchange=sync;$('#pc2').onchange=sync;sync();
+  const done=v=>{$('#pc').hidden=true;document.body.style.overflow='';cv.onpointerdown=cv.onpointermove=cv.onpointerup=null;res(v)};
+  $('#pcOk').onclick=()=>done(cv.toDataURL('image/jpeg',.8));$('#pcCancel').onclick=()=>done(null);
+  $('#pc').hidden=false;document.body.style.overflow='hidden'};
+ img.src=src})}
+
+/* ---------- Cookies ---------- */
+(function(){const ch=store.get('acg3-cookies',null);if(ch)return;setTimeout(()=>{$('#cookie').hidden=false},900);
+ const close=(v,msg)=>{store.set('acg3-cookies',v);$('#ckIc').classList.add('eaten');setTimeout(()=>{$('#cookie').hidden=true},550);toast(msg)};
+ $('#ckYes').onclick=()=>close('all','Buon appetito! 🍪');$('#ckNo').onclick=()=>close('min','Ok, μόνο τα απαραίτητα. Τίποτα δεν αποθηκεύεται.')})();
+
+/* ---------- Member card ---------- */
+const logo=new Image();logo.src='img/logo.png';logo.onload=()=>drawCard();
+const cardData=store.get('acg3-card',{name:'',ig:'',car:'',brand:'Abarth'});
+['cName','cIg','cCar','cBrand'].forEach(id=>{const k={cName:'name',cIg:'ig',cCar:'car',cBrand:'brand'}[id];$('#'+id).value=cardData[k]||(id==='cBrand'?'Abarth':'');$('#'+id).addEventListener('input',e=>{cardData[k]=e.target.value;store.set('acg3-card',cardData);drawCard()})});
+function drawCard(){const cv=$('#cardCanvas'),x=cv.getContext('2d'),W=cv.width,H=cv.height;
+ const bg=x.createLinearGradient(0,0,W,H);bg.addColorStop(0,'#1a1a1f');bg.addColorStop(1,'#050506');x.fillStyle=bg;x.fillRect(0,0,W,H);
+ const acc={Abarth:'#e5202e',Fiat:'#f3f1ec','Alfa Romeo':'#10a352',Lancia:'#f6c21a'}[cardData.brand]||'#e5202e';
+ x.save();x.globalAlpha=.1;x.fillStyle=acc;x.beginPath();x.arc(W*.86,H*.2,300,0,7);x.fill();x.restore();
+ x.strokeStyle='rgba(255,255,255,.04)';for(let i=-H;i<W;i+=22){x.beginPath();x.moveTo(i,H);x.lineTo(i+H,0);x.stroke()}
+ [['#10a352',0],['#f3f1ec',1],['#e5202e',2]].forEach(([c,i])=>{x.fillStyle=c;x.fillRect(60+i*70,H-70,70,10)});
+ if(logo.complete&&logo.naturalWidth)x.drawImage(logo,W-270,40,220,220);
+ x.fillStyle='#a9a7a3';x.font='700 22px "Barlow Condensed", Arial Narrow, sans-serif';x.fillText('OFFICIAL MEMBER · ATHENS · EST. 2026',60,80);
+ x.font='92px "Bebas Neue", Impact, sans-serif';x.fillStyle='#e5202e';x.fillText('ABARTH',60,180);const w1=x.measureText('ABARTH').width;x.fillStyle='#f3f1ec';x.fillText('_CLUB_',60+w1,180);const w2=x.measureText('_CLUB_').width;x.fillStyle='#10a352';x.fillText('GR',60+w1+w2,180);
+ const name=(cardData.name||'Το όνομά σου').toUpperCase();x.fillStyle='#f3f1ec';x.font='72px "Bebas Neue", Impact, sans-serif';x.fillText(name,60,340);
+ x.fillStyle='#a9a7a3';x.font='500 30px Barlow, Arial, sans-serif';x.fillText((cardData.car||'Το αυτοκίνητό σου')+'  ·  '+(cardData.brand||''),60,392);
+ x.fillStyle=acc;x.font='600 28px "Barlow Condensed", Arial Narrow, sans-serif';x.fillText(cardData.ig||'@instagram',60,440);
+ const num='#'+String(1+hash((cardData.name||'')+(cardData.ig||''))%999).padStart(3,'0');x.textAlign='right';x.fillStyle='#f3f1ec';x.font='120px "Bebas Neue", Impact, sans-serif';x.fillText(num,W-60,H-60);
+ x.fillStyle='#6f6d6a';x.font='700 18px "Barlow Condensed", Arial Narrow, sans-serif';x.fillText('MEMBER NO.',W-60,H-180);x.textAlign='left';
+ x.strokeStyle='rgba(255,255,255,.12)';x.lineWidth=2;x.strokeRect(20,20,W-40,H-40)}
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(drawCard);
+
+/* ---------- Quizzes ---------- */
+const persona=[['Σάββατο βράδυ. Τι κάνεις;',[['Meet με φουλ ήχο εξάτμισης','A'],['Βόλτα στην πόλη με την παρέα','F'],['Χωματόδρομος και βουνό','L'],['Ορεινές στροφές, μόνος σου','R']]],['Ποιο χρώμα σε εκφράζει;',[['Rosso με ρίγες','A'],['Λευκό με μαύρη οροφή','F'],['Martini ρίγες','L'],['Rosso Alfa','R']]],['Τι σημαίνει για σένα ένα αυτοκίνητο;',[['Αδρεναλίνη','A'],['Ελευθερία και παρέα','F'],['Ιστορία και θρύλος','L'],['Πάθος και design','R']]],['Διάλεξε soundtrack',[['Techno στο φουλ','A'],['Ιταλική ποπ','F'],['Rock των 80s','L'],['Κλασική μουσική','R']]]];
+const pRes={A:['Abarth','Είσαι ο σκορπιός. Μικρός, θορυβώδης και πάντα πρώτος στο meet.'],F:['Fiat','Είσαι η καρδιά της παρέας. Πρακτικός, κοινωνικός, πάντα με χαμόγελο.'],L:['Lancia','Είσαι θρύλος. Σε ενδιαφέρει η ιστορία και οι χωματόδρομοι του ράλι.'],R:['Alfa Romeo','Είσαι cuore sportivo. Ζεις για το design και τις στροφές.']};
+let pi=0,pScore={};
+function renderPersona(){const el=$('#quizPersona');if(pi>=persona.length){const top=Object.entries(pScore).sort((a,b)=>b[1]-a[1])[0][0];el.innerHTML=`<span class="qn">Αποτέλεσμα</span><div class="result-big">${pRes[top][0]}</div><p>${pRes[top][1]}</p><button class="btn" type="button" id="pAgain">Ξανά</button>`;$('#pAgain').onclick=()=>{pi=0;pScore={};renderPersona()};return}
+ const [qq,opts]=persona[pi];el.innerHTML=`<span class="qn">Ποιο ιταλικό σου ταιριάζει; · ${pi+1}/${persona.length}</span><div class="qbar"><i style="width:${pi/persona.length*100}%"></i></div><h3>${qq}</h3><div class="opts">${opts.map(([t,k])=>`<button type="button" data-k="${k}">${t}</button>`).join('')}</div>`;
+ el.querySelectorAll('[data-k]').forEach(b=>b.onclick=()=>{pScore[b.dataset.k]=(pScore[b.dataset.k]||0)+1;pi++;renderPersona()})}
+renderPersona();
+const trivia=[['Σε ποια πόλη ιδρύθηκε η Abarth το 1949;',['Μιλάνο','Τορίνο','Μόντενα','Μπολόνια'],3,'Στη Μπολόνια. Λίγο αργότερα η έδρα μεταφέρθηκε στο Τορίνο.'],['Γιατί το σήμα της Abarth είναι σκορπιός;',['Ζώδιο του ιδρυτή','Ζώο της Σικελίας','Ιδέα διαφημιστή','Σύμβολο αγώνων'],0,'Ο Carlo Abarth ήταν Σκορπιός.'],['Πόσους διαδοχικούς τίτλους κατασκευαστών WRC πήρε η Lancia με τη Delta;',['3','4','6','8'],2,'Έξι, από το 1987 έως το 1992.'],['Πότε ιδρύθηκε η Alfa Romeo;',['1899','1910','1929','1949'],1,'Το 1910 στο Μιλάνο, αρχικά ως A.L.F.A.'],['Τι συμβολίζει το τετράφυλλο τριφύλλι στις Alfa;',['Quadrifoglio, τις σπορ εκδόσεις','Τις 4 πόρτες','Την Ιρλανδία','Τους 4 κυλίνδρους'],0,'Το Quadrifoglio σημαδεύει τις πιο σπορ Alfa.'],['Ποια χρονιά ιδρύθηκε η Fiat;',['1899','1906','1910','1923'],0,'Το 1899 στο Τορίνο.'],['Ποιο αυτοκίνητο της Lancia κέρδισε το WRC 1974–1976;',['Fulvia','Stratos','037','Delta S4'],1,'Η Lancia Stratos HF.'],['Σε ποιο μοντέλο βασίστηκε το αρχικό Abarth 595 του 1963;',['Fiat 600','Fiat 500','Fiat 124','Fiat 850'],1,'Στο Fiat 500.']];
+let ti=0,tScore=0;
+function renderTrivia(){const el=$('#quizTrivia');if(ti>=trivia.length){el.innerHTML=`<span class="qn">Σκορ</span><div class="result-big">${tScore}/${trivia.length}</div><p>${tScore>=7?'Tifoso vero! Ξέρεις την ιστορία απ’ έξω.':tScore>=4?'Καλό! Λίγο διάβασμα ακόμα και είσαι έτοιμος.':'Έλα στο επόμενο meet, θα μάθεις πολλά.'}</p><button class="btn" type="button" id="tAgain">Ξανά</button>`;$('#tAgain').onclick=()=>{ti=0;tScore=0;renderTrivia()};return}
+ const [qq,opts,ans,why]=trivia[ti];el.innerHTML=`<span class="qn">Ιστορία · ${ti+1}/${trivia.length} · Σκορ ${tScore}</span><div class="qbar"><i style="width:${ti/trivia.length*100}%"></i></div><h3>${qq}</h3><div class="opts">${opts.map((t,i)=>`<button type="button" data-i="${i}">${t}</button>`).join('')}</div><p class="note" id="tWhy"></p>`;
+ el.querySelectorAll('[data-i]').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;el.querySelectorAll('[data-i]').forEach(x=>{x.disabled=true;if(+x.dataset.i===ans)x.classList.add('right')});if(i===ans)tScore++;else b.classList.add('wrong');$('#tWhy').textContent=why;setTimeout(()=>{ti++;renderTrivia()},1500)})}
+renderTrivia();
+
+$('#copy-email').onclick=()=>copy('Abarthclubgr@gmail.com',$('#email'),'Το email αντιγράφηκε');
+renderCars();route();
+})();
+</script>
+
+</body>
+</html>
