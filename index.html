@@ -407,6 +407,19 @@ footer img{width:84px}
 @media (max-width:860px){.cookie{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 .vote-teaser{margin-top:14px;max-width:56ch;padding:12px 14px;border-left:3px solid var(--rosso);background:rgba(229,32,46,.08);border-radius:0 10px 10px 0;color:var(--chalk)}
 .cotw-home{background:radial-gradient(ellipse at 15% 0%,rgba(229,32,46,.16),transparent 55%),var(--asphalt)}
+.steps{list-style:none;margin:0 0 22px;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;counter-reset:st}
+.steps li{counter-increment:st;display:grid;grid-template-columns:40px 1fr;column-gap:12px;align-items:center;background:var(--tarmac);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.steps li::before{content:counter(st);grid-row:span 2;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:400 24px/1 var(--display);background:var(--rosso);color:#fff}
+.steps li:nth-child(2)::before{background:var(--chalk);color:#111}
+.steps li:nth-child(3)::before{background:var(--verde)}
+.steps b{font:700 17px/1.2 var(--cond);letter-spacing:.02em}
+.steps span{font-size:14px;color:var(--smoke);line-height:1.35}
+@media (max-width:760px){.steps{grid-template-columns:1fr}}
+.add-car{margin-top:22px;background:var(--tarmac);border:1px dashed var(--line);border-radius:16px;padding:0 18px}
+.add-car summary{font:700 18px/1.3 var(--cond)}
+.add-car .upload{border:0;padding:0 0 18px}
+.more-cars{grid-column:1/-1;justify-self:center}
+
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 
 /* ===== v3: multi-page ===== */
@@ -580,10 +593,6 @@ input[type=file].hidden-file{position:absolute;width:1px;height:1px;opacity:0}
 .qbar i{display:block;height:100%;background:linear-gradient(90deg,var(--verde),var(--chalk),var(--rosso));transition:width .3s}
 .result-big{font:400 clamp(48px,7vw,80px)/.9 var(--display)}
 .tabs{display:flex;gap:6px;flex-wrap:wrap}
-.spot-board{display:grid;gap:8px}
-.spot-board div{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;background:var(--tarmac);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
-.spot-board .pos{font:400 24px/1 var(--display);color:var(--giallo);text-align:center}
-.spot-board b{font:400 26px/1 var(--display)}
 .merch-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
 @media (max-width:760px){.merch-strip{grid-template-columns:1fr 1fr}}
 .merch-strip a{border-radius:14px;overflow:hidden;border:1px solid var(--line);position:relative;display:block;aspect-ratio:1/1;max-width:100%}
@@ -592,6 +601,31 @@ input[type=file].hidden-file{position:absolute;width:1px;height:1px;opacity:0}
 a.partner{color:inherit}
 .partner .visit{font:700 12px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--rosso);margin-top:6px}
 .section-tight{padding-block:clamp(40px,6vw,72px)}
+@media (max-width:520px){
+  .garage-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .gcard .meta{padding:10px}
+  .gcard .meta b{font-size:19px}
+  .gcard .meta span:not(.v){display:none}
+  .logo-stage{width:min(210px,56vw)}
+  .tiles{grid-template-columns:1fr 1fr;gap:10px}
+  .tile{min-height:150px}
+  .tile b{font-size:26px}
+  .tile span:not(.arrow){display:none}
+  .tile .arrow{width:30px;height:30px;font-size:18px}
+  .gal{columns:2;column-gap:8px}
+  .gal button{margin-bottom:8px}
+  .quote-row{grid-template-columns:1fr 1fr}
+}.prod .price-line small{display:block;margin:6px 0 0}
+.toast{opacity:0;visibility:hidden;transition:transform .3s,opacity .3s,visibility .3s}
+.toast.show{opacity:1;visibility:visible}
+@media (max-width:520px){
+  .cookie{grid-template-columns:40px 1fr;padding:12px;gap:8px 12px;left:10px;right:10px}
+  .ck-ic{width:40px;height:40px}
+  .ck-txt b{font-size:22px}
+  .ck-txt p{font-size:13px;line-height:1.4}
+  .cookie .btns{flex-wrap:nowrap;gap:8px}
+  .cookie .btn{padding:12px 10px;font-size:13px;flex:1;justify-content:center}
+}
 </style>
 <style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <script data-goatcounter="https://abarthclubgr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -627,7 +661,7 @@ a.partner{color:inherit}
       <h1 class="wordmark" aria-label="ABARTH_CLUB_GR"><span class="a">ABARTH</span><span class="us">_</span><span class="c">CLUB</span><span class="us">_</span><span class="gr">GR</span></h1>
       <div class="hero-tag"><span class="hand">One Team. One Family. One Purpose.</span></div>
       <p class="hero-lede">Η κοινότητα της Αθήνας για όσους αγαπάνε τα ιταλικά αυτοκίνητα: <b>Abarth, Fiat, Lancia και Alfa Romeo</b>. Ξεκινήσαμε τον Αύγουστο του 2026 και στο πρώτο μας car meet ήρθαν <b>πάνω από 50 αυτοκίνητα</b>. Αυτό είναι μόνο η αρχή.</p>
-      <p class="vote-teaser"><b id="carTotal">62</b> αυτοκίνητα μελών διεκδικούν το <b>Car of the Week</b>. Ψήφισε τα 3 αγαπημένα σου, ο νικητής ανακοινώνεται την Κυριακή.</p>
+      <p class="vote-teaser"><b id="carTotal">62</b> αυτοκίνητα μελών διεκδικούν το <b>Car of the Week</b>. Ψήφισε τα 3 αγαπημένα σου.</p>
       <div class="btns">
         <a class="btn hot" href="#cotw">Ψήφισε το Car of the Week</a>
         <a class="btn" href="#meets">Varkiza · 17 Οκτωβρίου</a>
@@ -666,8 +700,13 @@ a.partner{color:inherit}
     <div class="sec-head">
       <div class="eyebrow"><span class="tri"></span>Car of the Week</div>
       <h2>Ψήφισε το Car of the Week.</h2>
-      <p>Κάθε αυτοκίνητο έχει τον αριθμό του. Διάλεξε τα αγαπημένα σου, στείλε την ψήφο με DM και την Κυριακή ανακοινώνουμε τον νικητή στο Instagram του club.</p>
+      <p>62 αυτοκίνητα μελών. Εσύ διαλέγεις τα αγαπημένα σου.</p>
     </div>
+    <ol class="steps">
+      <li><b>Πάτα «Ψήφισε»</b><span>σε έως 3 αυτοκίνητα</span></li>
+      <li><b>Στείλε την ψήφο</b><span>αντιγραφή και DM στο @abarth_club_gr</span></li>
+      <li><b>Κυριακή: ο νικητής</b><span>στο Instagram, με δωρεάν αυτοκόλλητο</span></li>
+    </ol>
     <div class="vote-layout">
       <div>
         <div class="carousel" id="carousel">
@@ -685,10 +724,12 @@ a.partner{color:inherit}
           <button class="btn hot" type="button" id="voteCopy">Αντιγραφή ψήφου</button>
           <a class="btn" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">Στείλε με DM</a>
         </div>
-        <p class="note">Η ψήφος μετράει όταν φτάσει με DM στο <b>@abarth_club_gr</b>. Ο νικητής ανακοινώνεται κάθε Κυριακή.</p>
-        <div class="upload">
-          <h4>Ανέβασε το αυτοκίνητό σου</h4>
-          <p>Μία φωτογραφία ανά μέλος την εβδομάδα. Τη νύχτα βγαίνουν καλύτερα.</p>
+        </aside>
+    </div>
+    <details class="add-car">
+      <summary>Δεν βλέπεις το αυτοκίνητό σου; Πρόσθεσέ το</summary>
+      <div class="upload">
+          <p>Μία φωτογραφία ανά μέλος. Τη νύχτα βγαίνουν καλύτερα.</p>
           <div class="row">
             <label class="sr" for="up-brand">Μάρκα</label>
             <select class="field" id="up-brand"><option>Abarth</option><option>Fiat</option><option>Alfa Romeo</option><option>Lancia</option></select>
@@ -702,13 +743,7 @@ a.partner{color:inherit}
           <input class="hidden-file" type="file" id="up-file" accept="image/*">
           <div class="msg" id="up-msg"></div>
         </div>
-      </aside>
-    </div>
-    <div class="vote-rules">
-      <div><b>1. Ανεβάζεις</b><p>Μία φωτογραφία του αυτοκινήτου σου με το @ του Instagram σου.</p></div>
-      <div><b>2. Ψηφίζεις με DM</b><p>Διαλέγεις έως 3 αυτοκίνητα και στέλνεις το έτοιμο μήνυμα με τους αριθμούς τους.</p></div>
-      <div><b>3. Ο νικητής στο προφίλ</b><p>Το Car of the Week ανεβαίνει στο Instagram και κερδίζει δωρεάν αυτοκόλλητο.</p></div>
-    </div>
+    </details>
   </div>
 </section>
 
@@ -757,7 +792,7 @@ a.partner{color:inherit}
       <a class="tile" href="#cars"><img src="img/c-gpa-black-stripe.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Garage</b><span>Όλα τα αυτοκίνητα των μελών, με φίλτρα ανά μάρκα</span></div></a>
       <a class="tile" href="#merch"><img src="img/m-tee-mockup.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Merch</b><span>Αυτοκόλλητα, μπλούζες, lanyard, μπρελόκ</span></div></a>
       <a class="tile" href="#guide"><img src="img/c-mito-red-forest.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Οδηγοί</b><span>Μοντέλα, διαδρομές για cruise, συνεργεία</span></div></a>
-      <a class="tile" href="#play"><img src="img/sticker-595.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Παιχνίδια</b><span>Spot the Sticker, κάρτα μέλους, quiz</span></div></a>
+      <a class="tile" href="#play"><img src="img/sticker-595.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Παιχνίδια</b><span>Κάρτα μέλους και quiz</span></div></a>
       <a class="tile" href="#club"><img src="img/banner.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Το Club</b><span>Η ιστορία μας, συνεργάτες, επικοινωνία</span></div></a>
     </div>
   </div>
@@ -879,7 +914,7 @@ a.partner{color:inherit}
   <div class="eyebrow"><span class="tri"></span>Η οικογένεια σε τέσσερις τροχούς</div>
   <h1>Αυτοκίνητα.</h1>
   <p>Όλα τα αυτοκίνητα που μας έχουν στείλει τα μέλη. Ψάξε ανά μάρκα και μοντέλο και πάτα ένα για όλες τις φωτογραφίες του.</p>
-  <nav class="subnav"><a href="#cotw">Ψήφισε (αρχική)</a><a href="#members">Garage μελών</a><a href="#family">Οι 4 μάρκες</a></nav>
+  <nav class="subnav"><a href="#cotw">Car of the Week</a><a href="#members">Garage μελών</a><a href="#family">Οι 4 μάρκες</a></nav>
 </div></div>
 
 <section class="garage" id="members">
@@ -906,7 +941,7 @@ a.partner{color:inherit}
       <div class="marque"><span class="since">Bologna · Torino · 1949</span><h3>Abarth</h3><p>Ο σκορπιός. Μικρά αυτοκίνητα, μεγάλος θόρυβος.</p><div class="chips"><span>595</span><span>695</span><span>Grande Punto Abarth</span><span>Punto Evo Abarth</span><span>124 Spider</span></div></div>
       <div class="marque"><span class="since">Torino · 1899</span><h3>Fiat</h3><p>Εκεί που ξεκίνησαν οι περισσότεροι από εμάς.</p><div class="chips"><span>Grande Punto</span><span>Punto GT</span><span>Punto Evo</span><span>Bravo</span><span>Panda 100HP</span></div></div>
       <div class="marque"><span class="since">Torino · 1906</span><h3>Lancia</h3><p>Ράλι στο DNA. Θρύλος σε κάθε meet.</p><div class="chips"><span>Delta</span><span>Delta Integrale</span><span>Ypsilon</span><span>Fulvia</span></div></div>
-      <div class="marque"><span class="since">Milano · 1910</span><h3>Alfa Romeo</h3><p>Cuore sportivo. Η πιο πολυπληθής παρέα του garage.</p><div class="chips"><span>MiTo</span><span>Giulietta</span><span>Giulia</span><span>147</span><span>159</span></div></div>
+      <div class="marque"><span class="since">Milano · 1910</span><h3>Alfa Romeo</h3><p>Cuore sportivo. Design, στροφές και ο πιο ωραίος ήχος.</p><div class="chips"><span>MiTo</span><span>Giulietta</span><span>Giulia</span><span>147</span><span>159</span></div></div>
     </div>
   </div>
 </section>
@@ -1048,43 +1083,11 @@ a.partner{color:inherit}
 <div class="page-hero"><div class="wrap">
   <div class="eyebrow"><span class="tri"></span>Για να περνάμε καλά</div>
   <h1>Παιχνίδια.</h1>
-  <p>Κυνήγα αυτοκόλλητα στον δρόμο, φτιάξε την κάρτα μέλους σου και δες πόσα ξέρεις για τα ιταλικά.</p>
-  <nav class="subnav"><a href="#spot">Spot the Sticker</a><a href="#card">Κάρτα μέλους</a><a href="#quiz">Quiz</a></nav>
+  <p>Φτιάξε την κάρτα μέλους σου και δες πόσα ξέρεις για τα ιταλικά αυτοκίνητα.</p>
+  <nav class="subnav"><a href="#card">Κάρτα μέλους</a><a href="#quiz">Quiz</a></nav>
 </div></div>
 
-<section id="spot">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>Spot the Sticker</div>
-      <h2>Το είδες; Φωτογράφισέ το.</h2>
-      <p>Είδες το αυτοκόλλητο ABARTH_CLUB_GR σε αυτοκίνητο στον δρόμο; Βγάλε φωτογραφία και ανέβασέ τη. Όποιος εντοπίσει τα περισσότερα μέσα στον μήνα κερδίζει merch.</p>
-    </div>
-    <div class="vote-layout">
-      <div>
-        <div class="album" id="spotGrid"></div>
-      </div>
-      <div style="display:grid;gap:16px">
-        <div class="board">
-          <h3>Κυνηγοί <small>Οκτώβριος</small></h3>
-          <div class="spot-board" id="spotBoard"></div>
-        </div>
-        <div class="dropzone">
-          <h4>Ανέβασε εντοπισμό</h4>
-          <div class="row">
-            <label class="sr" for="spWho">Instagram</label><input class="field" id="spWho" placeholder="@το_instagram_σου">
-            <label class="sr" for="spWhere">Πού</label><input class="field" id="spWhere" placeholder="Πού το είδες">
-          </div>
-          <p class="note photo-rules"><b>Κανόνες φωτογραφίας:</b> μόνο αυτοκίνητα, χωρίς πρόσωπα, και η πινακίδα να μη φαίνεται. Θα σου ζητήσουμε να τη θολώσεις πριν ανέβει.</p>
-          <label class="file" for="spFile">Φωτογραφία</label>
-          <input class="hidden-file" type="file" id="spFile" accept="image/*">
-          <div class="okmsg" id="spMsg"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="garage" id="card">
+<section id="card">
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow"><span class="tri"></span>Κάρτα μέλους</div>
@@ -1105,7 +1108,7 @@ a.partner{color:inherit}
   </div>
 </section>
 
-<section id="quiz">
+<section class="garage" id="quiz">
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow"><span class="tri"></span>Quiz</div>
@@ -1255,7 +1258,7 @@ function copy(text,el,ok){const sel=()=>{const r=document.createRange();r.select
 
 /* ---------- Router ---------- */
 const pages=['home','meets','cars','merch','guide','play','club'];
-const alias={top:'home',varkiza:'meets',meet1:'meets',album:'meets',cotw:'home',garage:'cars',members:'cars',family:'cars',sticker:'merch',preorder:'merch',mylist:'merch',models:'guide',routes:'guide',shops:'guide',spot:'play',card:'play',quiz:'play',story:'club',partners:'club',join:'club',faq:'club'};
+const alias={top:'home',varkiza:'meets',meet1:'meets',album:'meets',cotw:'home',garage:'cars',members:'cars',family:'cars',sticker:'merch',preorder:'merch',mylist:'merch',models:'guide',routes:'guide',shops:'guide',card:'play',quiz:'play',story:'club',partners:'club',join:'club',faq:'club'};
 let current=null;
 function route(){const h=(location.hash||'#home').slice(1);const p=pages.includes(h)?h:(alias[h]||'home');
  if(p!==current){$$('.page').forEach(el=>el.classList.toggle('on',el.id==='p-'+p));$$('#navlinks a').forEach(a=>a.setAttribute('aria-current',a.dataset.p===p?'page':'false'));current=p;window.scrollTo(0,0);if(p==='home')armTacho();if(p==='play')drawCard()}
@@ -1266,7 +1269,7 @@ document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a
 /* ---------- Countdown ---------- */
 const target=new Date('2026-10-17T20:00:00+03:00').getTime();const pad=n=>String(n).padStart(2,'0');
 function tick(){let d=Math.max(0,target-Date.now());const D=Math.floor(d/864e5);d-=D*864e5;const H=Math.floor(d/36e5);d-=H*36e5;const M=Math.floor(d/6e4);d-=M*6e4;const S=Math.floor(d/1e3);
- const v={d:D,h:pad(H),m:pad(M),s:pad(S)};$$('[data-cd]').forEach(b=>b.textContent=v[b.dataset.cd])}
+ const v={d:D,h:pad(H),m:pad(M),s:pad(S)};if(target<=Date.now()){$$('.next-label').forEach(e=>e.textContent='Το τελευταίο meet');}$$('[data-cd]').forEach(b=>b.textContent=v[b.dataset.cd])}
 tick();setInterval(tick,1000);
 
 /* ---------- Tacho ---------- */
@@ -1380,15 +1383,17 @@ $('#up-file').addEventListener('change',async e=>{const f=e.target.files[0];if(!
   $('#up-msg').textContent='Έτοιμο! Φαίνεται στη δική σου συσκευή. Για να μπει στο επίσημο garage, στείλε τη φωτογραφία με DM στο @abarth_club_gr.';e.target.value=''}catch(err){$('#up-msg').textContent='Δεν διαβάστηκε η φωτογραφία. Δοκίμασε JPG ή PNG.'}});
 
 /* ---------- Garage ---------- */
-let gFilter='Όλα',gQuery='';
+let gFilter='Όλα',gQuery='',gShown=12;
 function renderFilters(){const brands=['Όλα','Abarth','Fiat','Alfa Romeo','Lancia'];
  $('#filters').innerHTML=brands.map(b=>{const n=b==='Όλα'?cars.length:cars.filter(c=>c.brand===b).length;return `<button class="chip-btn" data-f="${b}" aria-pressed="${gFilter===b}">${b}<span class="n">${n}</span></button>`}).join('')+'<label class="sr" for="gSearch">Αναζήτηση</label><input class="field" id="gSearch" placeholder="Αναζήτηση μοντέλου, χρώματος" value="'+esc(gQuery)+'">';
- $('#gSearch').addEventListener('input',e=>{gQuery=e.target.value;renderGrid()})}
+ $('#gSearch').addEventListener('input',e=>{gQuery=e.target.value;gShown=12;renderGrid()})}
 function renderGrid(){const ct=$('#carTotal');if(ct)ct.textContent=cars.length;const q=gQuery.trim().toLowerCase();
  const list=cars.filter(c=>(gFilter==='Όλα'||c.brand===gFilter)&&(!q||(c.model+' '+c.color+' '+c.note+' '+(c.owner||'')).toLowerCase().includes(q)));
- $('#garageGrid').innerHTML=list.length?list.map(c=>`<button class="gcard b-${c.brand.split(' ')[0]}" data-car="${c.id}"><div class="ph"><img src="${c.photos[0]}" alt="${esc(c.model)}" loading="lazy"><span class="brand-pill">${esc(c.brand)}</span>${c.photos.length>1?`<span class="cnt">${c.photos.length} φωτό</span>`:''}</div><div class="meta"><b>${esc(c.model)}</b><span>${esc(c.color)} · ${esc(c.note)}</span><span class="v">${heart} Νο ${num(c)}</span></div></button>`).join(''):'<p class="note">Κανένα αυτοκίνητο δεν ταιριάζει στην αναζήτηση.</p>';
+ const more=list.length-gShown;
+ $('#garageGrid').innerHTML=list.length?list.slice(0,gShown).map(c=>`<button class="gcard b-${c.brand.split(' ')[0]}" data-car="${c.id}"><div class="ph"><img src="${c.photos[0]}" alt="${esc(c.model)}" loading="lazy"><span class="brand-pill">${esc(c.brand)}</span>${c.photos.length>1?`<span class="cnt">${c.photos.length} φωτό</span>`:''}</div><div class="meta"><b>${esc(c.model)}</b><span>${esc(c.color)} · ${esc(c.note)}</span><span class="v">${heart} Νο ${num(c)}</span></div></button>`).join('')+(more>0?`<button class="btn more-cars" type="button" id="moreCars">Δείξε άλλα ${Math.min(12,more)} από ${more}</button>`:''):'<p class="note">Κανένα αυτοκίνητο δεν ταιριάζει στην αναζήτηση.</p>';
  $('#carCount').textContent=cars.length}
-$('#filters').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;gFilter=b.dataset.f;$$('#filters [data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderGrid()});
+$('#filters').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;gFilter=b.dataset.f;gShown=12;$$('#filters [data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderGrid()});
+document.addEventListener('click',e=>{if(e.target.id==='moreCars'){gShown+=12;renderGrid()}});
 function renderCars(){renderCotw();renderFilters();renderGrid()}
 document.addEventListener('click',e=>{const g=e.target.closest('[data-car]');if(g)openCar(g.dataset.car)});
 function openCar(id){const c=cars.find(x=>x.id===id);if(!c)return;
@@ -1470,7 +1475,7 @@ const guides=[
  ['Alfa Romeo 147','Κλασική πια',['1.6 και 2.0 Twin Spark','Diesel 1.9 JTD','GTA με 3.2 V6 250 PS'],['Ιμάντας χρονισμού και variator στα Twin Spark','Κατανάλωση λαδιού','Selespeed (αν έχει): έλεγχος αντλίας και αλλαγών','Ψαλίδια μπροστινής ανάρτησης'],['Ανανέωση ανάρτησης','Εξάτμιση με ωραίο ήχο','Φροντίδα βαφής και πλαστικών']],
  ['Alfa Romeo 159','Η sedan της παρέας',['1750 TBi, 2.2 και 3.2 JTS','Diesel 1.9 και 2.4 JTDm'],['Αλυσίδα χρονισμού στα 2.2 JTS','Ανάρτηση και σινεμπλόκ (βαρύ αυτοκίνητο)','Ηλεκτρικά και αισθητήρες'],['Lip spoiler και ζάντες','Κόκκινες δαγκάνες','Σωστό service πριν από κάθε μετατροπή']],
  ['Fiat Punto GT (176)','Old school turbo',['1.4 turbo γύρω στους 130 PS','Τα περισσότερα έχουν πια 25+ χρόνια'],['Σκουριά σε μαρσπιέ και πάτωμα','Κατάσταση turbo και διαρροές λαδιού','Αυθεντικά κομμάτια που λείπουν'],['Αναβάθμιση φρένων πρώτα','Ανανέωση λάστιχων και αμορτισέρ','Κράτα τα αυθεντικά κομμάτια']],
- ['Lancia Delta / Ypsilon','Ο θρύλος του ράλι',['Delta HF 4WD και Integrale: 6 διαδοχικοί τίτλοι κατασκευαστών WRC (1987–1992)','Ypsilon: η πόλη με στιλ'],['Στο Integrale, σκουριά και αυθεντικότητα κομματιών','Ιστορικό και πιστοποίηση αν είναι συλλεκτικό','Στο Ypsilon, ηλεκτρικά και συμπλέκτης'],['Αποκατάσταση πριν από μετατροπή','Φέρ’ το στο meet, θα γίνει χαμός']]
+ ['Lancia Delta / Ypsilon','6 τίτλοι WRC, 1987–1992',['Delta HF Integrale: 2.0 turbo, τετρακίνητο','Delta 2ης γενιάς (836): από 1.6 έως 2.0 turbo HF','Ypsilon: μικροί κινητήρες για την πόλη'],['Στο Integrale, σκουριά και αυθεντικότητα κομματιών','Ιστορικό και πιστοποίηση αν είναι συλλεκτικό','Στο Ypsilon, ηλεκτρικά και συμπλέκτης'],['Αποκατάσταση πριν από μετατροπή','Φέρ’ το στο meet, θα γίνει χαμός']]
 ];
 $('#guideList').innerHTML=guides.map(([t,s,eng,watch,mods],i)=>`<details ${i===0?'open':''}><summary>${esc(t)}<small>${esc(s)}</small></summary><div class="guide-body"><div><h4 class="g">Κινητήρες</h4><ul>${eng.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h4 class="r">Τι να προσέξεις</h4><ul>${watch.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h4 class="y">Πρώτες μετατροπές</h4><ul>${mods.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div></details>`).join('');
 const routes=[['Σούνιο','70','Το κλασικό sunset cruise από την παραλιακή, με τελικό προορισμό τον Ναό του Ποσειδώνα.','Temple+of+Poseidon+Sounion'],['Πάρνηθα','35','Ανάβαση με στροφές και θέα όλη την Αθήνα από ψηλά. Ιδανική για πρωινό Κυριακής.','Mont+Parnes+Casino'],['Λίμνη Μαραθώνα','40','Ήρεμη διαδρομή μέσα από πεύκα μέχρι το φράγμα. Καλή για φωτογραφίες.','Marathon+Dam'],['Λαύριο','60','Η διαδρομή του πρώτου meet: Βάρκιζα, Σαρωνίδα, Λαύριο, δίπλα στη θάλασσα.','Lavrio+Port'],['Αράχωβα','170','Road trip για τον χειμώνα. Βουνό, στροφές και καφές με θέα τον Παρνασσό.','Arachova']];
@@ -1482,15 +1487,6 @@ function renderShops(){const ex={name:'Το συνεργείο σου',area:'Π�
 $('#shAdd').onclick=()=>{const name=$('#shName').value.trim();if(!name){$('#shMsg').textContent='Γράψε το όνομα του συνεργείου.';return}
  shops.unshift({name,area:$('#shArea').value.trim()||'—',type:$('#shType').value,why:$('#shWhy').value.trim()||'Προτείνεται από μέλος'});store.set('acg3-shops',shops);renderShops();['#shName','#shArea','#shWhy'].forEach(s=>$(s).value='');$('#shMsg').textContent='Προστέθηκε. Ευχαριστούμε!'};
 renderShops();
-
-/* ---------- Spot the sticker ---------- */
-let spots=store.get('acg3-spots',[]);
-const seedSpots=[{src:'img/sticker-595.jpg',who:'@abarth_club_gr',where:'Αθήνα'},{src:'img/sticker-mito.jpg',who:'@abarth_club_gr',where:'Αθήνα'},{src:'img/sticker-spoiler.jpg',who:'@abarth_club_gr',where:'Λαύριο'},{src:'img/sticker-door.jpg',who:'@abarth_club_gr',where:'Βάρκιζα'}];
-function renderSpots(){const all=spots.concat(seedSpots);$('#spotGrid').innerHTML=all.map(s=>`<button data-lb="${s.src}"><img src="${s.src}" alt="Αυτοκόλλητο στον δρόμο, ${esc(s.where)}" loading="lazy"><span class="who">${esc(s.who)} · ${esc(s.where)}</span></button>`).join('');
- const tally={};all.forEach(s=>tally[s.who]=(tally[s.who]||0)+1);const rows=Object.entries(tally).sort((a,b)=>b[1]-a[1]).slice(0,5);
- $('#spotBoard').innerHTML=rows.map(([w,n],i)=>`<div><span class="pos">${i+1}</span><span>${esc(w)}</span><b>${n}</b></div>`).join('')}
-$('#spFile').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;try{const src=await checkPhoto(f);if(!src){e.target.value='';return}spots.unshift({src,who:$('#spWho').value.trim()||'μέλος',where:$('#spWhere').value.trim()||'Ελλάδα'});store.set('acg3-spots',spots.slice(0,20));renderSpots();$('#spMsg').textContent='Καταγράφηκε στη συσκευή σου! Στείλ’ το και με DM για να μετρήσει στον διαγωνισμό.'}catch(err){$('#spMsg').textContent='Δεν διαβάστηκε η φωτογραφία.'}e.target.value=''});
-renderSpots();
 
 /* ---------- Photo check ---------- */
 function checkPhoto(file){return new Promise(async res=>{
