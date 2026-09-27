@@ -626,6 +626,61 @@ a.partner{color:inherit}
   .cookie .btns{flex-wrap:nowrap;gap:8px}
   .cookie .btn{padding:12px 10px;font-size:13px;flex:1;justify-content:center}
 }
+
+/* intro */
+#intro{position:fixed;inset:0;z-index:200;background:#0c0c0e;display:grid;place-items:center;overflow:hidden;animation:inFade .5s ease 2.35s forwards;cursor:pointer}
+#intro .in-road{position:absolute;left:0;right:0;top:calc(50% - 20px + min(122px,25.2vw));height:3px;background:repeating-linear-gradient(90deg,#f3f1ec 0 28px,transparent 28px 56px);opacity:.35;animation:roadMove .35s linear infinite}
+#intro .in-title{position:absolute;bottom:calc(50% + 40px);font:400 clamp(40px,9vw,96px)/1 var(--display);letter-spacing:.01em;color:#e5202e;opacity:0;transform:translateY(12px);animation:inTitle .5s ease .95s forwards;white-space:nowrap}
+#intro .in-title span{color:#f3f1ec}#intro .in-title b{font-weight:400;color:#10a352}
+#intro .in-sub{position:absolute;top:calc(50% + min(150px,31vw));font:700 12px/1 var(--cond);letter-spacing:.3em;text-transform:uppercase;color:#a9a7a3;opacity:0;animation:inTitle .5s ease 1.15s forwards}
+#intro .in-car{position:absolute;top:calc(50% - 20px);left:50%;width:min(300px,62vw);margin-left:calc(min(300px,62vw) / -2);animation:inDrive 2.3s cubic-bezier(.55,0,.3,1) forwards}
+#intro .in-car .car-svg{width:100%;height:auto;display:block;animation:inDip 2.3s ease forwards}
+#intro .wheel{animation:spin .35s linear infinite;transform-box:fill-box;transform-origin:center}
+#intro .in-skip{position:absolute;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));font:700 12px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;color:#a9a7a3;background:none;border:1px solid #2c2c33;border-radius:99px;padding:9px 12px;cursor:pointer}
+#intro .smoke{position:absolute;top:calc(50% - 30px + min(100px,20vw));left:50%;width:34px;height:34px;border-radius:50%;background:radial-gradient(circle,rgba(220,220,220,.5),transparent 70%);opacity:0;animation:smoke 1s ease-out 1.55s forwards}
+#intro .smoke.s2{animation-delay:1.65s;width:46px;height:46px}
+@keyframes inDrive{0%{transform:translateX(-120vw)}42%{transform:translateX(0)}62%{transform:translateX(0)}100%{transform:translateX(130vw)}}
+@keyframes inDip{38%{transform:rotate(0)}44%{transform:rotate(1.6deg)}50%{transform:rotate(0)}64%{transform:rotate(-2deg)}72%{transform:rotate(0)}}
+@keyframes inTitle{to{opacity:1;transform:none}}
+@keyframes inFade{to{opacity:0;visibility:hidden}}
+@keyframes roadMove{to{background-position:-56px 0}}
+@keyframes smoke{0%{opacity:.8;transform:translate(-190px,0) scale(.4)}100%{opacity:0;transform:translate(-260px,-24px) scale(2.4)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+/* ambient cruiser in hero */
+.hero-road{position:absolute;left:0;right:0;bottom:0;height:40px;z-index:3;pointer-events:none;overflow:hidden}
+.hero-road::before{content:"";position:absolute;left:0;right:0;bottom:6px;height:2px;background:repeating-linear-gradient(90deg,rgba(243,241,236,.25) 0 22px,transparent 22px 44px)}
+.cruiser{position:absolute;bottom:7px;left:0;width:78px;animation:cruise 14s linear infinite}
+.cruiser .car-svg{width:100%;height:auto;display:block;animation:bob .5s ease-in-out infinite alternate}
+.cruiser .wheel{animation:spin .45s linear infinite;transform-box:fill-box;transform-origin:center}
+.cruiser .beam{opacity:.7}
+.puff{position:absolute;left:-6px;bottom:6px;width:10px;height:10px;border-radius:50%;background:rgba(200,200,200,.35);animation:puff 1.2s ease-out infinite}
+.puff.p2{animation-delay:.6s}
+@keyframes cruise{0%{transform:translateX(-100px)}100%{transform:translateX(calc(100vw + 100px))}}
+@keyframes bob{to{transform:translateY(-1px)}}
+@keyframes puff{0%{opacity:.7;transform:scale(.4)}100%{opacity:0;transform:translate(-26px,-8px) scale(1.8)}}
+.cruiser:hover{animation-play-state:paused}
+@media (prefers-reduced-motion: reduce){#intro{display:none}.cruiser{animation:none;left:16px}}
+
+/* modal fixes: never clip top on small screens */
+.modal{display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:calc(16px + env(safe-area-inset-top,0px)) 12px calc(16px + env(safe-area-inset-bottom,0px))}
+.modal-box,.pc-box{margin:auto}
+@media (max-width:760px){
+  .modal-close{position:fixed;top:calc(12px + env(safe-area-inset-top,0px));right:12px;z-index:90;background:rgba(0,0,0,.75)}
+  .modal-photos{max-height:none}
+}
+.stat{min-width:0}
+.stat b{font-size:clamp(34px,10vw,72px)}
+@media (max-width:360px){.stat{padding:16px 14px}.stat span{font-size:11px;letter-spacing:.1em}.cd div{padding:8px 4px 6px}.cd b{font-size:30px}}
+
+footer .wrap>*{min-width:0}
+.foot-mid b{overflow-wrap:anywhere}
+@media (max-width:420px){.foot-mid b{font-size:26px}.foot-hand{transform:rotate(-3deg);font-size:19px}}
+
+html{scroll-padding-top:calc(76px + env(safe-area-inset-top,0px));scroll-padding-bottom:84px}
+section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
+
+@media (max-width:350px){.navlinks a{font-size:8.5px}.navlinks a svg{width:16px;height:16px}}
+@media (max-height:500px) and (orientation:landscape){.wordmark{font-size:clamp(44px,8vw,96px)}.navlinks a{padding:5px 1px}.navlinks a svg{width:15px;height:15px}body{padding-bottom:56px}}
 </style>
 <style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <script data-goatcounter="https://abarthclubgr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -652,6 +707,7 @@ a.partner{color:inherit}
 <!-- ================= HOME ================= -->
 <div class="page" id="p-home">
 <header class="hero" id="top">
+  <div class="hero-road" aria-hidden="true"><div class="cruiser"><svg class="car-svg" viewBox="0 0 124 52" aria-hidden="true"><defs><linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></linearGradient></defs><path class="beam" d="M114 27 L124 20 L124 38 Z" fill="url(#beam)"/><path d="M6 36 Q6 27 15 25 L33 23 Q43 11 59 10 L79 10 Q92 11 100 23 L109 25.5 Q116 27.5 116 35 L116 39 L6 39 Z" fill="#e5202e"/><path d="M40 23 Q47 14.5 59 13.5 L65 13.5 L65 23 Z M69 13.5 L79 13.5 Q89 14.5 95 23 L69 23 Z" fill="#1a2230"/><rect x="10" y="29" width="34" height="3" fill="#10a352"/><rect x="44" y="29" width="34" height="3" fill="#f3f1ec"/><rect x="78" y="29" width="34" height="3" fill="#b3121e"/><rect x="6" y="28" width="4" height="4" rx="1" fill="#ff5a5a"/><circle cx="112" cy="30" r="2.6" fill="#ffe9a8"/><g transform="translate(30 39)"><g class="wheel"><circle r="9.5" fill="#111"/><circle r="5.5" fill="#9a9a9e"/><path d="M0-5.5V5.5M-5.5 0H5.5M-3.9-3.9 3.9 3.9M-3.9 3.9 3.9-3.9" stroke="#333" stroke-width="1.4"/></g></g><g transform="translate(94 39)"><g class="wheel"><circle r="9.5" fill="#111"/><circle r="5.5" fill="#9a9a9e"/><path d="M0-5.5V5.5M-5.5 0H5.5M-3.9-3.9 3.9 3.9M-3.9 3.9 3.9-3.9" stroke="#333" stroke-width="1.4"/></g></g></svg><i class="puff"></i><i class="puff p2"></i></div></div>
   <div class="hero-bg" aria-hidden="true">
     <img src="img/c-gpa-widebody-garage.jpg" alt=""><img src="img/c-595-grey-2.jpg" alt=""><img src="img/meet-farma-wide.jpg" alt=""><img src="img/c-147-black-bridge.jpg" alt="">
   </div>
@@ -1246,6 +1302,14 @@ a.partner{color:inherit}
 <script>
 (function(){
 document.documentElement.lang='el';
+try{if('scrollRestoration' in history)history.scrollRestoration='manual'}catch(e){}
+(function intro(){let seen=false;try{seen=sessionStorage.getItem('acg-intro')==='1';sessionStorage.setItem('acg-intro','1')}catch(e){}
+ if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const d=document.createElement('div');d.id='intro';d.setAttribute('aria-hidden','true');
+ d.innerHTML='<div class="in-road"></div><div class="in-title">ABARTH<span>_CLUB_</span><b>GR</b></div><div class="in-car"><svg class="car-svg" viewBox="0 0 124 52" aria-hidden="true"><defs><linearGradient id="beam" x1="0" x2="1"><stop offset="0" stop-color="#ffe9a8" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/></linearGradient></defs><path class="beam" d="M114 27 L124 20 L124 38 Z" fill="url(#beam)"/><path d="M6 36 Q6 27 15 25 L33 23 Q43 11 59 10 L79 10 Q92 11 100 23 L109 25.5 Q116 27.5 116 35 L116 39 L6 39 Z" fill="#e5202e"/><path d="M40 23 Q47 14.5 59 13.5 L65 13.5 L65 23 Z M69 13.5 L79 13.5 Q89 14.5 95 23 L69 23 Z" fill="#1a2230"/><rect x="10" y="29" width="34" height="3" fill="#10a352"/><rect x="44" y="29" width="34" height="3" fill="#f3f1ec"/><rect x="78" y="29" width="34" height="3" fill="#b3121e"/><rect x="6" y="28" width="4" height="4" rx="1" fill="#ff5a5a"/><circle cx="112" cy="30" r="2.6" fill="#ffe9a8"/><g transform="translate(30 39)"><g class="wheel"><circle r="9.5" fill="#111"/><circle r="5.5" fill="#9a9a9e"/><path d="M0-5.5V5.5M-5.5 0H5.5M-3.9-3.9 3.9 3.9M-3.9 3.9 3.9-3.9" stroke="#333" stroke-width="1.4"/></g></g><g transform="translate(94 39)"><g class="wheel"><circle r="9.5" fill="#111"/><circle r="5.5" fill="#9a9a9e"/><path d="M0-5.5V5.5M-5.5 0H5.5M-3.9-3.9 3.9 3.9M-3.9 3.9 3.9-3.9" stroke="#333" stroke-width="1.4"/></g></g></svg></div><i class="smoke"></i><i class="smoke s2"></i><div class="in-sub">Athens · Est. 2026</div><button class="in-skip" type="button">Παράλειψη ›</button>';
+ document.body.appendChild(d);document.body.style.overflow='hidden';
+ const end=()=>{if(!d.isConnected)return;d.remove();document.body.style.overflow='';window.scrollTo(0,0)};
+ d.addEventListener('click',end);setTimeout(end,2900)})();
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const store={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){if(k!=='acg3-cookies'&&store.get('acg3-cookies',null)==='min')return false;try{localStorage.setItem(k,JSON.stringify(v));return true}catch(e){return false}}};
 const toast=t=>{const el=$('#toast');el.textContent=t;el.classList.add('show');clearTimeout(el._t);el._t=setTimeout(()=>el.classList.remove('show'),2300)};
@@ -1555,7 +1619,9 @@ function renderTrivia(){const el=$('#quizTrivia');if(ti>=trivia.length){el.inner
 renderTrivia();
 
 $('#copy-email').onclick=()=>copy('Abarthclubgr@gmail.com',$('#email'),'Το email αντιγράφηκε');
-renderCars();route();
+renderCars();
+(function(){const h=(location.hash||'').slice(1);if(h&&!pages.includes(h)){const pg=alias[h]||'home';try{history.replaceState(null,'',pg==='home'?location.pathname+location.search:'#'+pg)}catch(e){}}})();
+route();window.scrollTo(0,0);addEventListener('load',()=>{if(!location.hash||pages.includes(location.hash.slice(1)))window.scrollTo(0,0)});
 })();
 </script>
 
