@@ -705,6 +705,18 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
 .so-note{margin:0;color:var(--rosso);font-weight:600}
 .so-banner>div{min-width:0}
 @media (max-width:520px){.so-banner{flex-wrap:wrap;gap:12px}.so-banner b{font-size:24px}.so-stamp{font-size:22px}.so-mark{font-size:38px;border-width:4px}}
+
+/* smoke v2 */
+.puff{left:2px;bottom:4px;width:16px;height:16px;background:radial-gradient(circle,rgba(225,225,228,.75) 0,rgba(200,200,205,.35) 55%,transparent 72%);animation:puff2 1.1s ease-out infinite}
+.puff.p2{animation-delay:.28s}.puff.p3{animation-delay:.55s;width:20px;height:20px}.puff.p4{animation-delay:.82s}
+@keyframes puff2{0%{opacity:.9;transform:translate(0,0) scale(.35)}100%{opacity:0;transform:translate(-46px,-14px) scale(2.6)}}
+/* extra roads on every page */
+.page-hero,footer{position:relative;overflow:hidden}
+.page-hero .hero-road,footer .hero-road{height:36px}
+footer .hero-road{top:0;bottom:auto}
+.hero-road.r2 .cruiser{animation-duration:11s;animation-delay:-3s}
+.hero-road.r3 .cruiser{animation-duration:17s;animation-delay:-9s}
+@media (prefers-reduced-motion: reduce){.puff{display:none}}
 </style>
 <style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <script data-goatcounter="https://abarthclubgr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -731,7 +743,7 @@ section[id]{scroll-margin-top:calc(70px + env(safe-area-inset-top,0px))}
 <!-- ================= HOME ================= -->
 <div class="page" id="p-home">
 <header class="hero" id="top">
-  <div class="hero-road" aria-hidden="true"><div class="cruiser"><img class="car-svg car-img" src="img/car-595-intro.webp" alt="" decoding="async"><i class="puff"></i><i class="puff p2"></i></div></div>
+  <div class="hero-road" aria-hidden="true"><div class="cruiser"><img class="car-svg car-img" src="img/car-595-intro.webp" alt="" decoding="async"><i class="puff"></i><i class="puff p2"></i><i class="puff p3"></i><i class="puff p4"></i></div></div>
   <div class="hero-bg" aria-hidden="true">
     <img src="img/c-gpa-widebody-garage.jpg" alt=""><img src="img/c-595-grey-2.jpg" alt=""><img src="img/meet-farma-wide.jpg" alt=""><img src="img/c-147-black-bridge.jpg" alt="">
   </div>
@@ -1646,6 +1658,8 @@ renderTrivia();
 
 $('#copy-email').onclick=()=>copy('Abarthclubgr@gmail.com',$('#email'),'Το email αντιγράφηκε');
 renderCars();
+(function(){const src=document.querySelector('.hero .hero-road');if(!src)return;let i=0;
+ document.querySelectorAll('.page-hero, footer').forEach(el=>{const c=src.cloneNode(true);c.classList.add(i++%2?'r3':'r2');el.appendChild(c)})})();
 (function(){const h=(location.hash||'').slice(1);if(h&&!pages.includes(h)){const pg=alias[h]||'home';try{history.replaceState(null,'',pg==='home'?location.pathname+location.search:'#'+pg)}catch(e){}}})();
 route();window.scrollTo(0,0);addEventListener('load',()=>{if(!location.hash||pages.includes(location.hash.slice(1)))window.scrollTo(0,0)});
 })();
