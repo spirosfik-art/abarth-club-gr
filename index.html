@@ -719,6 +719,14 @@ footer .hero-road{top:0;bottom:auto}
 @media (prefers-reduced-motion: reduce){.puff{display:none}}
 .prod .pimg,.sticker-hero{overflow:hidden}
 @media (max-width:400px){.cs-mark{font-size:30px}}
+
+.car-wrap{position:relative;display:block}
+.car-wrap .car-img{display:block;width:100%;height:auto}
+.car-wrap .wh{position:absolute;width:14.42%;height:auto;aspect-ratio:1;animation:spin .38s linear infinite}
+.car-wrap .wh-r{left:6.52%;top:57.71%}
+.car-wrap .wh-f{left:59.31%;top:60.35%}
+#intro .car-wrap .wh{animation-duration:.3s}
+@media (prefers-reduced-motion: reduce){.car-wrap .wh{animation:none}}
 </style>
 <style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <script data-goatcounter="https://abarthclubgr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -745,7 +753,7 @@ footer .hero-road{top:0;bottom:auto}
 <!-- ================= HOME ================= -->
 <div class="page" id="p-home">
 <header class="hero" id="top">
-  <div class="hero-road" aria-hidden="true"><div class="cruiser"><img class="car-svg car-img" src="img/car-595-intro.webp" alt="" decoding="async"><i class="puff"></i><i class="puff p2"></i><i class="puff p3"></i><i class="puff p4"></i></div></div>
+  <div class="hero-road" aria-hidden="true"><div class="cruiser"><span class="car-svg car-wrap"><img class="car-img" src="img/car-595-intro.webp" alt="" decoding="async"><img class="wh wh-r" src="img/wheel-595-r.webp" alt=""><img class="wh wh-f" src="img/wheel-595-f.webp" alt=""></span><i class="puff"></i><i class="puff p2"></i><i class="puff p3"></i><i class="puff p4"></i></div></div>
   <div class="hero-bg" aria-hidden="true">
     <img src="img/c-gpa-widebody-garage.jpg" alt=""><img src="img/c-595-grey-2.jpg" alt=""><img src="img/meet-farma-wide.jpg" alt=""><img src="img/c-147-black-bridge.jpg" alt="">
   </div>
@@ -1346,7 +1354,7 @@ try{if('scrollRestoration' in history)history.scrollRestoration='manual'}catch(e
 (function intro(){let seen=false;try{seen=sessionStorage.getItem('acg-intro')==='1';sessionStorage.setItem('acg-intro','1')}catch(e){}
  if(seen||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
  const d=document.createElement('div');d.id='intro';d.setAttribute('aria-hidden','true');
- d.innerHTML='<div class="in-road"></div><div class="in-title">ABARTH<span>_CLUB_</span><b>GR</b></div><div class="in-car"><img class="car-svg car-img" src="img/car-595-intro.webp" alt="" decoding="async"></div><i class="smoke"></i><i class="smoke s2"></i><div class="in-sub">Athens · Est. 2026</div><button class="in-skip" type="button">Παράλειψη ›</button>';
+ d.innerHTML='<div class="in-road"></div><div class="in-title">ABARTH<span>_CLUB_</span><b>GR</b></div><div class="in-car"><span class="car-svg car-wrap"><img class="car-img" src="img/car-595-intro.webp" alt="" decoding="async"><img class="wh wh-r" src="img/wheel-595-r.webp" alt=""><img class="wh wh-f" src="img/wheel-595-f.webp" alt=""></span></div><i class="smoke"></i><i class="smoke s2"></i><div class="in-sub">Athens · Est. 2026</div><button class="in-skip" type="button">Παράλειψη ›</button>';
  document.body.appendChild(d);document.body.style.overflow='hidden';
  const end=()=>{if(!d.isConnected)return;d.remove();document.body.style.overflow='';window.scrollTo(0,0)};
  d.addEventListener('click',end);setTimeout(end,2900)})();
