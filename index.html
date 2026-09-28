@@ -782,7 +782,7 @@ footer .hero-road{top:0;bottom:auto}
       <h1 class="wordmark" aria-label="ABARTH_CLUB_GR"><span class="a">ABARTH</span><span class="us">_</span><span class="c">CLUB</span><span class="us">_</span><span class="gr">GR</span></h1>
       <div class="hero-tag"><span class="hand">One Team. One Family. One Purpose.</span></div>
       <p class="hero-lede">Η κοινότητα της Αθήνας για όσους αγαπάνε τα ιταλικά αυτοκίνητα: <b>Abarth, Fiat, Lancia και Alfa Romeo</b>. Ξεκινήσαμε τον Αύγουστο του 2026 και στο πρώτο μας car meet ήρθαν <b>πάνω από 50 αυτοκίνητα</b>. Αυτό είναι μόνο η αρχή.</p>
-      <p class="vote-teaser"><b id="carTotal">62</b> αυτοκίνητα μελών διεκδικούν το <b>Car of the Week</b>. Ψήφισε τα 3 αγαπημένα σου.</p>
+      <p class="vote-teaser"><b id="carTotal">66</b> αυτοκίνητα μελών διεκδικούν το <b>Car of the Week</b>. Ψήφισε τα 3 αγαπημένα σου.</p>
       <div class="btns">
         <a class="btn hot" href="#cotw">Ψήφισε το Car of the Week</a>
         <a class="btn" href="#meets">Varkiza · 17 Οκτωβρίου</a>
@@ -821,7 +821,7 @@ footer .hero-road{top:0;bottom:auto}
     <div class="sec-head">
       <div class="eyebrow"><span class="tri"></span>Car of the Week</div>
       <h2>Ψήφισε το Car of the Week.</h2>
-      <p>62 αυτοκίνητα μελών. Εσύ διαλέγεις τα αγαπημένα σου.</p>
+      <p>66 αυτοκίνητα μελών. Εσύ διαλέγεις τα αγαπημένα σου.</p>
     </div>
     <ol class="steps">
       <li><b>Πάτα «Ψήφισε»</b><span>σε έως 3 αυτοκίνητα</span></li>
@@ -1042,7 +1042,7 @@ footer .hero-road{top:0;bottom:auto}
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow"><span class="tri"></span>Garage μελών</div>
-      <h2><span id="carCount">62</span> αυτοκίνητα. Μία οικογένεια.</h2>
+      <h2><span id="carCount">66</span> αυτοκίνητα. Μία οικογένεια.</h2>
       <p>Πάτα σε ένα αυτοκίνητο για όλες τις φωτογραφίες και τα στοιχεία του. Είναι δικό σου; Στείλε μας DM να συμπληρώσουμε το @ σου και τις μετατροπές.</p>
     </div>
     <div class="filters" id="filters"></div>
@@ -1479,7 +1479,11 @@ const baseCars=[
  ['mito-meet','R','Alfa Romeo MiTo','Rosso Alfa','Στο πρώτο meet',['meet-mito-red']],
  ['giulietta-white','R','Alfa Romeo Giulietta','Λευκό','Αράχωβα',['car-giulietta']],
  ['gp-silver','A','Grande Punto Abarth','Ασημί','Μαύρες ζάντες',['car-punto-grey']],
- ['panda','F','Fiat Panda 100HP','Κόκκινο','Ο αουτσάιντερ',['meet-panda']]
+ ['panda','F','Fiat Panda 100HP','Κόκκινο','Ο αουτσάιντερ',['meet-panda']],
+ ['595-esseesse','A','Abarth 595 esseesse','Γκρι Campovolo','Λευκές ζάντες, κόκκινες δαγκάνες, δίπλα στη θάλασσα',['c-595-esseesse-side','c-595-esseesse-front']],
+ ['punto-hgt','A','Punto HGT Abarth','Μαύρο','Μεγάλο intercooler, ασημί ζάντες, ηλιοβασίλεμα',['c-punto-hgt-black']],
+ ['gp-red-engine','F','Fiat Grande Punto','Κόκκινο & μαύρο','Ανοιχτό καπό: εισαγωγή αέρα, μπάρα θόλων',['c-gp-red-engine']],
+ ['gp-grey-2','A','Grande Punto Abarth','Γκρι','Μαύρες ζάντες, κόκκινες δαγκάνες, εξάτμιση',['c-gp-grey-avin','c-gp-grey-side']]
 ].map(([id,b,model,color,note,ph])=>({id,brand:B[b],model,color,note,photos:ph.map(p=>'img/'+p+'.jpg'),seed:4+hash(id)%38}));
 let cars=baseCars.concat(store.get('acg3-mycars',[]));
 let voted=store.get('acg3-voted',{});
