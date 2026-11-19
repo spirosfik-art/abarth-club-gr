@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>ABARTH_CLUB_GR</title>
-<meta name="description" content="Η κοινότητα της Αθήνας για Abarth, Fiat, Lancia και Alfa Romeo. Meets, garage μελών, Car of the Week, merch.">
+<meta name="description" content="Η κοινότητα της Αθήνας για Abarth, Fiat, Lancia και Alfa Romeo. Meets, garage μελών, merch.">
 <meta property="og:title" content="ABARTH_CLUB_GR · Athens">
-<meta property="og:description" content="Η κοινότητα των ιταλικών αυτοκινήτων. Meets, garage, Car of the Week, merch.">
+<meta property="og:description" content="Η κοινότητα των ιταλικών αυτοκινήτων. Meets, garage μελών και official merch shop.">
 <meta property="og:image" content="https://spirosfik-art.github.io/abarth-club-gr/img/cover.jpg">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -753,6 +753,133 @@ footer .hero-road{top:0;bottom:auto}
 .prod .pimg img{aspect-ratio:4/5;object-position:50% 30%}
 .prod[data-prod="lanyard"] .pimg img{aspect-ratio:4/5;object-position:40% 50%}
 .prod .cs-mark{top:auto;left:auto;right:14px;bottom:18px;transform:rotate(-6deg);font-size:clamp(26px,3.4vw,38px);border-width:3px;padding:6px 12px 3px}
+/* ---- Shop ---- */
+.ship-bar{background:#000;color:var(--chalk);text-align:center;font:700 12px/1 var(--cond);letter-spacing:.18em;text-transform:uppercase;padding:12px 16px;border-bottom:1px solid var(--line)}
+.shop-hero{padding-bottom:10px}
+.shop-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.shop-tabs button{font:700 14px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;padding:14px 20px;border-radius:6px;border:1px solid var(--line);background:transparent;color:var(--chalk);cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+.shop-tabs button[aria-pressed="true"]{background:var(--rosso);border-color:var(--rosso);color:#fff;box-shadow:0 8px 24px rgba(229,32,46,.3)}
+.shop-tabs .dot{width:7px;height:7px;border-radius:50%;background:var(--rosso)}
+.shop-tabs button[aria-pressed="true"] .dot{background:#fff}
+.shop-sec{padding-top:24px}
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media(max-width:1000px){.shop-grid{grid-template-columns:repeat(2,1fr);gap:14px}}
+.pc{display:flex;flex-direction:column;gap:12px}
+.pc-img{position:relative;display:block;aspect-ratio:4/5;border-radius:14px;overflow:hidden;background:#121214;border:1px solid var(--line);padding:0;cursor:pointer}
+.pc-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s ease,transform .7s ease}
+.pc-img img.b{opacity:0}
+.pc-img:hover img.b,.pc-img:focus-visible img.b{opacity:1}
+.pc-img:hover img{transform:scale(1.04)}
+.pc.is-sold .pc-img img{filter:grayscale(.5) brightness(.7)}
+.pc-tag{position:absolute;top:12px;left:12px;background:var(--rosso);color:#fff;font:700 11px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase;padding:8px 10px;border-radius:4px;z-index:2}
+.pc-tag.sold{background:#fff;color:#111}
+.pc-b{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.pc-b h3{font:700 15px/1.25 var(--cond);letter-spacing:.08em;text-transform:uppercase;margin:0 0 6px}
+.pc-p{color:var(--smoke,#aaa);font:500 15px/1 var(--body)}
+.pc-add{flex:none;width:46px;height:46px;border-radius:50%;border:0;background:var(--rosso);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 6px 18px rgba(229,32,46,.35);transition:transform .2s}
+.pc-add:hover{transform:scale(1.08)}
+.pc-add svg{width:20px;height:20px}
+.shop-perks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px}
+.shop-perks div{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--tarmac)}
+.shop-perks b{display:block;font:700 14px/1 var(--cond);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.shop-perks span{color:var(--smoke,#aaa);font-size:14px}
+@media(max-width:800px){.shop-perks{grid-template-columns:1fr 1fr}}
+.row-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.homeshop{background:radial-gradient(ellipse at 15% 0%,rgba(229,32,46,.14),transparent 55%),var(--asphalt)}
+/* product view */
+.pv{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.72);backdrop-filter:blur(6px);display:grid;place-items:center;padding:20px;overflow:auto}
+.pv[hidden]{display:none}
+.pv-in{position:relative;width:min(1180px,100%);max-height:calc(100vh - 40px);overflow:auto;background:var(--asphalt);border:1px solid var(--line);border-radius:18px;display:grid;grid-template-columns:1.15fr 1fr;gap:34px;padding:28px}
+@media(max-width:860px){.pv-in{grid-template-columns:1fr;padding:18px;gap:18px}}
+.pv-x{position:absolute;top:12px;right:12px;z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--tarmac);color:var(--chalk);font-size:26px;line-height:1;cursor:pointer}
+.pv-gal{display:grid;grid-template-columns:76px 1fr;gap:12px}
+.pv-thumbs{display:flex;flex-direction:column;gap:10px}
+.pv-thumbs button{padding:0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#111;cursor:pointer;aspect-ratio:4/5}
+.pv-thumbs button[aria-pressed="true"]{border-color:var(--chalk)}
+.pv-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.pv-main{border-radius:14px;overflow:hidden;background:#111;aspect-ratio:4/5}
+.pv-main img{width:100%;height:100%;object-fit:cover;display:block}
+.pv-cat{color:var(--rosso);font:700 13px/1 var(--cond);letter-spacing:.2em;text-transform:uppercase;margin-bottom:12px}
+.pv-info h2{font-size:clamp(34px,4vw,54px)}
+.pv-price{display:flex;align-items:baseline;gap:10px;margin:14px 0 22px}
+.pv-price b{font:700 32px/1 var(--cond)}
+.pv-price span{color:var(--smoke,#aaa);font-size:14px}
+.pv-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.pv-lab{font:700 13px/1 var(--cond);letter-spacing:.18em;text-transform:uppercase}
+.linkish{background:none;border:0;color:var(--chalk);text-decoration:underline;text-underline-offset:4px;cursor:pointer;font:500 14px/1.3 var(--body);padding:0}
+.pv-sizes{display:flex;flex-wrap:wrap;gap:8px}
+.pv-sizes button{min-width:62px;padding:16px 10px;border:1px solid var(--line);border-radius:6px;background:transparent;color:var(--chalk);font:700 15px/1 var(--cond);letter-spacing:.06em;cursor:pointer}
+.pv-sizes button[aria-pressed="true"]{background:var(--rosso);border-color:var(--rosso);color:#fff}
+.shake{animation:shake .45s}
+@keyframes shake{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+.fit{margin-top:14px;border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--tarmac);display:grid;gap:12px}
+.fit p{margin:0;color:var(--smoke,#aaa);font-size:14px}
+.fit-row{display:grid;grid-template-columns:1fr auto;gap:6px 10px;align-items:center;font:700 13px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase}
+.fit-row b{color:var(--rosso);font-size:18px;letter-spacing:0}
+.fit-row input{grid-column:1/-1;width:100%;accent-color:var(--rosso)}
+.fit-mode{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.fit-mode button{padding:12px;border:1px solid var(--line);background:transparent;color:var(--chalk);font:700 13px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;border-radius:6px;cursor:pointer}
+.fit-mode button[aria-pressed="true"]{background:var(--chalk);color:#111}
+.fit-res{display:flex;align-items:center;gap:12px;background:var(--rosso);color:#fff;border-radius:8px;padding:14px 16px}
+.fit-res span{font:700 12px/1 var(--cond);letter-spacing:.16em;text-transform:uppercase}
+.fit-res b{font:700 30px/1 var(--cond);margin-right:auto}
+.fit-res button{background:transparent;border:1px solid #fff;color:#fff;font:700 12px/1 var(--cond);letter-spacing:.14em;text-transform:uppercase;padding:10px 12px;border-radius:6px;cursor:pointer}
+.pv-add{width:100%;margin-top:20px;justify-content:center}
+.pv-add:disabled{opacity:.55;cursor:not-allowed;box-shadow:none}
+.pv-badges{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}
+.pv-badges span{padding:9px 14px;border-radius:99px;background:var(--tarmac);border:1px solid var(--line);font-size:13px;color:var(--chalk)}
+.pv-badges span:empty{display:none}
+.pv-desc{color:var(--chalk);opacity:.85;line-height:1.6}
+.pv-acc{border-top:1px solid var(--line);padding:14px 0}
+.pv-acc summary{cursor:pointer;font:700 13px/1 var(--cond);letter-spacing:.18em;text-transform:uppercase;list-style:none;display:flex;justify-content:space-between}
+.pv-acc summary::after{content:'+'}
+.pv-acc[open] summary::after{content:'−'}
+.pv-acc p{color:var(--smoke,#aaa);font-size:14px;margin:12px 0 0}
+/* cart */
+.cart-fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:70;width:58px;height:58px;border-radius:50%;border:0;background:var(--rosso);color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 30px rgba(229,32,46,.45)}
+.cart-fab svg{width:24px;height:24px}
+.cart-fab span{position:absolute;top:-4px;right:-4px;min-width:22px;height:22px;border-radius:11px;background:#fff;color:#111;font:700 12px/22px var(--cond);text-align:center;padding:0 5px}
+.cart-fab span[hidden]{display:none}
+@media(max-width:900px){.cart-fab{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+.cart-bg{position:fixed;inset:0;z-index:95;background:rgba(0,0,0,.6);opacity:0;transition:opacity .25s}
+.cart-bg.on{opacity:1}
+.cart{position:fixed;top:0;right:0;bottom:0;z-index:96;width:min(440px,100%);background:var(--asphalt);border-left:1px solid var(--line);display:flex;flex-direction:column;transform:translateX(100%);transition:transform .25s ease;overflow:auto}
+.cart.on{transform:none}
+.cart-h{display:flex;justify-content:space-between;align-items:center;padding:20px 22px;border-bottom:1px solid var(--line)}
+.cart-h h3{font:700 18px/1 var(--cond);letter-spacing:.12em;text-transform:uppercase}
+.cart-h h3 span{color:var(--smoke,#aaa)}
+.cart-h button{background:none;border:0;color:var(--chalk);font-size:30px;cursor:pointer;line-height:1}
+.cart-ship{padding:16px 22px;border-bottom:1px solid var(--line);font-size:14px}
+.cart-ship .bar{height:4px;border-radius:2px;background:var(--line);margin-top:10px;overflow:hidden}
+.cart-ship i{display:block;height:100%;background:var(--rosso);transition:width .3s}
+.cart-ship i.ok{background:var(--verde)}
+.cart-items{padding:8px 22px;flex:1}
+.ci{display:grid;grid-template-columns:76px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ci img{width:76px;height:92px;object-fit:cover;border-radius:8px;background:#111}
+.ci-m b{display:block;font:700 14px/1.25 var(--cond);letter-spacing:.06em;text-transform:uppercase}
+.ci-m small{display:block;color:var(--smoke,#aaa);margin:4px 0 10px}
+.ci .qty{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:6px}
+.ci .qty button{width:34px;height:34px;background:none;border:0;color:var(--chalk);font-size:18px;cursor:pointer}
+.ci .qty output{min-width:26px;text-align:center;font-weight:700}
+.ci-r{display:flex;flex-direction:column;justify-content:space-between;align-items:flex-end}
+.ci-x{background:none;border:0;color:var(--smoke,#aaa);font-size:20px;cursor:pointer}
+.cart-empty{text-align:center;padding:40px 0;display:grid;gap:14px;justify-items:center}
+.cart-f{padding:18px 22px calc(18px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--tarmac);display:grid;gap:10px}
+.cart-f[hidden]{display:none}
+.cart-sum{display:flex;justify-content:space-between}
+.cart-sum.small{color:var(--smoke,#aaa);font-size:14px}
+.cart-sum.tot{font-size:20px;font-weight:700;border-top:1px solid var(--line);padding-top:10px}
+.btn.wide{width:100%;justify-content:center;text-align:center}
+.checkout{padding:18px 22px calc(22px + env(safe-area-inset-bottom,0px));display:grid;gap:10px;border-top:1px solid var(--line);background:var(--tarmac)}
+.checkout[hidden]{display:none}
+.checkout h4{font:700 13px/1 var(--cond);letter-spacing:.18em;text-transform:uppercase;margin:10px 0 2px}
+.bn{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;background:#7ad03a14;border:1px solid #6fcf3f55;border-radius:10px;padding:10px}
+.bn img{width:64px;height:48px;object-fit:cover;border-radius:6px}
+.bn b{display:block}
+.bn span{font-size:13px;color:var(--smoke,#aaa)}
+.bn-btn{background:#62c93a;border-color:#62c93a;color:#0b2a00}
+.pay-opts{display:flex;flex-wrap:wrap;gap:6px}
+.pay-opts span{padding:6px 10px;border:1px solid var(--line);border-radius:6px;font:700 11px/1 var(--cond);letter-spacing:.1em}
 </style>
 <style>html{color-scheme:dark}body{margin:0}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <script data-goatcounter="https://abarthclubgr.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
@@ -789,9 +916,8 @@ footer .hero-road{top:0;bottom:auto}
       <h1 class="wordmark" aria-label="ABARTH_CLUB_GR"><span class="a">ABARTH</span><span class="us">_</span><span class="c">CLUB</span><span class="us">_</span><span class="gr">GR</span></h1>
       <div class="hero-tag"><span class="hand">One Team. One Family. One Purpose.</span></div>
       <p class="hero-lede">Η κοινότητα της Αθήνας για όσους αγαπάνε τα ιταλικά αυτοκίνητα: <b>Abarth, Fiat, Lancia και Alfa Romeo</b>. Ξεκινήσαμε τον Αύγουστο του 2026 και στο πρώτο μας car meet ήρθαν <b>πάνω από 50 αυτοκίνητα</b>. Αυτό είναι μόνο η αρχή.</p>
-      <p class="vote-teaser"><b id="carTotal">77</b> αυτοκίνητα μελών διεκδικούν το <b>Car of the Week</b>. Ψήφισε τα 3 αγαπημένα σου.</p>
       <div class="btns">
-        <a class="btn hot" href="#cotw">Ψήφισε το Car of the Week</a>
+        <a class="btn hot" href="#merch">Δες το Merch</a>
         <a class="btn" href="#mission">First Mission · 5 Δεκεμβρίου</a>
       </div>
     </div>
@@ -823,55 +949,10 @@ footer .hero-road{top:0;bottom:auto}
   </div>
 </div>
 
-<section id="cotw" class="cotw-home">
+<section id="homeshop" class="homeshop">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>Car of the Week</div>
-      <h2>Ψήφισε το Car of the Week.</h2>
-      <p>77 αυτοκίνητα μελών. Εσύ διαλέγεις τα αγαπημένα σου.</p>
-    </div>
-    <ol class="steps">
-      <li><b>Πάτα «Ψήφισε»</b><span>σε έως 3 αυτοκίνητα</span></li>
-      <li><b>Στείλε την ψήφο</b><span>αντιγραφή και DM στο @abarth_club_gr</span></li>
-      <li><b>Κυριακή: ο νικητής</b><span>στο Instagram, με δωρεάν αυτοκόλλητο</span></li>
-    </ol>
-    <div class="vote-layout">
-      <div>
-        <div class="carousel" id="carousel">
-          <div class="slides" id="slides"></div>
-          <button class="car-nav prev" id="prev" aria-label="Προηγούμενο αυτοκίνητο">‹</button>
-          <button class="car-nav next" id="nextb" aria-label="Επόμενο αυτοκίνητο">›</button>
-        </div>
-        <div class="strip" id="strip" aria-label="Όλα τα αυτοκίνητα"></div>
-      </div>
-      <aside class="board">
-        <h3>Οι ψήφοι σου <small>έως 3</small></h3>
-        <ol id="board"></ol>
-        <div class="dm-preview" id="voteDm"></div>
-        <div class="btns" style="margin-top:0">
-          <button class="btn hot" type="button" id="voteCopy">Αντιγραφή ψήφου</button>
-          <a class="btn" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">Στείλε με DM</a>
-        </div>
-        </aside>
-    </div>
-    <details class="add-car">
-      <summary>Δεν βλέπεις το αυτοκίνητό σου; Πρόσθεσέ το</summary>
-      <div class="upload">
-          <p>Μία φωτογραφία ανά μέλος. Τη νύχτα βγαίνουν καλύτερα.</p>
-          <div class="row">
-            <label class="sr" for="up-brand">Μάρκα</label>
-            <select class="field" id="up-brand"><option>Abarth</option><option>Fiat</option><option>Alfa Romeo</option><option>Lancia</option></select>
-            <label class="sr" for="up-model">Μοντέλο</label>
-            <input class="field" type="text" id="up-model" placeholder="Μοντέλο">
-          </div>
-          <label class="sr" for="up-owner">Instagram</label>
-          <input class="field" type="text" id="up-owner" placeholder="@το_instagram_σου">
-          <p class="note photo-rules"><b>Κανόνες φωτογραφίας:</b> μόνο αυτοκίνητα, χωρίς πρόσωπα, και η πινακίδα να μη φαίνεται. Θα σου ζητήσουμε να τη θολώσεις πριν ανέβει.</p>
-          <label class="file" for="up-file">Επιλογή φωτογραφίας</label>
-          <input class="hidden-file" type="file" id="up-file" accept="image/*">
-          <div class="msg" id="up-msg"></div>
-        </div>
-    </details>
+    <div class="sec-head row-head"><div><div class="eyebrow"><span class="tri"></span>Official merch</div><h2>Wear your passion.</h2><p>Μπλούζες, φούτερ, καπέλα και αξεσουάρ του club. Αποστολή με BOX NOW σε όλη την Ελλάδα.</p></div><a class="btn hot" href="#merch">Όλο το shop →</a></div>
+    <div class="shop-grid" id="homeGrid"></div>
   </div>
 </section>
 
@@ -1065,7 +1146,7 @@ footer .hero-road{top:0;bottom:auto}
   <div class="eyebrow"><span class="tri"></span>Η οικογένεια σε τέσσερις τροχούς</div>
   <h1>Αυτοκίνητα.</h1>
   <p>Όλα τα αυτοκίνητα που μας έχουν στείλει τα μέλη. Ψάξε ανά μάρκα και μοντέλο και πάτα ένα για όλες τις φωτογραφίες του.</p>
-  <nav class="subnav"><a href="#cotw">Car of the Week</a><a href="#members">Garage μελών</a><a href="#family">Οι 4 μάρκες</a></nav>
+  <nav class="subnav"><a href="#members">Garage μελών</a><a href="#family">Οι 4 μάρκες</a></nav>
 </div></div>
 
 <section class="garage" id="members">
@@ -1099,81 +1180,92 @@ footer .hero-road{top:0;bottom:auto}
 </div>
 
 <!-- ================= MERCH ================= -->
-<div class="page soldout" id="p-merch">
-<div class="page-hero"><div class="wrap">
-  <div class="eyebrow"><span class="tri"></span>Official merch</div>
+<div class="page" id="p-merch">
+<div class="ship-bar">Δωρεάν αποστολή BOX NOW για παραγγελίες άνω των 40€ σε όλη την Ελλάδα</div>
+<div class="page-hero shop-hero"><div class="wrap">
+  <div class="eyebrow"><span class="tri"></span>Official merch · ABARTH_CLUB_GR</div>
   <h1>Wear your passion.</h1>
-  <div class="so-banner" role="status"><span class="so-stamp">Sold out</span><div><b>Το αυτοκόλλητο εξαντλήθηκε!</b><p>Θα το ανανεώσουμε το συντομότερο δυνατό. Ευχαριστούμε πολύ για τη στήριξή σας! Μπλούζες, φούτερ, καπέλα και lanyard έρχονται σύντομα.</p></div></div>
-  <p>Αυτοκόλλητα, μπλούζες και lanyard του club. Οι παραγγελίες γίνονται με DM στο Instagram και στέλνονται με BOX NOW.</p>
-  <nav class="subnav"><a href="#sticker">Αυτοκόλλητο</a><a href="#preorder">Μπλούζες και αξεσουάρ</a></nav>
+  <p>Το επίσημο merch του club. Πέρνα το ποντίκι πάνω από ένα προϊόν για να δεις και την πίσω πλευρά.</p>
+  <div class="shop-tabs" id="shopTabs" role="tablist">
+    <button type="button" data-cat="all" aria-pressed="true">Όλα</button>
+    <button type="button" data-cat="wear" aria-pressed="false">Ρούχα</button>
+    <button type="button" data-cat="acc" aria-pressed="false">Αξεσουάρ</button>
+    <button type="button" data-cat="new" aria-pressed="false"><span class="dot"></span>New arrivals</button>
+  </div>
 </div></div>
 
-<section id="sticker">
+<section class="shop-sec" id="shop">
   <div class="wrap">
-    <div class="merch-grid">
-      <div>
-        <div class="sticker-hero"><span class="so-mark" aria-hidden="true">Sold out</span><img id="st-main" src="img/sticker-spec.jpg" alt="Σχέδιο αυτοκόλλητου ABARTH_CLUB_GR, 20 × 5 cm"></div>
-        <div class="sticker-thumbs" id="st-thumbs">
-          <button aria-pressed="true" data-src="img/sticker-spec.jpg"><img src="img/sticker-spec.jpg" alt="Διαστάσεις"></button>
-          <button aria-pressed="false" data-src="img/sticker-595.jpg"><img src="img/sticker-595.jpg" alt="Σε Abarth 595"></button>
-          <button aria-pressed="false" data-src="img/sticker-mito.jpg"><img src="img/sticker-mito.jpg" alt="Σε Alfa Romeo MiTo"></button>
-          <button aria-pressed="false" data-src="img/sticker-spoiler.jpg"><img src="img/sticker-spoiler.jpg" alt="Κάτω από την αεροτομή"></button>
-          <button aria-pressed="false" data-src="img/sticker-pack.jpg"><img src="img/sticker-pack.jpg" alt="Έτοιμα για αποστολή"></button>
-        </div>
-      </div>
-      <div class="product">
-        <span class="tag so">Εξαντλήθηκε</span>
-        <div class="sticker-word" aria-label="ABARTH_CLUB_GR"><span class="r">ABARTH</span>_CLUB_<span class="g">GR</span></div>
-        <div class="price"><b>2€</b><span>ανά τεμάχιο<br>+ έξοδα BOX NOW</span></div>
-        <dl class="specs">
-          <div><dt>Διαστάσεις</dt><dd>20 × 5 cm</dd></div>
-          <div><dt>Υλικό</dt><dd>Κομμένο βινύλιο</dd></div>
-          <div><dt>Χρώματα</dt><dd>Κόκκινο · λευκό · πράσινο</dd></div>
-          <div><dt>Τοποθέτηση</dt><dd>Τζάμι, από έξω</dd></div>
-        </dl>
-        <div class="order">
-          <h4>Φτιάξε την παραγγελία σου</h4>
-          <p class="so-note">Προσωρινά εξαντλημένο. Θα ξαναβγεί σύντομα.</p>
-          <div class="row"><label>Τεμάχια</label>
-            <div class="qty"><button type="button" id="q-minus" aria-label="Λιγότερα">−</button><output id="q-val">2</output><button type="button" id="q-plus" aria-label="Περισσότερα">+</button></div>
-          </div>
-          <div class="row"><label for="o-city">Πόλη</label><input class="field" id="o-city" type="text" placeholder="π.χ. Αθήνα, Πάτρα, Θεσσαλονίκη"></div>
-          <div class="total"><span>Σύνολο προϊόντων</span><b id="o-total">4€</b></div>
-          <div class="dm-preview" id="dm"></div>
-          <div class="btns" style="margin-top:0">
-            <button class="btn hot" type="button" id="copy-dm">Αντιγραφή μηνύματος</button>
-            <a class="btn" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">Άνοιγμα DM</a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="boxnow">
-      <img src="img/boxnow.jpg" alt="Αυτόματο locker BOX NOW">
-      <div><b>Αποστολή με BOX NOW</b><p>Παραλαμβάνεις από το locker που θέλεις, 24/7, σε όλη την Ελλάδα. Λαμβάνεις μήνυμα, βάζεις τον κωδικό, παίρνεις το δέμα.</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="garage" id="preorder">
-  <div class="wrap">
-    <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>Coming soon</div>
-      <h2>Έρχονται σύντομα.</h2>
-      <p>Τα νέα προϊόντα του club είναι στα τελευταία στάδια. Ακολούθησε το @abarth_club_gr για να μάθεις πρώτος πότε βγαίνουν.</p>
-    </div>
-    <div class="shop" id="shop"></div>
-    <div class="order" id="mylist" hidden style="margin-top:22px">
-      <h4>Οι κρατήσεις μου</h4>
-      <div class="preorder-list" id="poList"></div>
-      <div class="dm-preview" id="poDm"></div>
-      <div class="btns" style="margin-top:0">
-        <button class="btn hot" type="button" id="poCopy">Αντιγραφή μηνύματος</button>
-        <a class="btn" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">Άνοιγμα DM</a>
-      </div>
+    <div class="shop-grid" id="shopGrid"></div>
+    <div class="shop-perks">
+      <div><b>BOX NOW</b><span>Παραλαβή από locker 24/7, σε όλη την Ελλάδα</span></div>
+      <div><b>Ασφαλής πληρωμή</b><span>Κάρτα, Apple Pay και Google Pay</span></div>
+      <div><b>Designed in Athens</b><span>Σχεδιασμένο από τα μέλη, για τα μέλη</span></div>
+      <div><b>Αλλαγή μεγέθους</b><span>Δωρεάν αλλαγή μέσα σε 14 μέρες</span></div>
     </div>
   </div>
 </section>
 </div>
+
+<!-- product view -->
+<div class="pv" id="pv" hidden role="dialog" aria-modal="true" aria-labelledby="pvTitle">
+  <div class="pv-in">
+    <button class="pv-x" id="pvClose" type="button" aria-label="Κλείσιμο">×</button>
+    <div class="pv-gal"><div class="pv-thumbs" id="pvThumbs"></div><div class="pv-main"><img id="pvImg" src="" alt=""></div></div>
+    <div class="pv-info">
+      <div class="pv-cat" id="pvCat"></div>
+      <h2 id="pvTitle"></h2>
+      <div class="pv-price"><b id="pvPrice"></b><span>Με ΦΠΑ</span></div>
+      <div id="pvSizeWrap">
+        <div class="pv-row"><span class="pv-lab">Μέγεθος</span><button type="button" class="linkish" id="fitToggle">Βρες το νούμερό σου</button></div>
+        <div class="pv-sizes" id="pvSizes"></div>
+        <div class="fit" id="fit" hidden>
+          <p>Βάλε ύψος και βάρος και διάλεξε πώς σου αρέσει να εφαρμόζει.</p>
+          <label class="fit-row"><span>Ύψος</span><b id="hVal">175 cm</b><input type="range" id="hIn" min="150" max="205" value="175"></label>
+          <label class="fit-row"><span>Βάρος</span><b id="wVal">75 kg</b><input type="range" id="wIn" min="45" max="140" value="75"></label>
+          <div class="fit-mode"><button type="button" data-fit="0" aria-pressed="true">Regular</button><button type="button" data-fit="1" aria-pressed="false">Oversized</button></div>
+          <div class="fit-res"><span>Προτεινόμενο μέγεθος</span><b id="fitSize">M</b><button type="button" id="fitPick">Επιλογή</button></div>
+          <p class="note">Ανάμεσα σε δύο μεγέθη; Πάρε το μεγαλύτερο.</p>
+        </div>
+      </div>
+      <button class="btn hot pv-add" type="button" id="pvAdd">Προσθήκη στο καλάθι</button>
+      <div class="pv-badges"><span>Designed in Athens</span><span id="pvMat"></span></div>
+      <p class="pv-desc" id="pvDesc"></p>
+      <details class="pv-acc"><summary>Αποστολή & επιστροφές</summary><p>Αποστολή με BOX NOW σε 1–3 εργάσιμες από την ημέρα που θα είναι έτοιμη η παραγγελία. Κόστος 3€, δωρεάν πάνω από 40€. Δωρεάν αλλαγή μεγέθους μέσα σε 14 μέρες.</p></details>
+      <details class="pv-acc"><summary>Φροντίδα</summary><p>Πλύσιμο στους 30°C από την ανάποδη. Όχι στεγνωτήριο, όχι σίδερο πάνω στο τύπωμα.</p></details>
+    </div>
+  </div>
+</div>
+
+<!-- cart -->
+<button class="cart-fab" id="cartFab" type="button" aria-label="Καλάθι"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h16l-1.5 11h-13z"/><path d="M8.5 9V7.5a3.5 3.5 0 0 1 7 0V9"/><path d="M9 13h.01M15 13h.01"/></svg><span id="cartCount">0</span></button>
+<div class="cart-bg" id="cartBg" hidden></div>
+<aside class="cart" id="cart" aria-label="Καλάθι" hidden>
+  <div class="cart-h"><h3>Το καλάθι σου <span id="cartN">(0)</span></h3><button type="button" id="cartClose" aria-label="Κλείσιμο">×</button></div>
+  <div class="cart-ship"><span id="shipMsg"></span><div class="bar"><i id="shipBar"></i></div></div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-f" id="cartFoot">
+    <div class="cart-sum"><span>Υποσύνολο</span><b id="cartSub">0€</b></div>
+    <div class="cart-sum small"><span>Αποστολή BOX NOW</span><b id="cartShip">3€</b></div>
+    <div class="cart-sum tot"><span>Σύνολο</span><b id="cartTot">0€</b></div>
+    <button class="btn hot wide" type="button" id="toCheckout">Ολοκλήρωση αγοράς</button>
+  </div>
+  <form class="checkout" id="checkout" hidden>
+    <button type="button" class="linkish" id="backCart">← Πίσω στο καλάθι</button>
+    <h4>Στοιχεία</h4>
+    <input class="field" name="name" required placeholder="Ονοματεπώνυμο" autocomplete="name">
+    <input class="field" name="phone" required placeholder="Κινητό (για το SMS του BOX NOW)" autocomplete="tel" inputmode="tel">
+    <input class="field" name="email" type="email" required placeholder="Email" autocomplete="email">
+    <h4>BOX NOW locker</h4>
+    <div class="bn"><img src="img/boxnow.jpg" alt=""><div><b>Παραλαβή από locker</b><span>Διάλεξε το locker που σε βολεύει στον χάρτη του BOX NOW και γράψε το όνομά του εδώ.</span></div></div>
+    <a class="btn wide bn-btn" href="https://boxnow.gr/" target="_blank" rel="noopener">Άνοιγμα χάρτη BOX NOW</a>
+    <input class="field" name="locker" required placeholder="Locker (π.χ. BOX NOW AB Γλυφάδα, Λ. Βουλιαγμένης 100)">
+    <h4>Πληρωμή</h4>
+    <div class="pay-opts"><span>VISA</span><span>Mastercard</span><span>Apple Pay</span><span>Google Pay</span></div>
+    <button class="btn hot wide" type="submit" id="payBtn">Πληρωμή με κάρτα</button>
+    <p class="note" id="payNote">Η πληρωμή γίνεται με ασφάλεια μέσω Stripe.</p>
+  </form>
+</aside>
 
 <!-- ================= GUIDE ================= -->
 <div class="page" id="p-guide">
@@ -1299,7 +1391,7 @@ footer .hero-road{top:0;bottom:auto}
       <div class="tl-item now"><div class="tl-dot"></div><div class="tl-date">Σεπ–Οκτ</div><div class="tl-body"><h3>Online παραγγελίες και νέο merch</h3><p>Τα αυτοκόλλητα φεύγουν με BOX NOW σε όλη την Ελλάδα. Μπλούζες, lanyard και μπρελόκ σε προπαραγγελία.</p></div></div>
       <div class="tl-item done"><div class="tl-dot"></div><div class="tl-date">17 Οκτ</div><div class="tl-body"><h3>Only VAG × Abarth Club GR</h3><p>Η πρώτη μας συνεργασία, με μια κοινότητα 4.000 ακολούθων. Βάρκιζα, 20:00.</p></div></div>
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">5 Δεκ</div><div class="tl-body"><h3>First Mission</h3><p>Meet στη Βάρκιζα στις 22:00 και κομβόι για τα μεσάνυχτα στον Ναό του Ποσειδώνα.</p><button class="tl-thumb" data-lb="img/poster-mission.jpg"><img src="img/poster-mission.jpg" alt="Αφίσα First Mission" loading="lazy"></button></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Επόμενα</div><div class="tl-body"><h3>1.000 followers και πολλά ακόμα</h3><p>Περισσότερα meets, Car of the Week κάθε εβδομάδα, κάρτα μέλους με εκπτώσεις.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Επόμενα</div><div class="tl-body"><h3>1.000 followers και πολλά ακόμα</h3><p>Περισσότερα meets, νέο merch, κάρτα μέλους με εκπτώσεις.</p></div></div>
     </div>
   </div>
 </section>
@@ -1360,7 +1452,7 @@ footer .hero-road{top:0;bottom:auto}
       <details><summary>Κοστίζει κάτι η συμμετοχή;</summary><p>Τίποτα. Τα meets και οι ομαδικές είναι δωρεάν. Πληρώνεις μόνο το merch, αν το θέλεις.</p></details>
       <details><summary>Πώς παραγγέλνω merch;</summary><p>Στη σελίδα Merch φτιάχνεις την παραγγελία ή την κράτησή σου, αντιγράφεις το έτοιμο μήνυμα και το στέλνεις με DM στο @abarth_club_gr. Αποστολή με BOX NOW.</p></details>
       <details><summary>Γιατί δεν αγοράζω απευθείας από το site;</summary><p>Προς το παρόν οι παραγγελίες γίνονται μόνο με προσωπικό μήνυμα. Online πληρωμές θα προστεθούν όταν το club αποκτήσει εταιρική μορφή.</p></details>
-      <details><summary>Πώς μπαίνει το αυτοκίνητό μου στο garage;</summary><p>Ανέβασέ το στο Car of the Week ή στείλε μας φωτογραφία με DM, μαζί με μοντέλο, χρώμα και μετατροπές.</p></details>
+      <details><summary>Πώς μπαίνει το αυτοκίνητό μου στο garage;</summary><p>Στείλε μας φωτογραφία με DM, μαζί με μοντέλο, χρώμα και μετατροπές.</p></details>
       <details><summary>Τι γίνεται με την οδήγηση στα meets;</summary><p>Τηρούμε τον Κ.Ο.Κ. χωρίς εξαιρέσεις. Όχι κόντρες, όχι burnouts, όχι φασαρία στις γειτονιές. Αφήνουμε τον χώρο όπως τον βρήκαμε, για να μας ξαναδεχτεί.</p></details>
     </div>
   </div>
@@ -1420,9 +1512,9 @@ function copy(text,el,ok){const sel=()=>{const r=document.createRange();r.select
 
 /* ---------- Router ---------- */
 const pages=['home','meets','cars','merch','guide','play','club'];
-const alias={top:'home',mission:'meets',varkiza:'meets',meet1:'meets',album:'meets',cotw:'home',garage:'cars',members:'cars',family:'cars',sticker:'merch',preorder:'merch',mylist:'merch',models:'guide',routes:'guide',shops:'guide',card:'play',quiz:'play',story:'club',partners:'club',join:'club',faq:'club'};
+const alias={top:'home',mission:'meets',varkiza:'meets',meet1:'meets',album:'meets',cotw:'cars',homeshop:'home',garage:'cars',members:'cars',family:'cars',sticker:'merch',preorder:'merch',mylist:'merch',shop:'merch',models:'guide',routes:'guide',shops:'guide',card:'play',quiz:'play',story:'club',partners:'club',join:'club',faq:'club'};
 let current=null;
-function route(){const h=(location.hash||'#home').slice(1);const p=pages.includes(h)?h:(alias[h]||'home');
+function route(){const h=(location.hash||'#merch').slice(1);const p=pages.includes(h)?h:(alias[h]||'home');
  if(p!==current){$$('.page').forEach(el=>el.classList.toggle('on',el.id==='p-'+p));$$('#navlinks a').forEach(a=>a.setAttribute('aria-current',a.dataset.p===p?'page':'false'));current=p;window.scrollTo(0,0);if(p==='home')armTacho();if(p==='play')drawCard()}
  if(!pages.includes(h)&&alias[h]){const t=document.getElementById(h);if(t)setTimeout(()=>t.scrollIntoView({behavior:reduce?'auto':'smooth'}),60)}}
 addEventListener('hashchange',route);
@@ -1534,31 +1626,6 @@ const myVotes=()=>cars.filter(c=>voted[c.id]);
 const heart='<svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 21s-7.5-4.6-9.6-9.3C.9 8.2 3 4.5 6.6 4.5c2.1 0 3.5 1.1 4.4 2.5.9-1.4 2.3-2.5 4.4-2.5 3.6 0 5.7 3.7 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>';
 function toggleVote(id){const c=cars.find(x=>x.id===id);if(!c)return;if(voted[id]){delete voted[id];toast('Βγήκε από τις ψήφους σου')}else{if(myVotes().length>=3){toast('Έχεις ήδη 3 ψήφους. Βγάλε μία πρώτα.');return}voted[id]=1;toast('Νο '+num(c)+' στις ψήφους σου 🔥')}store.set('acg3-voted',voted);renderCars()}
 
-/* ---------- Car of the week ---------- */
-let idx=0;
-function renderCotw(){
- $('#slides').innerHTML=cars.map(c=>`<div class="slide"><img src="${c.photos[0]}" alt="${esc(c.model)}" loading="lazy"><span class="rank-pill">Νο ${num(c)}</span><div class="slide-info"><div><h3>${esc(c.model)}</h3><p>${esc(c.color)}${c.owner?' · '+esc(c.owner):''}</p></div><button class="vote-btn ${voted[c.id]?'voted':''}" data-vote="${c.id}" aria-pressed="${!!voted[c.id]}">${heart}<span>${voted[c.id]?'Ψηφίστηκε':'Ψήφισε'}</span></button></div></div>`).join('');
- $('#strip').innerHTML=cars.map((c,i)=>`<button data-i="${i}" aria-label="Νο ${num(c)} ${esc(c.model)}" aria-current="${i===idx}"><img src="${c.photos[0]}" alt="" loading="lazy"></button>`).join('');
- const mine=myVotes();
- $('#board').innerHTML=mine.length?mine.map(c=>`<li data-id="${c.id}"><span class="pos">${num(c)}</span><img src="${c.photos[0]}" alt=""><span class="nm">${esc(c.model)}<small>${esc(c.color)}</small></span><button class="rm-vote" type="button" data-vote="${c.id}" aria-label="Αφαίρεση">×</button></li>`).join(''):'<p class="note">Πάτα «Ψήφισε» στα αυτοκίνητα που σου αρέσουν. Έως 3 ψήφοι την εβδομάδα.</p>';
- $('#voteDm').textContent=mine.length?`Ψηφίζω για Car of the Week: ${mine.map(c=>'Νο '+num(c)+' ('+c.model+')').join(', ')} 🔥`:'Το μήνυμα με τις ψήφους σου θα εμφανιστεί εδώ.';
- $('#voteCopy').disabled=!mine.length;
- go(idx);
- const F=cars[Math.floor(Date.now()/864e5)%Math.min(cars.length,62)];const HL=$('#homeLeader');if(HL)HL.innerHTML=`<img src="${F.photos[0]}" alt=""><div><small>Αυτοκίνητο της ημέρας · Νο ${num(F)}</small><b>${esc(F.model)}</b><span class="u">${esc(F.color)} · Ο νικητής του Car of the Week ανακοινώνεται κάθε Κυριακή στο Instagram</span></div><span class="btn hot">Ψήφισε</span>`;
-}
-function go(i){idx=(i+cars.length)%cars.length;$('#slides').style.transform=`translateX(-${idx*100}%)`;$$('#strip button').forEach((b,j)=>b.setAttribute('aria-current',j===idx));const cur=$$('#strip button')[idx];if(cur&&current==='home'){const s=$('#strip');s.scrollTo({left:cur.offsetLeft-s.clientWidth/2+32,behavior:reduce?'auto':'smooth'})}}
-$('#prev').onclick=()=>go(idx-1);$('#nextb').onclick=()=>go(idx+1);
-$('#strip').addEventListener('click',e=>{const b=e.target.closest('button');if(b)go(+b.dataset.i)});
-$('#board').addEventListener('click',e=>{const li=e.target.closest('li');if(li){go(cars.findIndex(c=>c.id===li.dataset.id));$('#carousel').scrollIntoView({behavior:reduce?'auto':'smooth',block:'center'})}});
-document.addEventListener('click',e=>{const b=e.target.closest('[data-vote]');if(b){e.stopImmediatePropagation();toggleVote(b.dataset.vote);if(!$('#modal').hidden&&b.closest('#mInfo'))openCar(b.dataset.vote)}},true);
-$('#voteCopy').onclick=()=>copy($('#voteDm').textContent,$('#voteDm'),'Αντιγράφηκε. Στείλ’ το με DM.');
-let sx=null;$('#carousel').addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
-$('#carousel').addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40)go(idx+(dx<0?1:-1));sx=null});
-$('#up-file').addEventListener('change',async e=>{const f=e.target.files[0];if(!f)return;
- try{const data=await checkPhoto(f);if(!data){e.target.value='';return}const c={id:'u'+Date.now(),brand:$('#up-brand').value,model:$('#up-model').value.trim()||'Το αυτοκίνητό μου',color:'Νέα συμμετοχή',note:'Ανέβηκε από μέλος',owner:$('#up-owner').value.trim(),photos:[data],seed:0};
-  const mine=store.get('acg3-mycars',[]);mine.push(c);const ok=store.set('acg3-mycars',mine);cars.push(c);idx=cars.length-1;renderCars();
-  $('#up-msg').textContent='Έτοιμο! Φαίνεται στη δική σου συσκευή. Για να μπει στο επίσημο garage, στείλε τη φωτογραφία με DM στο @abarth_club_gr.';e.target.value=''}catch(err){$('#up-msg').textContent='Δεν διαβάστηκε η φωτογραφία. Δοκίμασε JPG ή PNG.'}});
-
 /* ---------- Garage ---------- */
 let gFilter='Όλα',gQuery='',gShown=12;
 function renderFilters(){const brands=['Όλα','Abarth','Fiat','Alfa Romeo','Lancia'];
@@ -1571,18 +1638,16 @@ function renderGrid(){const ct=$('#carTotal');if(ct)ct.textContent=cars.length;c
  $('#carCount').textContent=cars.length}
 $('#filters').addEventListener('click',e=>{const b=e.target.closest('[data-f]');if(!b)return;gFilter=b.dataset.f;gShown=12;$$('#filters [data-f]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderGrid()});
 document.addEventListener('click',e=>{if(e.target.id==='moreCars'){gShown+=12;renderGrid()}});
-function renderCars(){renderCotw();renderFilters();renderGrid()}
+function renderCars(){renderFilters();renderGrid()}
 document.addEventListener('click',e=>{const g=e.target.closest('[data-car]');if(g)openCar(g.dataset.car)});
 function openCar(id){const c=cars.find(x=>x.id===id);if(!c)return;
  $('#mPhotos').innerHTML=c.photos.map(p=>`<img src="${p}" alt="${esc(c.model)}">`).join('');
  $('#mInfo').innerHTML=`<span class="tag ${c.brand==='Abarth'?'live':'later'}">${esc(c.brand)}</span><h3 id="mTitle">${esc(c.model)}</h3>
- <dl class="kv"><dt>Χρώμα</dt><dd>${esc(c.color)}</dd><dt>Λεπτομέρειες</dt><dd>${esc(c.note)}</dd><dt>Ιδιοκτήτης</dt><dd>${c.owner?esc(c.owner):'Μέλος της κοινότητας'}</dd><dt>Αριθμός</dt><dd>Νο ${num(c)} στο Car of the Week</dd></dl>
- <button class="vote-btn ${voted[c.id]?'voted':''}" data-vote="${c.id}" style="justify-self:start">${heart}<span>${voted[c.id]?'Ψηφίστηκε':'Ψήφισε'}</span></button>
+ <dl class="kv"><dt>Χρώμα</dt><dd>${esc(c.color)}</dd><dt>Λεπτομέρειες</dt><dd>${esc(c.note)}</dd><dt>Ιδιοκτήτης</dt><dd>${c.owner?esc(c.owner):'Μέλος της κοινότητας'}</dd><dt>Αριθμός</dt><dd>Νο ${num(c)} στο garage</dd></dl>
  <p class="note">Είναι δικό σου; Στείλε DM στο <b>@abarth_club_gr</b> για να προστεθεί το @ σου, η περιοχή και οι μετατροπές.</p>`;
  $('#modal').hidden=false;document.body.style.overflow='hidden';$('#mClose').focus()}
 function closeModal(){$('#modal').hidden=true;document.body.style.overflow=''}
 $('#mClose').onclick=closeModal;$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
-document.addEventListener('click',e=>{if(e.target.closest('#mInfo [data-vote]')){const id=e.target.closest('[data-vote]').dataset.vote;setTimeout(()=>{if(!$('#modal').hidden)openCar(id)},0)}});
 
 /* ---------- Meet gallery + album ---------- */
 const gal=[['meet-tikaname.jpg','Τι κάναμε'],['meet-abarth-lineup.jpg','Abarth line-up'],['meet-cruise.jpg','Cruise'],['meet-farma-wide.jpg','50+ αυτοκίνητα'],['meet-farma.jpg','Φάρμα Ρέρρα'],['meet-595-row.jpg','595 line-up'],['meet-palms.jpg','Grande Punto squad'],['meet-mito-red.jpg','MiTo'],['meet-punto-orange.jpg','Punto'],['meet-mito-crew.jpg','Alfa crew'],['meet-punto-widebody.jpg','Widebody'],['meet-595-duo.jpg','Competizione'],['meet-lavrio-row.jpg','Λαύριο'],['meet-panda.jpg','Panda 100HP'],['meet-mito-black.jpg','Black MiTos'],['meet-punto-white.jpg','Grande Punto Abarth'],['meet-punto-row.jpg','Palm row']];
@@ -1613,34 +1678,78 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-lb]');if(!
 $('#lb').addEventListener('click',e=>{if(e.target.id!=='lb-img')$('#lb').hidden=true});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){$('#lb').hidden=true;closeModal()}});
 
-/* ---------- Sticker order ---------- */
-$('#st-thumbs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;$('#st-main').src=b.dataset.src;$$('#st-thumbs button').forEach(x=>x.setAttribute('aria-pressed',x===b))});
-let q=2;function upd(){$('#q-val').textContent=q;$('#o-total').textContent=(q*2)+'€';const city=$('#o-city').value.trim();
- $('#dm').textContent=`Γεια σας! Θα ήθελα ${q} ${q===1?'αυτοκόλλητο':'αυτοκόλλητα'} ABARTH_CLUB_GR (${q*2}€ + BOX NOW)${city?` με αποστολή σε locker στην περιοχή ${city}`:''}. 🇮🇹🔥`}
-$('#q-minus').onclick=()=>{q=Math.max(1,q-1);upd()};$('#q-plus').onclick=()=>{q=Math.min(50,q+1);upd()};$('#o-city').addEventListener('input',upd);upd();
-$('#copy-dm').onclick=()=>copy($('#dm').textContent,$('#dm'),'Αντιγράφηκε. Στείλ’ το με DM.');
-
-/* ---------- Preorders ---------- */
-const products=[
- {id:'tee',name:'T-shirt ABARTH CLUB GR',desc:'Μαύρο βαμβακερό. Μπροστά το λογότυπο, πίσω τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Σημαιάκι στο μανίκι και σκορπιός στο κάτω μέρος.',imgs:['m2-tee-woman','m2-tee-back','m3-tee-athens','m2-tee-mockup','m2-tee-collage'],opts:['S','M','L','XL','XXL'],optLabel:'Μέγεθος'},
- {id:'lanyard',name:'Lanyard ABARTH_CLUB_GR',desc:'Μαύρο κορδόνι λαιμού με το ABARTH_CLUB_GR, τα σήματα των 4 μαρκών και ιταλικές ρίγες. Αποσπώμενο κούμπωμα και κρίκος για κλειδιά.',imgs:['m2-lanyard-hang','m2-lanyard-car','m2-lanyard-studio'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'},
- {id:'hoodie',name:'Φούτερ ATHENS EST. 2026',desc:'Μαύρο φούτερ με κουκούλα. Μπροστά τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Υπάρχει και η λιτή εκδοχή με το λογότυπο ABARTH CLUB GR στο στήθος.',imgs:['m3-hoodie-athens','m3-hoodie'],opts:['S','M','L','XL','XXL'],optLabel:'Μέγεθος'},
- {id:'cap',name:'Καπέλο ABARTH_CLUB_GR',desc:'Μαύρο trucker καπέλο με δίχτυ και κεντημένο ABARTH_CLUB_GR στα χρώματα της ιταλικής σημαίας. Ρυθμιζόμενο κούμπωμα πίσω.',imgs:['m3-cap'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'}];
-const pick={};let po=store.get('acg3-preorders',[]);
-$('#shop').innerHTML=products.map(p=>{pick[p.id]=p.opts[0];return `<article class="prod" data-prod="${p.id}"><div class="pimg"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}" data-main loading="lazy"><span class="tag next">Coming soon</span><span class="so-mark cs-mark" aria-hidden="true">Coming soon</span></div>
- ${p.imgs.length>1?`<div class="pthumbs">${p.imgs.map((m,i)=>`<button type="button" data-img="img/${m}.jpg" aria-pressed="${i===0}"><img src="img/${m}.jpg" alt=""></button>`).join('')}</div>`:''}
- <div class="pbody"><h3>${esc(p.name)}</h3><p>${esc(p.desc)}</p><div class="price-line">Τιμή σύντομα<small>ανακοινώνεται στο Instagram</small></div>
- <div><div class="note" style="margin-bottom:6px">${p.optLabel}</div><div class="sizes">${p.opts.map((o,i)=>`<button type="button" data-opt="${esc(o)}" aria-pressed="${i===0}">${esc(o)}</button>`).join('')}</div></div>
- <button class="btn hot" type="button" data-reserve="${p.id}" disabled>Έρχεται σύντομα</button></div></article>`}).join('');
-$('#shop').addEventListener('click',e=>{const art=e.target.closest('[data-prod]');if(!art)return;const id=art.dataset.prod;
- const t=e.target.closest('[data-img]');if(t){art.querySelector('[data-main]').src=t.dataset.img;art.querySelectorAll('[data-img]').forEach(x=>x.setAttribute('aria-pressed',x===t));art.querySelector('[data-main]').parentElement.dataset.lb=t.dataset.img;return}
- const o=e.target.closest('[data-opt]');if(o){pick[id]=o.dataset.opt;art.querySelectorAll('[data-opt]').forEach(x=>x.setAttribute('aria-pressed',x===o));return}
- if(e.target.closest('[data-reserve]')){const p=products.find(x=>x.id===id);const ex=po.find(x=>x.id===id&&x.opt===pick[id]);if(ex)ex.qty++;else po.push({id,name:p.name,opt:pick[id],qty:1});store.set('acg3-preorders',po);renderPo();toast('Κρατήθηκε: '+p.name+' · '+pick[id])}});
-function renderPo(){$('#poList').innerHTML=po.length?po.map((x,i)=>`<div><span>${x.qty} × ${esc(x.name)} · ${esc(x.opt)}</span><button type="button" data-rm="${i}">Αφαίρεση</button></div>`).join(''):'<p class="note">Δεν έχεις κρατήσει κάτι ακόμα. Διάλεξε από πάνω.</p>';
- $('#poDm').textContent=po.length?'Γεια σας! Θέλω να κρατήσω από το νέο merch:\n'+po.map(x=>`• ${x.qty} × ${x.name} (${x.opt})`).join('\n')+'\nΕνημερώστε με για τιμή και διαθεσιμότητα. 🇮🇹':'Το μήνυμα θα εμφανιστεί εδώ μόλις κρατήσεις κάτι.';$('#poCopy').disabled=!po.length}
-$('#poList').addEventListener('click',e=>{const b=e.target.closest('[data-rm]');if(!b)return;po.splice(+b.dataset.rm,1);store.set('acg3-preorders',po);renderPo()});
-$('#poCopy').onclick=()=>copy($('#poDm').textContent,$('#poDm'),'Αντιγράφηκε. Στείλ’ το με DM.');
-renderPo();
+/* ---------- Shop ---------- */
+const SHIP=3,FREE=40;
+const STRIPE_LINKS={}; /* συμπληρώνεται όταν συνδεθεί το Stripe */
+const PRODUCTS=[
+ {id:'hoodie',name:'Φούτερ ATHENS EST. 2026',cat:'wear',tag:'new',price:45,mat:'Βαμβάκι με fleece εσωτερικά',img:['m3-hoodie','m3-hoodie-athens'],sizes:['S','M','L','XL','XXL'],desc:'Μαύρο φούτερ με κουκούλα. Μπροστά το λογότυπο ABARTH CLUB GR στο στήθος. Πίσω τα σήματα Fiat, Abarth, Alfa Romeo και Lancia, η ιταλική ρίγα και «Athens Est. 2026».'},
+ {id:'tee',name:'T-shirt ATHENS EST. 2026',cat:'wear',tag:'new',price:25,mat:'100% βαμβάκι',img:['p-tee-front','p-tee-back','m2-tee-woman','m3-tee-athens'],sizes:['S','M','L','XL','XXL'],desc:'Μαύρο βαμβακερό T-shirt. Μπροστά το λογότυπο, πίσω τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Σημαιάκι στο μανίκι.'},
+ {id:'cap',name:'Καπέλο ABARTH_CLUB_GR',cat:'acc',tag:'new',price:20,mat:'Trucker με δίχτυ',img:['p-cap-front','p-cap-back','m3-cap'],sizes:null,desc:'Μαύρο trucker καπέλο με δίχτυ και κεντημένο ABARTH_CLUB_GR στα χρώματα της ιταλικής σημαίας. Ρυθμιζόμενο κούμπωμα πίσω, ένα μέγεθος για όλους.'},
+ {id:'lanyard',name:'Lanyard ABARTH_CLUB_GR',cat:'acc',tag:'',price:8,mat:'Υφασμάτινο, 2,5 cm',img:['m2-lanyard-studio','m2-lanyard-hang','m2-lanyard-car'],sizes:null,desc:'Μαύρο κορδόνι λαιμού με το ABARTH_CLUB_GR, τα σήματα των 4 μαρκών και ιταλικές ρίγες. Αποσπώμενο κούμπωμα και κρίκος για τα κλειδιά.'},
+ {id:'sticker',name:'Αυτοκόλλητο ABARTH_CLUB_GR',cat:'acc',tag:'sold',price:2,mat:'Κομμένο βινύλιο, 20 × 5 cm',img:['sticker-spec','sticker-595','sticker-mito','sticker-spoiler'],sizes:null,desc:'Το αυτοκόλλητο του club για το τζάμι, από έξω. Κόκκινο, λευκό και πράσινο. Εξαντλήθηκε! Θα το ανανεώσουμε το συντομότερο, ευχαριστούμε για τη στήριξη.'}
+];
+const eur=n=>(Math.round(n*100)/100).toFixed(n%1?2:0).replace('.',',')+'€';
+const P=id=>PRODUCTS.find(p=>p.id===id);
+function card(p){const sold=p.tag==='sold';
+ return `<article class="pc${sold?' is-sold':''}" data-pid="${p.id}"><button class="pc-img" type="button" data-open="${p.id}" aria-label="${esc(p.name)}">
+ <img class="a" src="img/${p.img[0]}.jpg" alt="${esc(p.name)}" loading="lazy">${p.img[1]?`<img class="b" src="img/${p.img[1]}.jpg" alt="" loading="lazy">`:''}
+ ${p.tag==='new'?'<span class="pc-tag">New arrival</span>':''}${sold?'<span class="pc-tag sold">Sold out</span>':''}</button>
+ <div class="pc-b"><div><h3>${esc(p.name)}</h3><span class="pc-p">${eur(p.price)}</span></div>${sold?'':`<button class="pc-add" type="button" data-quick="${p.id}" aria-label="Στο καλάθι"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h16l-1.5 11h-13z"/><path d="M8.5 9V7.5a3.5 3.5 0 0 1 7 0V9"/><path d="M9 13h.01M15 13h.01"/></svg></button>`}</div></article>`}
+let cat='all';
+function renderShop(){const list=PRODUCTS.filter(p=>cat==='all'||(cat==='new'?p.tag==='new':p.cat===cat));
+ $('#shopGrid').innerHTML=list.map(card).join('');const hg=$('#homeGrid');if(hg)hg.innerHTML=PRODUCTS.slice(0,4).map(card).join('')}
+$('#shopTabs').addEventListener('click',e=>{const b=e.target.closest('[data-cat]');if(!b)return;cat=b.dataset.cat;$$('#shopTabs [data-cat]').forEach(x=>x.setAttribute('aria-pressed',x===b));renderShop()});
+/* product view */
+let cur=null,size=null,fitMode=0;
+function openP(id){const p=P(id);cur=p;size=null;
+ $('#pvCat').textContent=p.cat==='wear'?'Ρούχα':'Αξεσουάρ';$('#pvTitle').textContent=p.name;$('#pvPrice').textContent=eur(p.price);$('#pvDesc').textContent=p.desc;$('#pvMat').textContent=p.mat;
+ $('#pvImg').src='img/'+p.img[0]+'.jpg';$('#pvImg').alt=p.name;
+ $('#pvThumbs').innerHTML=p.img.map((m,i)=>`<button type="button" data-pimg="img/${m}.jpg" aria-pressed="${i===0}"><img src="img/${m}.jpg" alt=""></button>`).join('');
+ $('#pvSizeWrap').hidden=!p.sizes;if(p.sizes){$('#pvSizes').innerHTML=p.sizes.map(z=>`<button type="button" data-size="${z}" aria-pressed="false">${z}</button>`).join('');$('#fit').hidden=true}
+ const sold=p.tag==='sold';$('#pvAdd').disabled=sold;$('#pvAdd').textContent=sold?'Sold out · Ξαναβγαίνει σύντομα':'Προσθήκη στο καλάθι';
+ $('#pv').hidden=false;document.body.style.overflow='hidden'}
+function closeP(){$('#pv').hidden=true;document.body.style.overflow=''}
+document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o){openP(o.dataset.open);return}
+ const q=e.target.closest('[data-quick]');if(q){const p=P(q.dataset.quick);if(p.sizes)openP(p.id);else{addCart(p.id,null);openCart()}}});
+$('#pvClose').onclick=closeP;$('#pv').addEventListener('click',e=>{if(e.target.id==='pv')closeP()});
+$('#pvThumbs').addEventListener('click',e=>{const b=e.target.closest('[data-pimg]');if(!b)return;$('#pvImg').src=b.dataset.pimg;$$('#pvThumbs button').forEach(x=>x.setAttribute('aria-pressed',x===b))});
+function pickSize(z){size=z;$$('#pvSizes [data-size]').forEach(x=>x.setAttribute('aria-pressed',x.dataset.size===z))}
+$('#pvSizes').addEventListener('click',e=>{const b=e.target.closest('[data-size]');if(b)pickSize(b.dataset.size)});
+$('#fitToggle').onclick=()=>{$('#fit').hidden=!$('#fit').hidden;calcFit()};
+function calcFit(){const h=+$('#hIn').value,w=+$('#wIn').value;$('#hVal').textContent=h+' cm';$('#wVal').textContent=w+' kg';
+ let i=h<166?0:h<176?1:h<184?2:h<191?3:4;const ideal=(h-100)*.95;if(w>ideal*1.18)i++;if(w>ideal*1.38)i++;if(w<ideal*.8)i--;i+=fitMode;
+ const S=['S','M','L','XL','XXL'];$('#fitSize').textContent=S[Math.max(0,Math.min(4,i))]}
+['input','change'].forEach(t=>{$('#hIn').addEventListener(t,calcFit);$('#wIn').addEventListener(t,calcFit)});
+$('.fit-mode').addEventListener('click',e=>{const b=e.target.closest('[data-fit]');if(!b)return;fitMode=+b.dataset.fit;$$('.fit-mode button').forEach(x=>x.setAttribute('aria-pressed',x===b));calcFit()});
+$('#fitPick').onclick=()=>{pickSize($('#fitSize').textContent);toast('Επιλέχθηκε μέγεθος '+size)};
+$('#pvAdd').onclick=()=>{if(cur.sizes&&!size){toast('Διάλεξε μέγεθος πρώτα');$('#pvSizes').classList.add('shake');setTimeout(()=>$('#pvSizes').classList.remove('shake'),500);return}addCart(cur.id,size);closeP();openCart()};
+/* cart */
+let cart=store.get('acg3-cart',[]);
+function saveCart(){store.set('acg3-cart',cart);renderCart()}
+function addCart(id,sz){const ex=cart.find(x=>x.id===id&&x.size===sz);if(ex)ex.qty++;else cart.push({id,size:sz,qty:1});saveCart();toast('Μπήκε στο καλάθι 🛒')}
+function totals(){const sub=cart.reduce((a,x)=>a+P(x.id).price*x.qty,0);const ship=!cart.length||sub>=FREE?0:SHIP;return{sub,ship,tot:sub+ship,n:cart.reduce((a,x)=>a+x.qty,0)}}
+function renderCart(){const t=totals();$('#cartCount').textContent=t.n;$('#cartCount').hidden=!t.n;$('#cartN').textContent='('+t.n+')';
+ $('#cartItems').innerHTML=cart.length?cart.map((x,i)=>{const p=P(x.id);return `<div class="ci"><img src="img/${p.img[0]}.jpg" alt=""><div class="ci-m"><b>${esc(p.name)}</b><small>${x.size?'Μέγεθος '+x.size:'Ένα μέγεθος'}</small><div class="qty"><button type="button" data-cq="${i}" data-d="-1" aria-label="Λιγότερα">−</button><output>${x.qty}</output><button type="button" data-cq="${i}" data-d="1" aria-label="Περισσότερα">+</button></div></div><div class="ci-r"><button type="button" class="ci-x" data-crm="${i}" aria-label="Αφαίρεση">×</button><b>${eur(p.price*x.qty)}</b></div></div>`}).join(''):'<div class="cart-empty"><p>Το καλάθι σου είναι άδειο.</p><a class="btn hot" href="#merch" id="emptyShop">Πάμε για ψώνια</a></div>';
+ const left=FREE-t.sub;$('#shipMsg').textContent=!cart.length?'Δωρεάν αποστολή για παραγγελίες άνω των 40€':left>0?`Σου λείπουν ${eur(left)} για δωρεάν αποστολή`:'Έχεις δωρεάν αποστολή 🎉';
+ $('#shipBar').style.width=Math.min(100,t.sub/FREE*100)+'%';$('#shipBar').classList.toggle('ok',left<=0&&cart.length>0);
+ $('#cartSub').textContent=eur(t.sub);$('#cartShip').textContent=t.ship?eur(t.ship):'Δωρεάν';$('#cartTot').textContent=eur(t.tot);
+ $('#cartFoot').hidden=!cart.length;if(!cart.length)$('#checkout').hidden=true}
+$('#cartItems').addEventListener('click',e=>{const q=e.target.closest('[data-cq]');if(q){const x=cart[+q.dataset.cq];x.qty=Math.max(1,Math.min(20,x.qty+ +q.dataset.d));saveCart();return}
+ const r=e.target.closest('[data-crm]');if(r){cart.splice(+r.dataset.crm,1);saveCart();return}if(e.target.id==='emptyShop')closeCart()});
+function openCart(){$('#cart').hidden=false;$('#cartBg').hidden=false;requestAnimationFrame(()=>{$('#cart').classList.add('on');$('#cartBg').classList.add('on')})}
+function closeCart(){$('#cart').classList.remove('on');$('#cartBg').classList.remove('on');setTimeout(()=>{$('#cart').hidden=true;$('#cartBg').hidden=true},250)}
+$('#cartFab').onclick=openCart;$('#cartClose').onclick=closeCart;$('#cartBg').onclick=closeCart;
+addEventListener('keydown',e=>{if(e.key==='Escape'){if(!$('#pv').hidden)closeP();else if(!$('#cart').hidden)closeCart()}});
+$('#toCheckout').onclick=()=>{$('#checkout').hidden=false;$('#cartFoot').hidden=true;$('#checkout [name=name]').focus()};
+$('#backCart').onclick=()=>{$('#checkout').hidden=true;$('#cartFoot').hidden=false};
+$('#checkout').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target),t=totals();
+ const order=`ΝΕΑ ΠΑΡΑΓΓΕΛΙΑ ABARTH CLUB GR\n${cart.map(x=>`• ${x.qty} × ${P(x.id).name}${x.size?' ('+x.size+')':''} = ${eur(P(x.id).price*x.qty)}`).join('\n')}\nΑποστολή: ${t.ship?eur(t.ship):'Δωρεάν'}\nΣύνολο: ${eur(t.tot)}\n\n${f.get('name')}\n${f.get('phone')}\n${f.get('email')}\nBOX NOW: ${f.get('locker')}`;
+ store.set('acg3-lastorder',order);
+ if(window.STRIPE_CHECKOUT){window.STRIPE_CHECKOUT(cart,Object.fromEntries(f));return}
+ location.href='mailto:Abarthclubgr@gmail.com?subject='+encodeURIComponent('Παραγγελία merch · '+f.get('name'))+'&body='+encodeURIComponent(order);
+ $('#payNote').innerHTML='Η πληρωμή με κάρτα ανοίγει σύντομα. Μέχρι τότε η παραγγελία σου στέλνεται με email και σου στέλνουμε link πληρωμής. <button type="button" class="linkish" id="copyOrder">Αντιγραφή παραγγελίας για DM</button>'});
+document.addEventListener('click',e=>{if(e.target.id==='copyOrder')navigator.clipboard&&navigator.clipboard.writeText(store.get('acg3-lastorder','')).then(()=>toast('Αντιγράφηκε. Στείλ’ το με DM στο @abarth_club_gr.'))});
+renderShop();renderCart();
 
 /* ---------- Guides ---------- */
 const guides=[
