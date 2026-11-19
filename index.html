@@ -465,6 +465,13 @@ footer img{width:84px}
 /* RSVP */
 .rsvp{margin-top:22px;display:grid;gap:12px;background:var(--tarmac);border:1px solid var(--line);border-radius:16px;padding:18px}
 .rsvp h3{font-size:30px}
+.mission-route{margin:0 0 16px}
+.recap-badge{display:inline-block;background:var(--green,#1f9d55);color:#fff;font-weight:800;padding:8px 14px;border-radius:999px;margin:0 0 12px}
+.recap-text{color:var(--muted,#bbb);margin:0 0 14px}
+.recap-gal{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.recap-gal .tl-thumb{padding:0;border:0;background:none;cursor:zoom-in;border-radius:10px;overflow:hidden;aspect-ratio:1}
+.recap-gal img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:640px){.recap-gal{grid-template-columns:repeat(2,1fr)}}
 .rsvp .row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .btn.going{background:var(--verde);border-color:var(--verde);color:#fff}
 .note{font-size:14px;color:var(--dim);line-height:1.5}
@@ -785,7 +792,7 @@ footer .hero-road{top:0;bottom:auto}
       <p class="vote-teaser"><b id="carTotal">66</b> αυτοκίνητα μελών διεκδικούν το <b>Car of the Week</b>. Ψήφισε τα 3 αγαπημένα σου.</p>
       <div class="btns">
         <a class="btn hot" href="#cotw">Ψήφισε το Car of the Week</a>
-        <a class="btn" href="#meets">Varkiza · 17 Οκτωβρίου</a>
+        <a class="btn" href="#mission">First Mission · 5 Δεκεμβρίου</a>
       </div>
     </div>
     <div class="logo-stage"><img src="img/logo.png" alt="Λογότυπο Abarth Club GR Athens, Est. 2026"></div>
@@ -796,8 +803,8 @@ footer .hero-road{top:0;bottom:auto}
   <div class="wrap">
     <div>
       <div class="next-label">Επόμενο car meet</div>
-      <div class="next-title">ONLY VAG ATHENS × ABARTH CLUB GR</div>
-      <div class="next-sub">Σάββατο 17 Οκτωβρίου · 20:00 · Parking μετά το Varkiza Resort, Βάρκιζα</div>
+      <div class="next-title">CAR MEET · FIRST MISSION</div>
+      <div class="next-sub">Σάββατο 5 Δεκεμβρίου · 22:00 Varkiza Resort · 23:00 αναχώρηση · 00:00 Ναός Ποσειδώνα, Σούνιο</div>
     </div>
     <div></div>
     <div class="cd">
@@ -896,7 +903,7 @@ footer .hero-road{top:0;bottom:auto}
         <div class="stat"><b class="r">50+</b><span>Αυτοκίνητα</span><small>στο πρώτο car meet, 19/09/2026</small></div>
         <div class="stat"><b>250+</b><span>Μέλη στο Telegram</span><small>και άλλα 250+ στην ομαδική του Instagram</small></div>
         <div class="stat"><b class="g">~20</b><span>Αυτοκόλλητα</span><small>πουλήθηκαν μέσα σε ένα βράδυ</small></div>
-        <div class="stat"><b>4.000</b><span>Ακόλουθοι Only VAG</span><small>ο πρώτος μας συνεργάτης για τις 17/10</small></div>
+        <div class="stat"><b>4.000</b><span>Ακόλουθοι Only VAG</span><small>ο πρώτος μας συνεργάτης, στο meet της 17/10</small></div>
       </div>
     </div>
   </div>
@@ -909,9 +916,9 @@ footer .hero-road{top:0;bottom:auto}
       <h2>Διάλεξε διαδρομή.</h2>
     </div>
     <div class="tiles">
-      <a class="tile" href="#meets"><img src="img/meet-farma-wide.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Meets</b><span>Varkiza 17/10, «Έρχομαι», album της βραδιάς</span></div></a>
+      <a class="tile" href="#meets"><img src="img/meet-farma-wide.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Meets</b><span>First Mission 5/12 στο Σούνιο, «Έρχομαι», album</span></div></a>
       <a class="tile" href="#cars"><img src="img/c-gpa-black-stripe.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Garage</b><span>Όλα τα αυτοκίνητα των μελών, με φίλτρα ανά μάρκα</span></div></a>
-      <a class="tile" href="#merch"><img src="img/m2-tee-woman.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Merch</b><span>Νέα προϊόντα έρχονται σύντομα</span></div></a>
+      <a class="tile" href="#merch"><img src="img/m2-tee-woman.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Merch</b><span>Φούτερ, καπέλο, T-shirt και lanyard έρχονται σύντομα</span></div></a>
       <a class="tile" href="#guide"><img src="img/c-mito-red-forest.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Οδηγοί</b><span>Μοντέλα, διαδρομές για cruise, συνεργεία</span></div></a>
       <a class="tile" href="#play"><img src="img/sticker-595.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Παιχνίδια</b><span>Κάρτα μέλους και quiz</span></div></a>
       <a class="tile" href="#club"><img src="img/banner.jpg" alt="" loading="lazy"><span class="arrow">›</span><div><b>Το Club</b><span>Η ιστορία μας, συνεργάτες, επικοινωνία</span></div></a>
@@ -926,13 +933,63 @@ footer .hero-road{top:0;bottom:auto}
   <div class="eyebrow"><span class="tri"></span>Car meets</div>
   <h1>Meets.</h1>
   <p>Το επόμενο meet, το πρόγραμμα, οι κανόνες και οι φωτογραφίες από όσα έχουμε κάνει. Δήλωσε ότι έρχεσαι και ανέβασε τις δικές σου λήψεις.</p>
-  <nav class="subnav"><a href="#varkiza">Varkiza 17/10</a><a href="#meet1">Meet #1</a><a href="#album">Album</a></nav>
+  <nav class="subnav"><a href="#mission">First Mission 5/12</a><a href="#varkiza">Varkiza 17/10</a><a href="#meet1">Meet #1</a><a href="#album">Album</a></nav>
 </div></div>
+
+<section class="collab mission" id="mission">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow"><span class="tri"></span>Επόμενο car meet · Σάββατο 5 Δεκεμβρίου 2026</div>
+      <h2>First Mission.</h2>
+      <p>Βραδινό meet στη Βάρκιζα και μετά όλοι μαζί, σε κομβόι, για τα μεσάνυχτα στον Ναό του Ποσειδώνα στο Σούνιο. Η πρώτη «αποστολή» του club.</p>
+    </div>
+    <div class="collab-grid">
+      <button class="poster" data-lb="img/poster-mission.jpg" style="padding:0;cursor:zoom-in;background:none"><img src="img/poster-mission.jpg" alt="Αφίσα Car meet First Mission: Σάββατο 5 Δεκεμβρίου 2026, 22:00 Varkiza Resort, 23:00 αναχώρηση για Σούνιο, 00:00 Ναός Ποσειδώνα"></button>
+      <div>
+        <div class="cd" style="margin-bottom:16px">
+          <div><b data-cd="d">15</b><span>Μέρες</span></div><div><b data-cd="h">21</b><span>Ώρες</span></div><div><b data-cd="m">00</b><span>Λεπτά</span></div><div><b data-cd="s">00</b><span>Δευτ.</span></div>
+        </div>
+        <div class="route mission-route" aria-label="Πρόγραμμα βραδιάς">
+          <div><b>22:00</b><span>Συνάντηση<br>Varkiza Resort</span></div>
+          <div><b>23:00</b><span>Αναχώρηση<br>για Σούνιο</span></div>
+          <div><b class="r">00:00</b><span>Ναός<br>Ποσειδώνα</span></div>
+        </div>
+        <dl class="facts">
+          <div class="fact"><dt>Πότε</dt><dd>Σάββατο 5 Δεκεμβρίου 2026<small>Συνάντηση 22:00</small></dd></div>
+          <div class="fact"><dt>Πού</dt><dd>Varkiza Resort → Σούνιο<small>Παραλιακή Αθηνών–Σουνίου, περίπου 40 λεπτά cruise</small></dd></div>
+          <div class="fact"><dt>Ποιοι</dt><dd>Abarth, Fiat, Lancia, Alfa Romeo<small>Ανοιχτό σε όλους τους φίλους του ιταλικού.</small></dd></div>
+          <div class="fact"><dt>Κόστος</dt><dd>Δωρεάν<small>Φέρε το αυτοκίνητο και την παρέα σου.</small></dd></div>
+        </dl>
+        <div class="rsvp">
+          <h3>Έρχεσαι;</h3>
+          <div class="row">
+            <button class="btn hot" type="button" id="rsvpBtn">Έρχομαι</button>
+            <a class="btn" id="calBtn" target="_blank" rel="noopener" href="#">+ Google Calendar</a>
+            <a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Varkiza+Resort&destination=Temple+of+Poseidon+Sounion" target="_blank" rel="noopener">Διαδρομή</a>
+          </div>
+          <div class="row" id="rsvpCar" hidden>
+            <label class="sr" for="rsvpModel">Με ποιο αυτοκίνητο</label>
+            <input class="field" id="rsvpModel" placeholder="Με ποιο αυτοκίνητο έρχεσαι; (π.χ. MiTo QV)" style="flex:1;min-width:0">
+          </div>
+          <p class="note" id="rsvpNote">Πάτα «Έρχομαι» για να κρατήσεις τη θέση σου και να μπει το meet στο ημερολόγιό σου.</p>
+        </div>
+        <div class="rules">
+          <h3>Κανόνες του cruise</h3>
+          <ul>
+            <li>Τηρούμε αυστηρά τον Κ.Ο.Κ. και τα όρια ταχύτητας σε όλη τη διαδρομή.</li>
+            <li>Κομβόι με απόσταση ασφαλείας. Κανείς δεν προσπερνά επικίνδυνα.</li>
+            <li>Όχι κόντρες, όχι burnouts. Στο Σούνιο σεβόμαστε τον χώρο και τους επισκέπτες.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="collab" id="varkiza">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>The biggest collaboration ever</div>
+      <div class="eyebrow"><span class="tri"></span>The biggest collaboration ever · Έγινε</div>
       <h2>German engineering. Italian passion.</h2>
       <p>Δύο κοινότητες, δύο κουλτούρες, μία βραδιά. Γερμανικά και ιταλικά αυτοκίνητα στο ίδιο parking, δίπλα στη θάλασσα της Βάρκιζας.</p>
     </div>
@@ -944,36 +1001,9 @@ footer .hero-road{top:0;bottom:auto}
     <div class="collab-grid">
       <button class="poster" data-lb="img/poster-collab.jpg" style="padding:0;cursor:zoom-in;background:none"><img src="img/poster-collab.jpg" alt="Αφίσα: Only VAG Athens × Abarth Club GR, Σάββατο 17 Οκτωβρίου, 20:00, Varkiza Resort"></button>
       <div>
-        <div class="cd" style="margin-bottom:16px">
-          <div><b data-cd="d">20</b><span>Μέρες</span></div><div><b data-cd="h">21</b><span>Ώρες</span></div><div><b data-cd="m">06</b><span>Λεπτά</span></div><div><b data-cd="s">00</b><span>Δευτ.</span></div>
-        </div>
-        <dl class="facts">
-          <div class="fact"><dt>Πότε</dt><dd>Σάββατο 17 Οκτωβρίου 2026<small>Ώρα έναρξης 20:00</small></dd></div>
-          <div class="fact"><dt>Πού</dt><dd>Parking μετά το Varkiza Resort<small>Βάρκιζα, παραλιακή Αθηνών–Σουνίου</small></dd></div>
-          <div class="fact"><dt>Ποιοι</dt><dd>Γερμανικά και ιταλικά αυτοκίνητα<small>Ανοιχτό σε όλους.</small></dd></div>
-          <div class="fact"><dt>Κόστος</dt><dd>Δωρεάν<small>Φέρε το αυτοκίνητο και την παρέα σου.</small></dd></div>
-        </dl>
-        <div class="rsvp">
-          <h3>Έρχεσαι;</h3>
-          <div class="row">
-            <button class="btn hot" type="button" id="rsvpBtn">Έρχομαι</button>
-            <a class="btn" id="calBtn" target="_blank" rel="noopener" href="#">+ Google Calendar</a>
-            <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Varkiza+Resort" target="_blank" rel="noopener">Χάρτης</a>
-          </div>
-          <div class="row" id="rsvpCar" hidden>
-            <label class="sr" for="rsvpModel">Με ποιο αυτοκίνητο</label>
-            <input class="field" id="rsvpModel" placeholder="Με ποιο αυτοκίνητο έρχεσαι; (π.χ. MiTo QV)" style="flex:1;min-width:0">
-          </div>
-          <p class="note" id="rsvpNote">Πάτα «Έρχομαι» για να κρατήσεις τη θέση σου και να μπει το meet στο ημερολόγιό σου.</p>
-        </div>
-        <div class="rules">
-          <h3>Κανόνες του meet</h3>
-          <ul>
-            <li>Τηρούμε αυστηρά τον Κ.Ο.Κ., πριν, κατά και μετά το meet.</li>
-            <li>Σεβόμαστε τον χώρο και τον περιβάλλοντα χώρο.</li>
-            <li>Όχι κόντρες, όχι burnouts. Αφήνουμε τον χώρο όπως τον βρήκαμε.</li>
-          </ul>
-        </div>
+        <p class="recap-badge">✓ Έγινε · 17 Οκτωβρίου 2026</p>
+        <p class="recap-text">Ιταλικά και γερμανικά αυτοκίνητα, μαζί, στο parking της Βάρκιζας. Η πρώτη μας συνεργασία έγινε μία από τις μεγαλύτερες βραδιές του club.</p>
+        <div class="recap-gal"><button class="tl-thumb" data-lb="img/meet-v1.jpg"><img src="img/meet-v1.jpg" alt="Αυτοκίνητα μελών στο meet" loading="lazy"></button><button class="tl-thumb" data-lb="img/meet-v2.jpg"><img src="img/meet-v2.jpg" alt="Αυτοκίνητα μελών στο meet" loading="lazy"></button><button class="tl-thumb" data-lb="img/meet-v3.jpg"><img src="img/meet-v3.jpg" alt="Αυτοκίνητα μελών στο meet" loading="lazy"></button><button class="tl-thumb" data-lb="img/meet-v4.jpg"><img src="img/meet-v4.jpg" alt="Αυτοκίνητα μελών στο meet" loading="lazy"></button><button class="tl-thumb" data-lb="img/meet-v5.jpg"><img src="img/meet-v5.jpg" alt="Αυτοκίνητα μελών στο meet" loading="lazy"></button><button class="tl-thumb" data-lb="img/meet-v6.jpg"><img src="img/meet-v6.jpg" alt="Αυτοκίνητα μελών στο meet" loading="lazy"></button><button class="tl-thumb" data-lb="img/meet-v7.jpg"><img src="img/meet-v7.jpg" alt="Αυτοκίνητα μελών στο meet" loading="lazy"></button><button class="tl-thumb" data-lb="img/meet-v8.jpg"><img src="img/meet-v8.jpg" alt="Αυτοκίνητα μελών στο meet" loading="lazy"></button></div>
       </div>
     </div>
   </div>
@@ -1016,7 +1046,7 @@ footer .hero-road{top:0;bottom:auto}
         <h4>Ανέβασε φωτογραφίες</h4>
         <p class="note">Διάλεξε μία ή περισσότερες, ή σύρε τες εδώ.</p>
         <label class="sr" for="albumMeet">Meet</label>
-        <select class="field" id="albumMeet"><option>Car meet #1 · 19/09</option><option>Varkiza · 17/10</option></select>
+        <select class="field" id="albumMeet"><option>First Mission · 05/12</option><option>Varkiza · 17/10</option><option>Car meet #1 · 19/09</option></select>
         <label class="sr" for="albumWho">Instagram</label>
         <input class="field" id="albumWho" placeholder="@το_instagram_σου">
         <p class="note photo-rules"><b>Κανόνες φωτογραφίας:</b> μόνο αυτοκίνητα, χωρίς πρόσωπα, και η πινακίδα να μη φαίνεται. Θα σου ζητήσουμε να τη θολώσεις πριν ανέβει.</p>
@@ -1073,7 +1103,7 @@ footer .hero-road{top:0;bottom:auto}
 <div class="page-hero"><div class="wrap">
   <div class="eyebrow"><span class="tri"></span>Official merch</div>
   <h1>Wear your passion.</h1>
-  <div class="so-banner" role="status"><span class="so-stamp">Sold out</span><div><b>Το αυτοκόλλητο εξαντλήθηκε!</b><p>Θα το ανανεώσουμε το συντομότερο δυνατό. Ευχαριστούμε πολύ για τη στήριξή σας! Μπλούζες και lanyard έρχονται σύντομα.</p></div></div>
+  <div class="so-banner" role="status"><span class="so-stamp">Sold out</span><div><b>Το αυτοκόλλητο εξαντλήθηκε!</b><p>Θα το ανανεώσουμε το συντομότερο δυνατό. Ευχαριστούμε πολύ για τη στήριξή σας! Μπλούζες, φούτερ, καπέλα και lanyard έρχονται σύντομα.</p></div></div>
   <p>Αυτοκόλλητα, μπλούζες και lanyard του club. Οι παραγγελίες γίνονται με DM στο Instagram και στέλνονται με BOX NOW.</p>
   <nav class="subnav"><a href="#sticker">Αυτοκόλλητο</a><a href="#preorder">Μπλούζες και αξεσουάρ</a></nav>
 </div></div>
@@ -1267,7 +1297,8 @@ footer .hero-road{top:0;bottom:auto}
       <div class="tl-item done"><div class="tl-dot"></div><div class="tl-date">12 Σεπ</div><div class="tl-body"><h3>400 followers</h3><p>Σε λιγότερο από δύο μήνες. Οι ομαδικές σε Instagram και Telegram ξεπερνούν τα 250 άτομα η καθεμία.</p><button class="tl-thumb" data-lb="img/poster-400.jpg"><img src="img/poster-400.jpg" alt="Αφίσα 400 followers" loading="lazy"></button></div></div>
       <div class="tl-item done"><div class="tl-dot"></div><div class="tl-date">19 Σεπ</div><div class="tl-body"><h3>Το πρώτο car meet</h3><p>Roisters 3 στις 21:30, cruise προς Λαύριο στις 23:00. Πάνω από 50 αυτοκίνητα. Περίπου 20 αυτοκόλλητα πουλήθηκαν επιτόπου.</p></div></div>
       <div class="tl-item now"><div class="tl-dot"></div><div class="tl-date">Σεπ–Οκτ</div><div class="tl-body"><h3>Online παραγγελίες και νέο merch</h3><p>Τα αυτοκόλλητα φεύγουν με BOX NOW σε όλη την Ελλάδα. Μπλούζες, lanyard και μπρελόκ σε προπαραγγελία.</p></div></div>
-      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">17 Οκτ</div><div class="tl-body"><h3>Only VAG × Abarth Club GR</h3><p>Η πρώτη μας συνεργασία, με μια κοινότητα 4.000 ακολούθων. Βάρκιζα, 20:00.</p></div></div>
+      <div class="tl-item done"><div class="tl-dot"></div><div class="tl-date">17 Οκτ</div><div class="tl-body"><h3>Only VAG × Abarth Club GR</h3><p>Η πρώτη μας συνεργασία, με μια κοινότητα 4.000 ακολούθων. Βάρκιζα, 20:00.</p></div></div>
+      <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">5 Δεκ</div><div class="tl-body"><h3>First Mission</h3><p>Meet στη Βάρκιζα στις 22:00 και κομβόι για τα μεσάνυχτα στον Ναό του Ποσειδώνα.</p><button class="tl-thumb" data-lb="img/poster-mission.jpg"><img src="img/poster-mission.jpg" alt="Αφίσα First Mission" loading="lazy"></button></div></div>
       <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">Επόμενα</div><div class="tl-body"><h3>1.000 followers και πολλά ακόμα</h3><p>Περισσότερα meets, Car of the Week κάθε εβδομάδα, κάρτα μέλους με εκπτώσεις.</p></div></div>
     </div>
   </div>
@@ -1306,8 +1337,8 @@ footer .hero-road{top:0;bottom:auto}
         <div><b>Ομαδική Instagram</b><span>Ζήτα πρόσκληση με DM</span></div><div class="num">250+</div>
       </a>
       <a class="channel" href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 4 3 11l6 2 2 6 3-4 5 4z"/></svg></div>
-        <div><b>Ομαδική Telegram</b><span>Ζήτα το link με DM</span></div><div class="num">250+</div>
+        <div class="ic" style="padding:0;overflow:hidden"><img src="img/telegram.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+        <div><b>Ομαδική Telegram</b><span style="display:block">Chat · Photos · Events · Tech talk</span><span>Ζήτα το link με DM</span></div><div class="num">250+</div>
       </a>
       <div class="channel">
         <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></div>
@@ -1325,7 +1356,7 @@ footer .hero-road{top:0;bottom:auto}
       <h2>Πριν έρθεις.</h2>
     </div>
     <div class="faq">
-      <details><summary>Πρέπει να έχω Abarth για να έρθω;</summary><p>Όχι. Το club είναι για όλα τα ιταλικά: Abarth, Fiat, Lancia και Alfa Romeo. Στο meet της 17ης Οκτωβρίου είναι ευπρόσδεκτα και τα γερμανικά, μαζί με το Only VAG Athens.</p></details>
+      <details><summary>Πρέπει να έχω Abarth για να έρθω;</summary><p>Όχι. Το club είναι για όλα τα ιταλικά: Abarth, Fiat, Lancia και Alfa Romeo. Στα κοινά meets με άλλα clubs, όπως με το Only VAG Athens στις 17 Οκτωβρίου, έρχονται και γερμανικά.</p></details>
       <details><summary>Κοστίζει κάτι η συμμετοχή;</summary><p>Τίποτα. Τα meets και οι ομαδικές είναι δωρεάν. Πληρώνεις μόνο το merch, αν το θέλεις.</p></details>
       <details><summary>Πώς παραγγέλνω merch;</summary><p>Στη σελίδα Merch φτιάχνεις την παραγγελία ή την κράτησή σου, αντιγράφεις το έτοιμο μήνυμα και το στέλνεις με DM στο @abarth_club_gr. Αποστολή με BOX NOW.</p></details>
       <details><summary>Γιατί δεν αγοράζω απευθείας από το site;</summary><p>Προς το παρόν οι παραγγελίες γίνονται μόνο με προσωπικό μήνυμα. Online πληρωμές θα προστεθούν όταν το club αποκτήσει εταιρική μορφή.</p></details>
@@ -1389,7 +1420,7 @@ function copy(text,el,ok){const sel=()=>{const r=document.createRange();r.select
 
 /* ---------- Router ---------- */
 const pages=['home','meets','cars','merch','guide','play','club'];
-const alias={top:'home',varkiza:'meets',meet1:'meets',album:'meets',cotw:'home',garage:'cars',members:'cars',family:'cars',sticker:'merch',preorder:'merch',mylist:'merch',models:'guide',routes:'guide',shops:'guide',card:'play',quiz:'play',story:'club',partners:'club',join:'club',faq:'club'};
+const alias={top:'home',mission:'meets',varkiza:'meets',meet1:'meets',album:'meets',cotw:'home',garage:'cars',members:'cars',family:'cars',sticker:'merch',preorder:'merch',mylist:'merch',models:'guide',routes:'guide',shops:'guide',card:'play',quiz:'play',story:'club',partners:'club',join:'club',faq:'club'};
 let current=null;
 function route(){const h=(location.hash||'#home').slice(1);const p=pages.includes(h)?h:(alias[h]||'home');
  if(p!==current){$$('.page').forEach(el=>el.classList.toggle('on',el.id==='p-'+p));$$('#navlinks a').forEach(a=>a.setAttribute('aria-current',a.dataset.p===p?'page':'false'));current=p;window.scrollTo(0,0);if(p==='home')armTacho();if(p==='play')drawCard()}
@@ -1398,7 +1429,7 @@ addEventListener('hashchange',route);
 document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(a){e.preventDefault();location.hash=a.dataset.go}});
 
 /* ---------- Countdown ---------- */
-const target=new Date('2026-10-17T20:00:00+03:00').getTime();const pad=n=>String(n).padStart(2,'0');
+const target=new Date('2026-12-05T22:00:00+02:00').getTime();const pad=n=>String(n).padStart(2,'0');
 function tick(){let d=Math.max(0,target-Date.now());const D=Math.floor(d/864e5);d-=D*864e5;const H=Math.floor(d/36e5);d-=H*36e5;const M=Math.floor(d/6e4);d-=M*6e4;const S=Math.floor(d/1e3);
  const v={d:D,h:pad(H),m:pad(M),s:pad(S)};if(target<=Date.now()){$$('.next-label').forEach(e=>e.textContent='Το τελευταίο meet');}$$('[data-cd]').forEach(b=>b.textContent=v[b.dataset.cd])}
 tick();setInterval(tick,1000);
@@ -1557,10 +1588,10 @@ const dz=$('#albumDrop');['dragenter','dragover'].forEach(t=>dz.addEventListener
 renderAlbum();
 
 /* ---------- RSVP + calendar ---------- */
-$('#calBtn').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Only VAG Athens × Abarth Club GR · Car meet')+'&dates=20261017T170000Z/20261017T210000Z&location='+encodeURIComponent('Parking μετά το Varkiza Resort, Βάρκιζα')+'&details='+encodeURIComponent('Γερμανικά και ιταλικά αυτοκίνητα. Τηρούμε τον Κ.Ο.Κ. instagram.com/abarth_club_gr');
+$('#calBtn').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('Abarth Club GR · Car meet First Mission')+'&dates=20261205T200000Z/20261205T230000Z&location='+encodeURIComponent('Varkiza Resort, Βάρκιζα')+'&details='+encodeURIComponent('22:00 Varkiza Resort, 23:00 αναχώρηση για Σούνιο, 00:00 Ναός Ποσειδώνα. Τηρούμε τον Κ.Ο.Κ. abarthclub.gr');
 let rsvp=store.get('acg3-rsvp',null);
 function renderRsvp(){const b=$('#rsvpBtn');b.textContent=rsvp?'✓ Έρχεσαι!':'Έρχομαι';b.classList.toggle('going',!!rsvp);b.classList.toggle('hot',!rsvp);$('#rsvpCar').hidden=!rsvp;
- if(rsvp){$('#rsvpModel').value=rsvp.car||'';$('#rsvpNote').innerHTML='Τα λέμε στη Βάρκιζα! Βάλε το meet στο ημερολόγιό σου και πες το στην παρέα σου. <b>Η συνολική καταμέτρηση για όλους ενεργοποιείται στην έκδοση με δικό της server.</b>'}
+ if(rsvp){$('#rsvpModel').value=rsvp.car||'';$('#rsvpNote').innerHTML='Τα λέμε στη Βάρκιζα στις 22:00! Βάλε το meet στο ημερολόγιό σου και πες το στην παρέα σου. <b>Η συνολική καταμέτρηση για όλους ενεργοποιείται στην έκδοση με δικό της server.</b>'}
  else $('#rsvpNote').textContent='Πάτα «Έρχομαι» για να κρατήσεις τη θέση σου και να μπει το meet στο ημερολόγιό σου.'}
 $('#rsvpBtn').onclick=()=>{rsvp=rsvp?null:{car:''};store.set('acg3-rsvp',rsvp);renderRsvp();toast(rsvp?'Δήλωσες ότι έρχεσαι 🔥':'Η δήλωση ακυρώθηκε')};
 $('#rsvpModel').addEventListener('change',e=>{if(rsvp){rsvp.car=e.target.value.trim();store.set('acg3-rsvp',rsvp);toast('Αποθηκεύτηκε')}});
@@ -1580,8 +1611,10 @@ $('#copy-dm').onclick=()=>copy($('#dm').textContent,$('#dm'),'Αντιγράφη
 
 /* ---------- Preorders ---------- */
 const products=[
- {id:'tee',name:'T-shirt ABARTH CLUB GR',desc:'Μαύρο βαμβακερό. Μπροστά το λογότυπο, πίσω τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Σημαιάκι στο μανίκι και σκορπιός στο κάτω μέρος.',imgs:['m2-tee-woman','m2-tee-back','m2-tee-mockup','m2-tee-collage'],opts:['S','M','L','XL','XXL'],optLabel:'Μέγεθος'},
- {id:'lanyard',name:'Lanyard ABARTH_CLUB_GR',desc:'Μαύρο κορδόνι λαιμού με το ABARTH_CLUB_GR, τα σήματα των 4 μαρκών και ιταλικές ρίγες. Αποσπώμενο κούμπωμα και κρίκος για κλειδιά.',imgs:['m2-lanyard-hang','m2-lanyard-car','m2-lanyard-studio'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'}];
+ {id:'tee',name:'T-shirt ABARTH CLUB GR',desc:'Μαύρο βαμβακερό. Μπροστά το λογότυπο, πίσω τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Σημαιάκι στο μανίκι και σκορπιός στο κάτω μέρος.',imgs:['m2-tee-woman','m2-tee-back','m3-tee-athens','m2-tee-mockup','m2-tee-collage'],opts:['S','M','L','XL','XXL'],optLabel:'Μέγεθος'},
+ {id:'lanyard',name:'Lanyard ABARTH_CLUB_GR',desc:'Μαύρο κορδόνι λαιμού με το ABARTH_CLUB_GR, τα σήματα των 4 μαρκών και ιταλικές ρίγες. Αποσπώμενο κούμπωμα και κρίκος για κλειδιά.',imgs:['m2-lanyard-hang','m2-lanyard-car','m2-lanyard-studio'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'},
+ {id:'hoodie',name:'Φούτερ ATHENS EST. 2026',desc:'Μαύρο φούτερ με κουκούλα. Μπροστά τα σήματα των 4 μαρκών, η ιταλική ρίγα και «Athens Est. 2026». Υπάρχει και η λιτή εκδοχή με το λογότυπο ABARTH CLUB GR στο στήθος.',imgs:['m3-hoodie-athens','m3-hoodie'],opts:['S','M','L','XL','XXL'],optLabel:'Μέγεθος'},
+ {id:'cap',name:'Καπέλο ABARTH_CLUB_GR',desc:'Μαύρο trucker καπέλο με δίχτυ και κεντημένο ABARTH_CLUB_GR στα χρώματα της ιταλικής σημαίας. Ρυθμιζόμενο κούμπωμα πίσω.',imgs:['m3-cap'],opts:['Ένα μέγεθος'],optLabel:'Επιλογή'}];
 const pick={};let po=store.get('acg3-preorders',[]);
 $('#shop').innerHTML=products.map(p=>{pick[p.id]=p.opts[0];return `<article class="prod" data-prod="${p.id}"><div class="pimg"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}" data-main loading="lazy"><span class="tag next">Coming soon</span><span class="so-mark cs-mark" aria-hidden="true">Coming soon</span></div>
  ${p.imgs.length>1?`<div class="pthumbs">${p.imgs.map((m,i)=>`<button type="button" data-img="img/${m}.jpg" aria-pressed="${i===0}"><img src="img/${m}.jpg" alt=""></button>`).join('')}</div>`:''}
