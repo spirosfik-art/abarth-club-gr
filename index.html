@@ -13,7 +13,7 @@
 <meta name="theme-color" content="#0c0c0e">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700;800&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Barlow+Condensed:wght@500;600;700;800&family=Permanent+Marker&family=Fira+Sans+Extra+Condensed:wght@600;700;800&display=swap">
 <meta property="og:url" content="https://spirosfik-art.github.io/abarth-club-gr/">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <link rel="icon" type="image/png" href="img/logo.png">
@@ -33,7 +33,7 @@
   --verde:#10a352;
   --giallo:#f6c21a;
   --glow-r: 0 0 24px rgba(229,32,46,.55);
-  --display:"Bebas Neue", "Oswald", Impact, "Arial Narrow", sans-serif;
+  --display:"Bebas Neue", "Fira Sans Extra Condensed", "Oswald", Impact, "Arial Narrow", sans-serif;
   --cond:"Barlow Condensed", "Arial Narrow", sans-serif;
   --body:"Barlow", "Helvetica Neue", Arial, sans-serif;
   --hand:"Permanent Marker", "Comic Sans MS", cursive;
@@ -49,7 +49,7 @@ a{color:inherit}
 img{max-width:100%;display:block}
 :focus-visible{outline:2px solid var(--giallo);outline-offset:3px}
 .wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gut)}
-h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:.01em;line-height:.92;margin:0;text-wrap:balance}
+h1,h2,h3{font-family:var(--display);text-transform:uppercase;font-weight:400;letter-spacing:.01em;line-height:.92;margin:0;text-wrap:balance}
 p{margin:0}
 .tri{background:linear-gradient(90deg,var(--verde) 0 33.3%,var(--chalk) 33.3% 66.6%,var(--rosso) 66.6%);height:4px;width:72px;border-radius:2px}
 .eyebrow{font:700 13px/1 var(--cond);letter-spacing:.22em;text-transform:uppercase;color:var(--smoke);display:flex;align-items:center;gap:12px}
@@ -905,16 +905,16 @@ footer .hero-road{top:0;bottom:auto}
 <!-- ================= MEETS ================= -->
 <div class="page" id="p-meets">
 <div class="page-hero"><div class="wrap">
-  <div class="eyebrow"><span class="tri"></span>Car meets</div>
-  <h1>Meets.</h1>
+  <div class="eyebrow"><span class="tri"></span>Οι συναντήσεις μας</div>
+  <h1>Συναντήσεις.</h1>
   <p>Το επόμενο meet, το πρόγραμμα, οι κανόνες και οι φωτογραφίες από όσα έχουμε κάνει. Δήλωσε ότι έρχεσαι και ανέβασε τις δικές σου λήψεις.</p>
-  <nav class="subnav"><a href="#mission">First Mission 5/12</a><a href="#varkiza">Varkiza 17/10</a><a href="#meet1">Meet #1</a><a href="#album">Album</a></nav>
+  <nav class="subnav"><a href="#mission">First Mission 5/12</a><a href="#varkiza">Βάρκιζα 17/10</a><a href="#meet1">Πρώτη συνάντηση</a><a href="#album">Άλμπουμ</a></nav>
 </div></div>
 
 <section class="collab mission" id="mission">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>Επόμενο car meet · Σάββατο 5 Δεκεμβρίου 2026</div>
+      <div class="eyebrow"><span class="tri"></span>Επόμενη συνάντηση · Σάββατο 5 Δεκεμβρίου 2026</div>
       <h2>First Mission.</h2>
       <p>Βραδινό meet στη Βάρκιζα και μετά όλοι μαζί, σε κομβόι, για τα μεσάνυχτα στον Ναό του Ποσειδώνα στο Σούνιο. Η πρώτη «αποστολή» του club.</p>
     </div>
@@ -939,7 +939,7 @@ footer .hero-road{top:0;bottom:auto}
           <h3>Έρχεσαι;</h3>
           <div class="row">
             <button class="btn hot" type="button" id="rsvpBtn">Έρχομαι</button>
-            <a class="btn" id="calBtn" target="_blank" rel="noopener" href="#">+ Google Calendar</a>
+            <a class="btn" id="calBtn" target="_blank" rel="noopener" href="#">+ Ημερολόγιο Google</a>
             <a class="btn" href="https://www.google.com/maps/dir/?api=1&origin=Varkiza+Resort&destination=Temple+of+Poseidon+Sounion" target="_blank" rel="noopener">Διαδρομή</a>
           </div>
           <div class="row" id="rsvpCar" hidden>
@@ -964,8 +964,8 @@ footer .hero-road{top:0;bottom:auto}
 <section class="collab" id="varkiza">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>The biggest collaboration ever · Έγινε</div>
-      <h2>German engineering. Italian passion.</h2>
+      <div class="eyebrow"><span class="tri"></span>Η μεγαλύτερη συνεργασία μας · Έγινε</div>
+      <h2>Γερμανική μηχανική. Ιταλικό πάθος.</h2>
       <p>Δύο κοινότητες, δύο κουλτούρες, μία βραδιά. Γερμανικά και ιταλικά αυτοκίνητα στο ίδιο parking, δίπλα στη θάλασσα της Βάρκιζας.</p>
     </div>
     <div class="vs">
@@ -988,9 +988,9 @@ footer .hero-road{top:0;bottom:auto}
   <div class="wrap">
     <div class="meet-head">
       <div class="sec-head" style="margin-bottom:0">
-        <div class="eyebrow"><span class="tri"></span>Car meet #1 · 19/09/2026</div>
+        <div class="eyebrow"><span class="tri"></span>Πρώτη συνάντηση · 19/09/2026</div>
         <h2>Τι κάναμε.</h2>
-        <p>Το πρώτο μας car meet ξεπέρασε κάθε προσδοκία. Δεν μαζευτήκαμε απλώς για να δούμε αυτοκίνητα. Γράψαμε ιστορία για το Abarth Club GR και για την κοινότητα που χτίζουμε όλοι μαζί.</p>
+        <p>Η πρώτη μας συνάντηση ξεπέρασε κάθε προσδοκία. Δεν μαζευτήκαμε απλώς για να δούμε αυτοκίνητα. Γράψαμε ιστορία για το Abarth Club GR και για την κοινότητα που χτίζουμε όλοι μαζί.</p>
       </div>
       <div class="route" aria-label="Πρόγραμμα βραδιάς">
         <div><b>21:30</b><span>Συνάντηση<br>Roisters 3</span></div>
@@ -1011,7 +1011,7 @@ footer .hero-road{top:0;bottom:auto}
 <section class="garage" id="album">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>Κοινό album</div>
+      <div class="eyebrow"><span class="tri"></span>Κοινό άλμπουμ</div>
       <h2>Οι δικές σας λήψεις.</h2>
       <p>Ήσουν στο meet; Ανέβασε τις φωτογραφίες σου εδώ, χωρίς να τις στέλνεις στο DM. Οι καλύτερες ανεβαίνουν στο Instagram του club με tag.</p>
     </div>
@@ -1021,7 +1021,7 @@ footer .hero-road{top:0;bottom:auto}
         <h4>Ανέβασε φωτογραφίες</h4>
         <p class="note">Διάλεξε μία ή περισσότερες, ή σύρε τες εδώ.</p>
         <label class="sr" for="albumMeet">Meet</label>
-        <select class="field" id="albumMeet"><option>First Mission · 05/12</option><option>Varkiza · 17/10</option><option>Car meet #1 · 19/09</option></select>
+        <select class="field" id="albumMeet"><option>First Mission · 05/12</option><option>Βάρκιζα · 17/10</option><option>Πρώτη συνάντηση · 19/09</option></select>
         <label class="sr" for="albumWho">Instagram</label>
         <input class="field" id="albumWho" placeholder="@το_instagram_σου">
         <p class="note photo-rules"><b>Κανόνες φωτογραφίας:</b> μόνο αυτοκίνητα, χωρίς πρόσωπα, και η πινακίδα να μη φαίνεται. Θα σου ζητήσουμε να τη θολώσεις πριν ανέβει.</p>
@@ -1046,7 +1046,7 @@ footer .hero-road{top:0;bottom:auto}
 <section class="garage" id="members">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>Garage μελών</div>
+      <div class="eyebrow"><span class="tri"></span>Τα αυτοκίνητα των μελών</div>
       <h2><span id="carCount">77</span> αυτοκίνητα. Μία οικογένεια.</h2>
       <p>Πάτα σε ένα αυτοκίνητο για όλες τις φωτογραφίες και τα στοιχεία του. Είναι δικό σου; Στείλε μας DM να συμπληρώσουμε το @ σου και τις μετατροπές.</p>
     </div>
@@ -1077,14 +1077,14 @@ footer .hero-road{top:0;bottom:auto}
 <div class="page" id="p-merch">
 <div class="ship-bar">Δωρεάν αποστολή BOX NOW για παραγγελίες άνω των 40€ σε όλη την Ελλάδα</div>
 <div class="page-hero shop-hero"><div class="wrap">
-  <div class="eyebrow"><span class="tri"></span>Official merch · ABARTH_CLUB_GR</div>
-  <h1>Wear your passion.</h1>
+  <div class="eyebrow"><span class="tri"></span>Επίσημα προϊόντα · ABARTH_CLUB_GR</div>
+  <h1>Φόρεσε το πάθος σου.</h1>
   <p>Το επίσημο merch του club. Πέρνα το ποντίκι πάνω από ένα προϊόν για να δεις και την πίσω πλευρά.</p>
   <div class="shop-tabs" id="shopTabs" role="tablist">
     <button type="button" data-cat="all" aria-pressed="true">Όλα</button>
     <button type="button" data-cat="wear" aria-pressed="false">Ρούχα</button>
     <button type="button" data-cat="acc" aria-pressed="false">Αξεσουάρ</button>
-    <button type="button" data-cat="new" aria-pressed="false"><span class="dot"></span>New arrivals</button>
+    <button type="button" data-cat="new" aria-pressed="false"><span class="dot"></span>Νέα</button>
   </div>
 </div></div>
 
@@ -1094,7 +1094,7 @@ footer .hero-road{top:0;bottom:auto}
     <div class="shop-perks">
       <div><b>BOX NOW</b><span>Παραλαβή από locker 24/7, σε όλη την Ελλάδα</span></div>
       <div><b>Ασφαλής πληρωμή</b><span>Κάρτα, Apple Pay και Google Pay</span></div>
-      <div><b>Designed in Athens</b><span>Σχεδιασμένο από τα μέλη, για τα μέλη</span></div>
+      <div><b>Σχεδιασμένο στην Αθήνα</b><span>Σχεδιασμένο από τα μέλη, για τα μέλη</span></div>
       <div><b>Αλλαγή μεγέθους</b><span>Δωρεάν αλλαγή μέσα σε 14 μέρες</span></div>
     </div>
   </div>
@@ -1117,13 +1117,13 @@ footer .hero-road{top:0;bottom:auto}
           <p>Βάλε ύψος και βάρος και διάλεξε πώς σου αρέσει να εφαρμόζει.</p>
           <label class="fit-row"><span>Ύψος</span><b id="hVal">175 cm</b><input type="range" id="hIn" min="150" max="205" value="175"></label>
           <label class="fit-row"><span>Βάρος</span><b id="wVal">75 kg</b><input type="range" id="wIn" min="45" max="140" value="75"></label>
-          <div class="fit-mode"><button type="button" data-fit="0" aria-pressed="true">Regular</button><button type="button" data-fit="1" aria-pressed="false">Oversized</button></div>
+          <div class="fit-mode"><button type="button" data-fit="0" aria-pressed="true">Κανονική εφαρμογή</button><button type="button" data-fit="1" aria-pressed="false">Φαρδιά εφαρμογή</button></div>
           <div class="fit-res"><span>Προτεινόμενο μέγεθος</span><b id="fitSize">M</b><button type="button" id="fitPick">Επιλογή</button></div>
           <p class="note">Ανάμεσα σε δύο μεγέθη; Πάρε το μεγαλύτερο.</p>
         </div>
       </div>
       <button class="btn hot pv-add" type="button" id="pvAdd">Προσθήκη στο καλάθι</button>
-      <div class="pv-badges"><span>Designed in Athens</span><span id="pvMat"></span></div>
+      <div class="pv-badges"><span>Σχεδιασμένο στην Αθήνα</span><span id="pvMat"></span></div>
       <p class="pv-desc" id="pvDesc"></p>
       <details class="pv-acc"><summary>Αποστολή & επιστροφές</summary><p>Αποστολή με BOX NOW σε 1–3 εργάσιμες από την ημέρα που θα είναι έτοιμη η παραγγελία. Κόστος 3€, δωρεάν πάνω από 40€. Δωρεάν αλλαγή μεγέθους μέσα σε 14 μέρες.</p></details>
       <details class="pv-acc"><summary>Φροντίδα</summary><p>Πλύσιμο στους 30°C από την ανάποδη. Όχι στεγνωτήριο, όχι σίδερο πάνω στο τύπωμα.</p></details>
@@ -1150,7 +1150,7 @@ footer .hero-road{top:0;bottom:auto}
     <input class="field" name="name" required placeholder="Ονοματεπώνυμο" autocomplete="name">
     <input class="field" name="phone" required placeholder="Κινητό (για το SMS του BOX NOW)" autocomplete="tel" inputmode="tel">
     <input class="field" name="email" type="email" required placeholder="Email" autocomplete="email">
-    <h4>BOX NOW locker</h4>
+    <h4>Locker παραλαβής BOX NOW</h4>
     <div class="bn"><img src="img/boxnow.jpg" alt=""><div><b>Παραλαβή από locker</b><span>Διάλεξε το locker που σε βολεύει στον χάρτη του BOX NOW και γράψε το όνομά του εδώ.</span></div></div>
     <a class="btn wide bn-btn" href="https://boxnow.gr/" target="_blank" rel="noopener">Άνοιγμα χάρτη BOX NOW</a>
     <input class="field" name="locker" required placeholder="Locker (π.χ. BOX NOW AB Γλυφάδα, Λ. Βουλιαγμένης 100)">
@@ -1184,7 +1184,7 @@ footer .hero-road{top:0;bottom:auto}
 <section class="garage" id="routes">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow"><span class="tri"></span>Cruise routes</div>
+      <div class="eyebrow"><span class="tri"></span>Διαδρομές για βόλτα</div>
       <h2>Πού πάμε βόλτα.</h2>
       <p>Οι αγαπημένες διαδρομές της παρέας γύρω από την Αθήνα. Οι αποστάσεις είναι περίπου, από το Σύνταγμα. Οδηγούμε με τον Κ.Ο.Κ., όπως πάντα.</p>
     </div>
@@ -1206,7 +1206,7 @@ footer .hero-road{top:0;bottom:auto}
         <label class="sr" for="shName">Όνομα</label><input class="field" id="shName" placeholder="Όνομα συνεργείου">
         <div class="row">
           <label class="sr" for="shArea">Περιοχή</label><input class="field" id="shArea" placeholder="Περιοχή">
-          <label class="sr" for="shType">Ειδικότητα</label><select class="field" id="shType"><option>Μηχανικός</option><option>Ηλεκτρολόγος</option><option>Φανοποιός</option><option>Ελαστικά</option><option>Tuning / remap</option><option>Detailing</option></select>
+          <label class="sr" for="shType">Ειδικότητα</label><select class="field" id="shType"><option>Μηχανικός</option><option>Ηλεκτρολόγος</option><option>Φανοποιός</option><option>Ελαστικά</option><option>Βελτιώσεις / remap</option><option>Περιποίηση αυτοκινήτου</option></select>
         </div>
         <label class="sr" for="shWhy">Γιατί το προτείνεις</label><input class="field" id="shWhy" placeholder="Γιατί το προτείνεις (μία φράση)">
         <button class="btn green" type="button" id="shAdd">Πρόσθεσε στη λίστα</button>
@@ -1222,11 +1222,11 @@ footer .hero-road{top:0;bottom:auto}
   <div class="wrap">
     <img src="img/logo.png" alt="">
     <div class="foot-mid">
-      <b>ABARTH_CLUB_GR · Athens · Est. 2026</b>
+      <b>ABARTH_CLUB_GR · Αθήνα · Από το 2026</b>
       <small>Ανεξάρτητη κοινότητα φίλων των ιταλικών αυτοκινήτων. Δεν συνδέεται με την Abarth, τη Fiat, τη Lancia, την Alfa Romeo ή τη Stellantis. Τα σήματα ανήκουν στους κατόχους τους. Ψήφοι, φωτογραφίες και κρατήσεις φτάνουν σε εμάς μόνο με DM στο Instagram. Ό,τι ανεβάζεις εδώ μένει στη δική σου συσκευή.</small>
     </div>
     <div class="foot-links"><a href="https://instagram.com/abarth_club_gr" target="_blank" rel="noopener">Instagram @abarth_club_gr</a><a href="https://ig.me/m/abarth_club_gr" target="_blank" rel="noopener">DM για Telegram group</a><a href="mailto:Abarthclubgr@gmail.com">Abarthclubgr@gmail.com</a></div>
-    <div class="foot-hand">One Team<br>One Family<br>One Purpose</div>
+    <div class="foot-hand">Μία ομάδα<br>Μία οικογένεια<br>Ένας σκοπός</div>
   </div>
 </footer>
 
@@ -1243,7 +1243,7 @@ footer .hero-road{top:0;bottom:auto}
 </div></div>
 <div class="cookie" id="cookie" hidden role="dialog" aria-labelledby="ckT">
   <svg class="ck-ic" id="ckIc" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 4a28 28 0 1 0 28 28 9 9 0 0 1-9-9 9 9 0 0 1-9-9 9 9 0 0 1-10-10z" fill="#c98a45"/><circle cx="22" cy="24" r="3.5" fill="#4a2a12"/><circle cx="36" cy="38" r="4" fill="#4a2a12"/><circle cx="20" cy="42" r="3" fill="#4a2a12"/><circle cx="44" cy="26" r="2.5" fill="#4a2a12"/><circle cx="30" cy="52" r="2.5" fill="#4a2a12"/></svg>
-  <div class="ck-txt"><b id="ckT">Biscotti italiani;</b><p>Κρατάμε λίγα «cookies» μόνο στη συσκευή σου, για να θυμόμαστε τις ψήφους, τις κρατήσεις και την κάρτα μέλους σου. Κανένα tracking, καμία διαφήμιση. Μόνο βενζίνη.</p></div>
+  <div class="ck-txt"><b id="ckT">Ιταλικά μπισκοτάκια;</b><p>Κρατάμε λίγα «cookies» μόνο στη συσκευή σου, για να θυμόμαστε τις ψήφους, τις κρατήσεις και την κάρτα μέλους σου. Κανένα tracking, καμία διαφήμιση. Μόνο βενζίνη.</p></div>
   <div class="btns" style="margin-top:0"><button class="btn hot" type="button" id="ckYes">Γκάζι, δέχομαι</button><button class="btn" type="button" id="ckNo">Μόνο τα απαραίτητα</button></div>
 </div>
 <div class="toast" id="toast" role="status"></div>
@@ -1397,10 +1397,10 @@ function closeModal(){$('#modal').hidden=true;document.body.style.overflow=''}
 $('#mClose').onclick=closeModal;$('#modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
 
 /* ---------- Meet gallery + album ---------- */
-const gal=[['meet-tikaname.jpg','Τι κάναμε'],['meet-abarth-lineup.jpg','Abarth line-up'],['meet-cruise.jpg','Cruise'],['meet-farma-wide.jpg','50+ αυτοκίνητα'],['meet-farma.jpg','Φάρμα Ρέρρα'],['meet-595-row.jpg','595 line-up'],['meet-palms.jpg','Grande Punto squad'],['meet-mito-red.jpg','MiTo'],['meet-punto-orange.jpg','Punto'],['meet-mito-crew.jpg','Alfa crew'],['meet-punto-widebody.jpg','Widebody'],['meet-595-duo.jpg','Competizione'],['meet-lavrio-row.jpg','Λαύριο'],['meet-panda.jpg','Panda 100HP'],['meet-mito-black.jpg','Black MiTos'],['meet-punto-white.jpg','Grande Punto Abarth'],['meet-punto-row.jpg','Palm row']];
+const gal=[['meet-tikaname.jpg','Τι κάναμε'],['meet-abarth-lineup.jpg','Η σειρά των Abarth'],['meet-cruise.jpg','Κομβόι'],['meet-farma-wide.jpg','50+ αυτοκίνητα'],['meet-farma.jpg','Φάρμα Ρέρρα'],['meet-595-row.jpg','Τα 595 στη σειρά'],['meet-palms.jpg','Η ομάδα των Grande Punto'],['meet-mito-red.jpg','MiTo'],['meet-punto-orange.jpg','Punto'],['meet-mito-crew.jpg','Η παρέα των Alfa'],['meet-punto-widebody.jpg','Φαρδύ body kit'],['meet-595-duo.jpg','Competizione'],['meet-lavrio-row.jpg','Λαύριο'],['meet-panda.jpg','Panda 100HP'],['meet-mito-black.jpg','Μαύρα MiTo'],['meet-punto-white.jpg','Grande Punto Abarth'],['meet-punto-row.jpg','Κάτω από τους φοίνικες']];
 $('#gal').innerHTML=gal.map(([f,c])=>`<button data-lb="img/${f}"><img src="img/${f}" alt="${c}" loading="lazy"><span class="cap">${c}</span></button>`).join('');
 let album=store.get('acg3-album',[]);
-function renderAlbum(){const seed=['meet-mito-crew','meet-palms','meet-lavrio-row','meet-mito-black'].map(f=>({src:'img/'+f+'.jpg',who:'@abarth_club_gr',meet:'Car meet #1 · 19/09'}));
+function renderAlbum(){const seed=['meet-mito-crew','meet-palms','meet-lavrio-row','meet-mito-black'].map(f=>({src:'img/'+f+'.jpg',who:'@abarth_club_gr',meet:'Πρώτη συνάντηση · 19/09'}));
  $('#albumGrid').innerHTML=album.concat(seed).map(a=>`<button data-lb="${a.src}"><img src="${a.src}" alt="Φωτογραφία από ${esc(a.meet)}" loading="lazy"><span class="who">${esc(a.who)}</span></button>`).join('')}
 async function addAlbum(files){const who=$('#albumWho').value.trim()||'μέλος';let n=0;
  for(const f of files){if(!f.type.startsWith('image/'))continue;try{const src=await checkPhoto(f);if(src){album.unshift({src,who,meet:$('#albumMeet').value});n++}}catch(e){}}
@@ -1440,7 +1440,7 @@ const P=id=>PRODUCTS.find(p=>p.id===id);
 function card(p){const sold=p.tag==='sold';
  return `<article class="pc${sold?' is-sold':''}" data-pid="${p.id}"><button class="pc-img" type="button" data-open="${p.id}" aria-label="${esc(p.name)}">
  <img class="a" src="img/${p.img[0]}.jpg" alt="${esc(p.name)}" loading="lazy">${p.img[1]?`<img class="b" src="img/${p.img[1]}.jpg" alt="" loading="lazy">`:''}
- ${p.tag==='new'?'<span class="pc-tag">New arrival</span>':''}${sold?'<span class="pc-tag sold">Sold out</span>':''}</button>
+ ${p.tag==='new'?'<span class="pc-tag">Νέο</span>':''}${sold?'<span class="pc-tag sold">Εξαντλήθηκε</span>':''}</button>
  <div class="pc-b"><div><h3>${esc(p.name)}</h3><span class="pc-p">${eur(p.price)}</span></div>${sold?'':`<button class="pc-add" type="button" data-quick="${p.id}" aria-label="Στο καλάθι"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h16l-1.5 11h-13z"/><path d="M8.5 9V7.5a3.5 3.5 0 0 1 7 0V9"/><path d="M9 13h.01M15 13h.01"/></svg></button>`}</div></article>`}
 let cat='all';
 function renderShop(){const list=PRODUCTS.filter(p=>cat==='all'||(cat==='new'?p.tag==='new':p.cat===cat));
@@ -1453,7 +1453,7 @@ function openP(id){const p=P(id);cur=p;size=null;
  $('#pvImg').src='img/'+p.img[0]+'.jpg';$('#pvImg').alt=p.name;
  $('#pvThumbs').innerHTML=p.img.map((m,i)=>`<button type="button" data-pimg="img/${m}.jpg" aria-pressed="${i===0}"><img src="img/${m}.jpg" alt=""></button>`).join('');
  $('#pvSizeWrap').hidden=!p.sizes;if(p.sizes){$('#pvSizes').innerHTML=p.sizes.map(z=>`<button type="button" data-size="${z}" aria-pressed="false">${z}</button>`).join('');$('#fit').hidden=true}
- const sold=p.tag==='sold';$('#pvAdd').disabled=sold;$('#pvAdd').textContent=sold?'Sold out · Ξαναβγαίνει σύντομα':'Προσθήκη στο καλάθι';
+ const sold=p.tag==='sold';$('#pvAdd').disabled=sold;$('#pvAdd').textContent=sold?'Εξαντλήθηκε · Ξαναβγαίνει σύντομα':'Προσθήκη στο καλάθι';
  $('#pv').hidden=false;document.body.style.overflow='hidden'}
 function closeP(){$('#pv').hidden=true;document.body.style.overflow=''}
 document.addEventListener('click',e=>{const o=e.target.closest('[data-open]');if(o){openP(o.dataset.open);return}
@@ -1507,7 +1507,7 @@ const guides=[
  ['Alfa Romeo Giulietta','Το hatch με το μεγάλο «V»',['1.4 TB και MultiAir, 1750 TBi','Diesel 1.6 και 2.0 JTDm','Κάποιες με TCT'],['MultiAir και TCT όπως στο MiTo','Στα diesel, ιμάντας χρονισμού στην ώρα του','Φθορές σε ανάρτηση και σινεμπλόκ'],['Splitter και λεπτομέρειες σε κόκκινο','Ζάντες Alfa','Remap μόνο με υγιή μηχανή']],
  ['Alfa Romeo 147','Κλασική πια',['1.6 και 2.0 Twin Spark','Diesel 1.9 JTD','GTA με 3.2 V6 250 PS'],['Ιμάντας χρονισμού και variator στα Twin Spark','Κατανάλωση λαδιού','Selespeed (αν έχει): έλεγχος αντλίας και αλλαγών','Ψαλίδια μπροστινής ανάρτησης'],['Ανανέωση ανάρτησης','Εξάτμιση με ωραίο ήχο','Φροντίδα βαφής και πλαστικών']],
  ['Alfa Romeo 159','Η sedan της παρέας',['1750 TBi, 2.2 και 3.2 JTS','Diesel 1.9 και 2.4 JTDm'],['Αλυσίδα χρονισμού στα 2.2 JTS','Ανάρτηση και σινεμπλόκ (βαρύ αυτοκίνητο)','Ηλεκτρικά και αισθητήρες'],['Lip spoiler και ζάντες','Κόκκινες δαγκάνες','Σωστό service πριν από κάθε μετατροπή']],
- ['Fiat Punto GT (176)','Old school turbo',['1.4 turbo γύρω στους 130 PS','Τα περισσότερα έχουν πια 25+ χρόνια'],['Σκουριά σε μαρσπιέ και πάτωμα','Κατάσταση turbo και διαρροές λαδιού','Αυθεντικά κομμάτια που λείπουν'],['Αναβάθμιση φρένων πρώτα','Ανανέωση λάστιχων και αμορτισέρ','Κράτα τα αυθεντικά κομμάτια']],
+ ['Fiat Punto GT (176)','Turbo της παλιάς σχολής',['1.4 turbo γύρω στους 130 PS','Τα περισσότερα έχουν πια 25+ χρόνια'],['Σκουριά σε μαρσπιέ και πάτωμα','Κατάσταση turbo και διαρροές λαδιού','Αυθεντικά κομμάτια που λείπουν'],['Αναβάθμιση φρένων πρώτα','Ανανέωση λάστιχων και αμορτισέρ','Κράτα τα αυθεντικά κομμάτια']],
  ['Lancia Delta / Ypsilon','6 τίτλοι WRC, 1987–1992',['Delta HF Integrale: 2.0 turbo, τετρακίνητο','Delta 2ης γενιάς (836): από 1.6 έως 2.0 turbo HF','Ypsilon: μικροί κινητήρες για την πόλη'],['Στο Integrale, σκουριά και αυθεντικότητα κομματιών','Ιστορικό και πιστοποίηση αν είναι συλλεκτικό','Στο Ypsilon, ηλεκτρικά και συμπλέκτης'],['Αποκατάσταση πριν από μετατροπή','Φέρ’ το στο meet, θα γίνει χαμός']]
 ];
 $('#guideList').innerHTML=guides.map(([t,s,eng,watch,mods],i)=>`<details ${i===0?'open':''}><summary>${esc(t)}<small>${esc(s)}</small></summary><div class="guide-body"><div><h4 class="g">Κινητήρες</h4><ul>${eng.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h4 class="r">Τι να προσέξεις</h4><ul>${watch.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div><div><h4 class="y">Πρώτες μετατροπές</h4><ul>${mods.map(x=>`<li>${esc(x)}</li>`).join('')}</ul></div></div></details>`).join('');
